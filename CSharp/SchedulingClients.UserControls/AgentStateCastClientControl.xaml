@@ -41,7 +41,23 @@
 					<Button x:Name="ushortVariableButton" Click="ushortVariableButton_Click" Width="auto">Retrieve</Button>
 				</StackPanel>
 			</local:LabelContentControl>
-			<local:LabelContentControl Header="Get IPAddress Statecast Variable">
+            <local:LabelContentControl Header="Get UInteger Statecast Variable">
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="uintegerBox" Text="" IsEnabled="False" Width="auto" MinWidth="50" />
+                    <toolkit:IntegerUpDown x:Name="uintegerVariableUpDown" Maximum="65535" Minimum="0" MinWidth="50" />
+                    <TextBox x:Name="uintegerAliasBox" Text="[variable alias]" Width="auto" MinWidth="50" />
+                    <Button x:Name="uintegerVariableButton" Click="uintegerVariableButton_Click" Width="auto">Retrieve</Button>
+                </StackPanel>
+            </local:LabelContentControl>
+            <local:LabelContentControl Header="Get Integer Statecast Variable">
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="integerBox" Text="" IsEnabled="False" Width="auto" MinWidth="50" />
+                    <toolkit:IntegerUpDown x:Name="integerVariableUpDown" Maximum="65535" Minimum="0" MinWidth="50" />
+                    <TextBox x:Name="integerAliasBox" Text="[variable alias]" Width="auto" MinWidth="50" />
+                    <Button x:Name="integerVariableButton" Click="integerVariableButton_Click" Width="auto">Retrieve</Button>
+                </StackPanel>
+            </local:LabelContentControl>
+            <local:LabelContentControl Header="Get IPAddress Statecast Variable">
 				<StackPanel Orientation="Horizontal">
 					<StackPanel Orientation="Horizontal">
 						<TextBox x:Name="ipBox1" Text="0" IsEnabled="False" Width="auto" />

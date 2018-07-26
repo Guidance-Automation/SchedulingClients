@@ -84,9 +84,9 @@ namespace SchedulingClients.UserControls
                         IEnumerable<NodeData> nodeDataEnumerable;
                         mapClient.TryGetAllNodeData(out nodeDataEnumerable);
                         int sleepingTaskId1;
-                        jobBuilderClient.TryCreateSleepingTask(jobData.OrderedListTaskId, nodeDataEnumerable.ElementAt(random.Next(nodeDataEnumerable.Count())).MapItemId, out sleepingTaskId1);
+                        jobBuilderClient.TryCreateSleepingTask(jobData.RootOrderedListTaskId, nodeDataEnumerable.ElementAt(random.Next(nodeDataEnumerable.Count())).MapItemId, out sleepingTaskId1);
                         int sleepingTaskId2;
-                        jobBuilderClient.TryCreateSleepingTask(jobData.OrderedListTaskId, nodeDataEnumerable.ElementAt(random.Next(nodeDataEnumerable.Count())).MapItemId, out sleepingTaskId2);
+                        jobBuilderClient.TryCreateSleepingTask(jobData.RootOrderedListTaskId, nodeDataEnumerable.ElementAt(random.Next(nodeDataEnumerable.Count())).MapItemId, out sleepingTaskId2);
                         bool success;
                         jobBuilderClient.TryCommit(jobData.JobId, out success);
                         TimeSpan rtt = DateTime.Now.Subtract(before);

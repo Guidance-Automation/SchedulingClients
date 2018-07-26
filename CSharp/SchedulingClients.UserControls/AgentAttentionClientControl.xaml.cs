@@ -1,6 +1,7 @@
 ﻿using SchedulingClients.AgentAttentionServiceReference;
 using System.Windows;
 using System.Windows.Controls;
+using System.Linq;
 
 namespace SchedulingClients.UserControls
 {
@@ -14,10 +15,11 @@ namespace SchedulingClients.UserControls
 	      InitializeComponent();
     }
         
-    private void AgentAttentionClient_AgentAttentionChange(AgentAttentionData agentAttentionData)
+    private void AgentAttentionClient_AgentAttentionChange(AgentAttentionData[] agentAttentionData)
     {
-        Application.Current.Dispatcher.Invoke(() =>
-            agentAttentionDataGrid.ItemsSource = agentAttentionData.RequiringAttention
+#warning needs sanity check
+            Application.Current.Dispatcher.Invoke(() =>
+            agentAttentionDataGrid.ItemsSource = agentAttentionData
         );
     }
 	

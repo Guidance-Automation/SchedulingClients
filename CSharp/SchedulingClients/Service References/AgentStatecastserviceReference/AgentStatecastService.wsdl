@@ -87,6 +87,18 @@
   <wsdl:message name="IAgentStatecastService_GetUShortStatecastValue_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetUShortStatecastValueResponse" />
   </wsdl:message>
+  <wsdl:message name="IAgentStatecastService_GetIntegerStatecastValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIntegerStatecastValue" />
+  </wsdl:message>
+  <wsdl:message name="IAgentStatecastService_GetIntegerStatecastValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIntegerStatecastValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgentStatecastService_GetUIntegerStatecastValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUIntegerStatecastValue" />
+  </wsdl:message>
+  <wsdl:message name="IAgentStatecastService_GetUIntegerStatecastValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUIntegerStatecastValueResponse" />
+  </wsdl:message>
   <wsdl:portType name="IAgentStatecastService">
     <wsdl:operation name="VersionMajor">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/VersionMajor" message="tns:IAgentStatecastService_VersionMajor_InputMessage" />
@@ -123,6 +135,14 @@
     <wsdl:operation name="GetUShortStatecastValue">
       <wsdl:input wsaw:Action="http://tempuri.org/IAgentStatecastService/GetUShortStatecastValue" message="tns:IAgentStatecastService_GetUShortStatecastValue_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAgentStatecastService/GetUShortStatecastValueResponse" message="tns:IAgentStatecastService_GetUShortStatecastValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIntegerStatecastValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgentStatecastService/GetIntegerStatecastValue" message="tns:IAgentStatecastService_GetIntegerStatecastValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgentStatecastService/GetIntegerStatecastValueResponse" message="tns:IAgentStatecastService_GetIntegerStatecastValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUIntegerStatecastValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgentStatecastService/GetUIntegerStatecastValue" message="tns:IAgentStatecastService_GetUIntegerStatecastValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgentStatecastService/GetUIntegerStatecastValueResponse" message="tns:IAgentStatecastService_GetUIntegerStatecastValue_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IAgentStatecastService" type="tns:IAgentStatecastService">
@@ -209,6 +229,24 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetIntegerStatecastValue">
+      <soap12:operation soapAction="http://tempuri.org/IAgentStatecastService/GetIntegerStatecastValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUIntegerStatecastValue">
+      <soap12:operation soapAction="http://tempuri.org/IAgentStatecastService/GetUIntegerStatecastValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WSDualHttpBinding_IAgentStatecastService" type="tns:IAgentStatecastService">
     <wsp:PolicyReference URI="#WSDualHttpBinding_IAgentStatecastService_policy" />
@@ -287,6 +325,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetUShortStatecastValue">
       <soap12:operation soapAction="http://tempuri.org/IAgentStatecastService/GetUShortStatecastValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIntegerStatecastValue">
+      <soap12:operation soapAction="http://tempuri.org/IAgentStatecastService/GetIntegerStatecastValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUIntegerStatecastValue">
+      <soap12:operation soapAction="http://tempuri.org/IAgentStatecastService/GetUIntegerStatecastValue" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -1,36 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Core" />
-  <xs:complexType name="JobStateData">
+  <xs:complexType name="JobSummaryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssignedAgentId" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobId" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Scheduling.Core" minOccurs="0" name="JobStatus" type="q1:JobStatus" />
+      <xs:element minOccurs="0" name="RootOrderedListTaskId" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskSummaries" nillable="true" type="tns:ArrayOfTaskSummaryData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobSummaryData" nillable="true" type="tns:JobSummaryData" />
+  <xs:complexType name="ArrayOfTaskSummaryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskSummaryData" nillable="true" type="tns:TaskSummaryData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaskSummaryData" nillable="true" type="tns:ArrayOfTaskSummaryData" />
+  <xs:complexType name="TaskSummaryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NodeTaskSummaryData" nillable="true" type="tns:NodeTaskSummaryData" />
+      <xs:element minOccurs="0" name="ParentTaskId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskId" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Scheduling.Core" minOccurs="0" name="TaskStatus" type="q2:TaskStatus" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Scheduling.Core" minOccurs="0" name="TaskType" type="q3:TaskType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskSummaryData" nillable="true" type="tns:TaskSummaryData" />
+  <xs:complexType name="NodeTaskSummaryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NodeId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NodeTaskSummaryData" nillable="true" type="tns:NodeTaskSummaryData" />
+  <xs:complexType name="JobProgressData">
     <xs:sequence>
       <xs:element minOccurs="0" name="AssignedAgentId" type="xs:int" />
       <xs:element minOccurs="0" name="JobId" type="xs:int" />
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Scheduling.Core" minOccurs="0" name="JobStatus" type="q1:JobStatus" />
-      <xs:element minOccurs="0" name="Tasks" nillable="true" type="tns:ArrayOfNodeTaskStateData" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Scheduling.Core" minOccurs="0" name="JobStatus" type="q4:JobStatus" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="JobStateData" nillable="true" type="tns:JobStateData" />
-  <xs:complexType name="ArrayOfNodeTaskStateData">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="NodeTaskStateData" nillable="true" type="tns:NodeTaskStateData" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfNodeTaskStateData" nillable="true" type="tns:ArrayOfNodeTaskStateData" />
-  <xs:complexType name="NodeTaskStateData">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="MetaData" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="NodeId" type="xs:int" />
-      <xs:element minOccurs="0" name="TaskId" type="xs:int" />
-      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Scheduling.Core" minOccurs="0" name="TaskStatus" type="q2:TaskStatus" />
-      <xs:element minOccurs="0" name="TaskType" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="NodeTaskStateData" nillable="true" type="tns:NodeTaskStateData" />
-  <xs:complexType name="TaskProgressData">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="TaskId" type="xs:int" />
-      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Scheduling.Core" minOccurs="0" name="TaskStatus" type="q3:TaskStatus" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="TaskProgressData" nillable="true" type="tns:TaskProgressData" />
+  <xs:element name="JobProgressData" nillable="true" type="tns:JobProgressData" />
 </xs:schema>

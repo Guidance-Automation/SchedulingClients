@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using SchedulingClients.JobStateServiceReference;
 using System.Collections.ObjectModel;
+using SchedulingClients.TaskStateServiceReference;
 
 namespace SchedulingClients.UserControls
 {
@@ -11,7 +12,7 @@ namespace SchedulingClients.UserControls
     /// </summary>
     public partial class JobStateClientControl : UserControl
     {
-        private ObservableCollection<TaskProgressData> recentData = new ObservableCollection<TaskProgressData>();
+        private ObservableCollection<JobProgressData> recentData = new ObservableCollection<JobProgressData>();
 
         public JobStateClientControl()
         {
@@ -19,34 +20,41 @@ namespace SchedulingClients.UserControls
             recentTaskProgressUpdatesDataGrid.DataContext = recentData;
         }
 
-        private void Client_TaskStateUpdated(TaskProgressData obj)
+        private void Client_JobProgressUpdated(JobProgressData jobProgressData)
         {
             Dispatcher.BeginInvoke(new Action(() =>
             {
-                recentData.Add(obj);
+                recentData.Add(jobProgressData);
             }));
         }
 
         private void getJobStateButton_Click(object sender, RoutedEventArgs e)
         {
+#warning NEEDS REFACTOR
+            throw new NotImplementedException();
+            /*
             JobStateData jobStateData;
 
             IJobStateClient jobStateClient = DataContext as IJobStateClient;
             if (jobStateClient.TryGetJobState((int)getJobStateId.Value, out jobStateData) == true)
             {
                 jobStateDataControl.DataContext = jobStateData;
-            }
+            }*/
         }
 
         private void getJobStateFromTaskIdButton_Click(object sender, RoutedEventArgs e)
         {
+#warning NEEDS REFACTOR
+
+            throw new NotImplementedException();
+            /*
             JobStateData jobStateData;
 
             IJobStateClient jobStateClient = DataContext as IJobStateClient;
             if (jobStateClient.TryGetParentJobStateFromTaskId((int)getJobStateFromTaskId.Value, out jobStateData) == true)
             {
                 jobStateDataControl.DataContext = jobStateData;
-            }
+            }*/
         }
 
         private void UserControl_DataContextChanged(object sender, System.Windows.DependencyPropertyChangedEventArgs e)
@@ -54,7 +62,7 @@ namespace SchedulingClients.UserControls
             if (e.NewValue is IJobStateClient)
             {
                 IJobStateClient client = e.NewValue as IJobStateClient;
-                client.TaskStateUpdated += Client_TaskStateUpdated;
+                client.JobProgressUpdated += Client_JobProgressUpdated;
             }
         }
     }

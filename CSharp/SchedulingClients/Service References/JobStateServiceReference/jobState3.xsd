@@ -38,4 +38,16 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="TaskStatus" nillable="true" type="tns:TaskStatus" />
+  <xs:simpleType name="TaskType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UnorderedList" />
+      <xs:enumeration value="OrderedList" />
+      <xs:enumeration value="PipelinedList" />
+      <xs:enumeration value="ServiceAtNode" />
+      <xs:enumeration value="AwaitAtNode" />
+      <xs:enumeration value="SleepAtNode" />
+      <xs:enumeration value="MoveToNode" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TaskType" nillable="true" type="tns:TaskType" />
 </xs:schema>

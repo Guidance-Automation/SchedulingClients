@@ -12,7 +12,7 @@
       <xs:enumeration value="Park" />
       <xs:enumeration value="Fault" />
       <xs:enumeration value="ManualLoadHandling" />
-      <xs:enumeration value="GoTo" />
+      <xs:enumeration value="Execution" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="ServiceType" nillable="true" type="tns:ServiceType" />

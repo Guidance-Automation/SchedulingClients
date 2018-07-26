@@ -1,4 +1,5 @@
 ﻿using GAClients;
+using SchedulingClients.Client_Interfaces;
 
 namespace SchedulingClients
 {
@@ -48,6 +49,12 @@ namespace SchedulingClients
         {
           return new AgentAttentionClient(portSettings.TcpAgentAttentionService());
         }
+
+        public static ITaskStateClient CreateTcpTaskStatecastClient(EndpointSettings portSettings)
+        {
+            return new TaskStateClient(portSettings.TcpTaskStateService());
+        }
+
 
         public static IAgentStatecastClient CreateTcpAgentStatecastClient(EndpointSettings portSettings)
         {

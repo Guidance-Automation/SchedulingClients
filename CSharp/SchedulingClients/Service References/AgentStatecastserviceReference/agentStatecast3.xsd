@@ -93,4 +93,34 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TupleOfunsignedShortServiceCallDatayG81JSvh" nillable="true" type="tns:TupleOfunsignedShortServiceCallDatayG81JSvh" />
+  <xs:complexType name="TupleOfintServiceCallDatayG81JSvh">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="TupleOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="int" Namespace="http://www.w3.org/2001/XMLSchema" />
+          <GenericParameter Name="ServiceCallData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="m_Item1" type="xs:int" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q9:ServiceCallData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TupleOfintServiceCallDatayG81JSvh" nillable="true" type="tns:TupleOfintServiceCallDatayG81JSvh" />
+  <xs:complexType name="TupleOfunsignedIntServiceCallDatayG81JSvh">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="TupleOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="unsignedInt" Namespace="http://www.w3.org/2001/XMLSchema" />
+          <GenericParameter Name="ServiceCallData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="m_Item1" type="xs:unsignedInt" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q10:ServiceCallData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TupleOfunsignedIntServiceCallDatayG81JSvh" nillable="true" type="tns:TupleOfunsignedIntServiceCallDatayG81JSvh" />
 </xs:schema>

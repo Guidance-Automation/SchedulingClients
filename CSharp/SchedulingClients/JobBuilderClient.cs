@@ -193,21 +193,45 @@ namespace SchedulingClients
             }
         }
 
+
         /// <summary>
-        /// Creates a new manoeuvre task
+        /// Creates a new await task
         /// </summary>
         /// <param name="parentListTaskId">Id of parent list task</param>
-        /// <param name="nodeId">Id of node for service to be carried out</param>
-        /// <param name="moveTaskId">Id of newly created manoeuvre task</param>
-        /// <param name="expectedDuration">Expected duration of the task</param>
+        /// <param name="nodeId">Id of node for await to be carried out</param>
+        /// <param name="awaitTaskId">Id of newly created await task</param>
         /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryCreateMovingTask(int parentListTaskId, int nodeId, out int moveTaskId, TimeSpan expectedDuration = default(TimeSpan))
+        public ServiceOperationResult TryCreateAwaitingTask(int parentListTaskId, int nodeId, out int awaitTaskId)
         {
-            Logger.Info("TryCreateNodeTask({0},{1})", parentListTaskId, nodeId);
+            Logger.Info("TryCreateAwaitTask({0},{1})", parentListTaskId, nodeId);
 
             try
             {
-                var result = CreateMovingTask(parentListTaskId, nodeId, expectedDuration);
+                var result = CreateAwaitingTask(parentListTaskId, nodeId);
+                awaitTaskId = result.Item1;
+                return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                awaitTaskId = -1;
+                return HandleClientException(ex);
+            }
+        }
+
+        /// <summary>
+        /// Creates a task to move an agent to a node
+        /// </summary>
+        /// <param name="parentListTaskId">Id of parent list task</param>
+        /// <param name="nodeId">Id of node to move agent to</param>
+        /// <param name="moveTaskId">Id of newly created move  task</param>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TryCreateMovingTask(int parentListTaskId, int nodeId, out int moveTaskId)
+        {
+            Logger.Info("TryCreateMoveTask({0},{1})", parentListTaskId, nodeId);
+
+            try
+            {
+                var result = CreateMovingTask(parentListTaskId, nodeId);
                 moveTaskId = result.Item1;
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
@@ -575,9 +599,9 @@ namespace SchedulingClients
             return result;
         }
 
-        private Tuple<int, ServiceCallData> CreateMovingTask(int parentTaskId, int nodeId, TimeSpan expectedDuration)
+        private Tuple<int, ServiceCallData> CreateAwaitingTask(int parentTaskId, int nodeId)
         {
-            Logger.Debug("CreateMovingTask({0},{1},{2})", parentTaskId, nodeId, expectedDuration);
+            Logger.Debug("CreateAwaitingTask({0},{1})", parentTaskId, nodeId);
 
             if (isDisposed)
             {
@@ -589,7 +613,28 @@ namespace SchedulingClients
             using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
             {
                 IJobBuilderService channel = channelFactory.CreateChannel();
-                result = channel.CreateMovingTask(parentTaskId, nodeId, expectedDuration);
+                result = channel.CreateAwaitingTask(parentTaskId, nodeId);
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private Tuple<int, ServiceCallData> CreateMovingTask(int parentTaskId, int nodeId)
+        {
+            Logger.Debug("CreateMovingTask({0},{1})", parentTaskId, nodeId);
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobBuilderClient");
+            }
+
+            Tuple<int, ServiceCallData> result;
+
+            using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
+            {
+                IJobBuilderService channel = channelFactory.CreateChannel();
+                result = channel.CreateMovingTask(parentTaskId, nodeId);
                 channelFactory.Close();
             }
 

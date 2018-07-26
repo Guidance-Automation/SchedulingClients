@@ -83,7 +83,41 @@ namespace SchedulingClients
 			}
 		}
 
-		public ServiceOperationResult TryGetIPAddressStatecastValue(int agentId, string parameterAlias, out IPAddress parameterValue)
+        public ServiceOperationResult TryGetUIntegerStatecastValue(int agentId, string parameterAlias, out uint parameterValue)
+        {
+            Logger.Info("TryGetUIntegerStatecastValue()");
+
+            try
+            {
+                var result = GetUIntegerStatecastValue(agentId, parameterAlias);
+                parameterValue = result.Item1;
+                return ServiceOperationResultFactory.FromAgentStatecastServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                parameterValue = 0;
+                return HandleClientException(ex);
+            }
+        }
+
+        public ServiceOperationResult TryGetIntegerStatecastValue(int agentId, string parameterAlias, out int parameterValue)
+        {
+            Logger.Info("TryGetIntegerStatecastValue()");
+
+            try
+            {
+                var result = GetIntegerStatecastValue(agentId, parameterAlias);
+                parameterValue = result.Item1;
+                return ServiceOperationResultFactory.FromAgentStatecastServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                parameterValue = 0;
+                return HandleClientException(ex);
+            }
+        }
+
+        public ServiceOperationResult TryGetIPAddressStatecastValue(int agentId, string parameterAlias, out IPAddress parameterValue)
 		{
 			Logger.Info("TryGetfloatStatecastValue()");
 
@@ -201,7 +235,49 @@ namespace SchedulingClients
 			return result;
 		}
 
-		private Tuple<IPAddress, ServiceCallData> GetIPAddressStatecastValue(int agentId, string parameterAlias)
+        private Tuple<uint, ServiceCallData> GetUIntegerStatecastValue(int agentId, string parameterAlias)
+        {
+            Logger.Debug(String.Format("GetUIntegerStatecastValue(agentId:{0}, parameterAlias:{1})", agentId, parameterAlias));
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("AgentStatecastClient");
+            }
+
+            Tuple<uint, ServiceCallData> result;
+
+            using (ChannelFactory<IAgentStatecastService> channelFactory = CreateChannelFactory())
+            {
+                IAgentStatecastService channel = channelFactory.CreateChannel();
+                result = channel.GetUIntegerStatecastValue(agentId, parameterAlias);
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private Tuple<int, ServiceCallData> GetIntegerStatecastValue(int agentId, string parameterAlias)
+        {
+            Logger.Debug(String.Format("GetIntegerStatecastValue(agentId:{0}, parameterAlias:{1})", agentId, parameterAlias));
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("AgentStatecastClient");
+            }
+
+            Tuple<int, ServiceCallData> result;
+
+            using (ChannelFactory<IAgentStatecastService> channelFactory = CreateChannelFactory())
+            {
+                IAgentStatecastService channel = channelFactory.CreateChannel();
+                result = channel.GetIntegerStatecastValue(agentId, parameterAlias);
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private Tuple<IPAddress, ServiceCallData> GetIPAddressStatecastValue(int agentId, string parameterAlias)
 		{
 			Logger.Debug(String.Format("GetIPAddressStatecastValue(agentId:{0}, parameterAlias:{1})", agentId, parameterAlias));
 

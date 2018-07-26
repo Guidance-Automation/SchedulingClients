@@ -115,7 +115,7 @@ namespace SchedulingClients.UserControls
 			client.TryCreateOrderedListTask(parentTaskIdUpDown.Value ?? 0, false, out newTaskId);
 		}
 
-		private void addNodeTaskToParentButton_Click(object sender, RoutedEventArgs e)
+		private void addMoveTaskToParentButton_Click(object sender, RoutedEventArgs e)
 		{
             IJobBuilderClient client = DataContext as IJobBuilderClient;
 
@@ -123,6 +123,15 @@ namespace SchedulingClients.UserControls
 
 			client.TryCreateMovingTask(addNodeTaskParentUpDown.Value ?? 0, addNodeTaskIdUpDown.Value ?? 0, out newMoveId);
 		}
+
+        private void addAwaitTaskToParentButton_Click(object sender, RoutedEventArgs e)
+        {
+            IJobBuilderClient client = DataContext as IJobBuilderClient;
+
+            int newMoveId;
+
+            client.TryCreateAwaitingTask(addNodeTaskParentUpDown.Value ?? 0, addNodeTaskIdUpDown.Value ?? 0, out newMoveId);
+        }
 
         private void commitJobButton_Click(object sender, RoutedEventArgs e)
         {

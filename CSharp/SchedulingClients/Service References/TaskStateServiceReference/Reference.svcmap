@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9d71d5c9-855a-492b-9457-96cf0579d971" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:41916/taskState.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="taskState.xsd" MetadataType="Schema" ID="607a9107-dd29-4589-b9c2-9797edfc6f2e" SourceId="1" SourceUrl="http://127.0.0.1:41916/taskState.svc?xsd=xsd1" />
+    <MetadataFile FileName="taskState1.xsd" MetadataType="Schema" ID="f58a6fe2-ad61-4f1e-a6e5-d855a99f3d06" SourceId="1" SourceUrl="http://127.0.0.1:41916/taskState.svc?xsd=xsd0" />
+    <MetadataFile FileName="taskState2.xsd" MetadataType="Schema" ID="3bd8228d-86ce-41b1-976a-e83648438c95" SourceId="1" SourceUrl="http://127.0.0.1:41916/taskState.svc?xsd=xsd3" />
+    <MetadataFile FileName="taskState3.xsd" MetadataType="Schema" ID="5afd74b7-74e6-41bc-91dd-2b9391bdc331" SourceId="1" SourceUrl="http://127.0.0.1:41916/taskState.svc?xsd=xsd2" />
+    <MetadataFile FileName="TaskStateService.wsdl" MetadataType="Wsdl" ID="964c268c-80af-41e8-8457-e6a13bf81729" SourceId="1" SourceUrl="http://127.0.0.1:41916/taskState.svc" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

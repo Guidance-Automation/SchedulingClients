@@ -258,6 +258,9 @@ namespace SchedulingClients.MapServiceReference {
         SETPOSEFAILED = 7011,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        RESETKINGPINFAILED = 7012,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         DOWNLOADFAILED = 8001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -511,7 +514,7 @@ namespace SchedulingClients.MapServiceReference {
         ManualLoadHandling = 3,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        GoTo = 4,
+        Execution = 4,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

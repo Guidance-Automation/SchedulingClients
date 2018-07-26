@@ -76,7 +76,10 @@
 						<toolkit:IntegerUpDown x:Name="addNodeTaskParentUpDown" Minimum="0" Maximum="65535" MinWidth="50" />
 					</local:LabelContentControl>
 					<local:LabelContentControl Header="Add Task to Parent">
-						<Button x:Name="addNodeTaskToParentButton" Click="addNodeTaskToParentButton_Click" Width="auto">Create Task</Button>
+                        <StackPanel>
+                            <Button x:Name="addMoveTaskToParentButton" Click="addMoveTaskToParentButton_Click" Width="auto">Create Move Task</Button>
+                            <Button x:Name="addAwaitTaskToParentButton" Click="addAwaitTaskToParentButton_Click" Width="auto">Create Await Task</Button>
+                        </StackPanel>
 					</local:LabelContentControl>
 				</StackPanel>
 			</local:LabelContentControl>

@@ -27,7 +27,7 @@ namespace SchedulingClients
         /// <summary>
         /// Change to agent attention status
         /// </summary>
-        public event Action<AgentAttentionData> AgentAttentionChange
+        public event Action<AgentAttentionData[]> AgentAttentionChange
         {
             add { callback.AgentAttentionChange += value; }
             remove { callback.AgentAttentionChange -= value; }

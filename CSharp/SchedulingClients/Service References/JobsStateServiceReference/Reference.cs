@@ -258,6 +258,9 @@ namespace SchedulingClients.JobsStateServiceReference {
         SETPOSEFAILED = 7011,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        RESETKINGPINFAILED = 7012,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         DOWNLOADFAILED = 8001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]

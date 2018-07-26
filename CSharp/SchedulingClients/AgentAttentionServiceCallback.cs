@@ -9,15 +9,15 @@ namespace SchedulingClients
 		{
 		}
 
-		public event Action<AgentAttentionData> AgentAttentionChange;
+		public event Action<AgentAttentionData[]> AgentAttentionChange;
 
-		public void OnCallback(AgentAttentionData callbackObject)
+		public void OnCallback(AgentAttentionData[] callbackObject)
 		{
-			Action<AgentAttentionData> handlers = AgentAttentionChange;
+			Action<AgentAttentionData[]> handlers = AgentAttentionChange;
 
 			if (handlers != null)
 			{
-				foreach (Action<AgentAttentionData> handler in handlers.GetInvocationList())
+				foreach (Action<AgentAttentionData[]> handler in handlers.GetInvocationList())
 				{
 					handler.BeginInvoke(callbackObject, null, null);
 				}

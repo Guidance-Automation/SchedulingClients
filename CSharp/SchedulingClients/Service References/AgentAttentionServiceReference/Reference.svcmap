@@ -22,11 +22,10 @@
     <MetadataSource Address="http://127.0.0.1:41916/agentAttention.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="agentAttention.xsd" MetadataType="Schema" ID="e7d39183-29b5-425d-ac31-02200f97ae36" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentAttention.svc?xsd=xsd2" />
-    <MetadataFile FileName="agentAttention1.xsd" MetadataType="Schema" ID="d73a6534-4282-4fdb-ba94-f7ee0db34164" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentAttention.svc?xsd=xsd3" />
-    <MetadataFile FileName="agentAttention2.xsd" MetadataType="Schema" ID="2640b22f-9835-4c96-b572-8aef6fb66c09" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentAttention.svc?xsd=xsd0" />
     <MetadataFile FileName="agentAttention3.xsd" MetadataType="Schema" ID="9394e318-c23e-4795-ab0d-6bff99cfd2fc" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentAttention.svc?xsd=xsd1" />
+    <MetadataFile FileName="agentAttention.xsd" MetadataType="Schema" ID="e7d39183-29b5-425d-ac31-02200f97ae36" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentAttention.svc?xsd=xsd2" />
     <MetadataFile FileName="AgentAttentionService.wsdl" MetadataType="Wsdl" ID="1cd74e69-987b-4bef-9700-0a8b771c4c05" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentAttention.svc" />
+    <MetadataFile FileName="agentAttention2.xsd" MetadataType="Schema" ID="2640b22f-9835-4c96-b572-8aef6fb66c09" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentAttention.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

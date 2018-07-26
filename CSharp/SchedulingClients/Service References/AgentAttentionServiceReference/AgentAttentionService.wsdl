@@ -26,7 +26,6 @@
       <xsd:import schemaLocation="http://127.0.0.1:41916/agentAttention.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/agentAttention.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/agentAttention.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Agents" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/agentAttention.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IAgentAttentionService_VersionMajor_InputMessage">

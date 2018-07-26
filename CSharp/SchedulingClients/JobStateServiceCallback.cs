@@ -9,17 +9,17 @@ namespace SchedulingClients
         {
         }
 
-        public event Action<TaskProgressData> TaskProgressUpdate;
+        public event Action<JobProgressData> JobProgressUpdated;
 
-        public void OnCallback(TaskProgressData taskProgressData)
+        public void OnCallback(JobProgressData jobProgressData)
         {
-            Action<TaskProgressData> handlers = TaskProgressUpdate;
+            Action<JobProgressData> handlers = JobProgressUpdated;
 
             if (handlers != null)
             {
-                foreach (Action<TaskProgressData> handler in handlers.GetInvocationList())
+                foreach (Action<JobProgressData> handler in handlers.GetInvocationList())
                 {
-                    handler.BeginInvoke(taskProgressData, null, null);
+                    handler.BeginInvoke(jobProgressData, null, null);
                 }
             }
         }

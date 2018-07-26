@@ -30,7 +30,7 @@ namespace SchedulingClients.UserControls
 
             if (jobBuilder.TryCreateJob(out jobData) == true)
             {
-                int unorderedListTaskId = HandleCreatedUnorderedListTask(jobBuilder, jobData.OrderedListTaskId);
+                int unorderedListTaskId = HandleCreatedUnorderedListTask(jobBuilder, jobData.RootOrderedListTaskId);
 
                 if (unorderedListTaskId >= 0)
                 {
@@ -50,7 +50,7 @@ namespace SchedulingClients.UserControls
                     if (dropNode != null)
                     {
                         int dropNodeId;
-                        jobBuilder.TryCreateServicingTask(jobData.OrderedListTaskId, dropNode.MapItemId, JobBuilderServiceReference.ServiceType.ManualLoadHandling, out dropNodeId, TimeSpan.FromSeconds(10));
+                        jobBuilder.TryCreateServicingTask(jobData.RootOrderedListTaskId, dropNode.MapItemId, JobBuilderServiceReference.ServiceType.ManualLoadHandling, out dropNodeId, TimeSpan.FromSeconds(10));
                     }
 
                     NodeData parkNode = GetRandomNode(nodes, MapServiceReference.ServiceType.Park);
@@ -58,7 +58,7 @@ namespace SchedulingClients.UserControls
                     if (parkNode != null)
                     {
                         int parkNodeId;
-                        jobBuilder.TryCreateServicingTask(jobData.OrderedListTaskId, parkNode.MapItemId, JobBuilderServiceReference.ServiceType.Park, out parkNodeId, TimeSpan.FromSeconds(10));
+                        jobBuilder.TryCreateServicingTask(jobData.RootOrderedListTaskId, parkNode.MapItemId, JobBuilderServiceReference.ServiceType.Park, out parkNodeId, TimeSpan.FromSeconds(10));
                     }
                 }
 
@@ -81,7 +81,7 @@ namespace SchedulingClients.UserControls
             if (jobBuilder.TryCreateJob(out jobData) == true)
             {
                 int piplineId;
-                jobBuilder.TryCreatePipelinedTask(jobData.OrderedListTaskId, isFinalised, out piplineId);
+                jobBuilder.TryCreatePipelinedTask(jobData.RootOrderedListTaskId, isFinalised, out piplineId);
 
                 NodeData pickNode = GetRandomNode(nodes, MapServiceReference.ServiceType.ManualLoadHandling);
                 NodeData pickNode2 = GetRandomNode(nodes, MapServiceReference.ServiceType.Charge);

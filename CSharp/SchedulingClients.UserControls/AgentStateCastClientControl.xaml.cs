@@ -81,5 +81,21 @@ namespace SchedulingClients.UserControls
                 MessageBox.Show(builder.ToString());
             }
 		}
-	}
+
+        private void uintegerVariableButton_Click(object sender, RoutedEventArgs e)
+        {
+            uint var;
+            IAgentStatecastClient client = DataContext as IAgentStatecastClient;
+            client.TryGetUIntegerStatecastValue(uintegerVariableUpDown.Value ?? 0, uintegerAliasBox.Text, out var);
+            uintegerBox.Text = var.ToString();
+        }
+
+        private void integerVariableButton_Click(object sender, RoutedEventArgs e)
+        {
+            int var;
+            IAgentStatecastClient client = DataContext as IAgentStatecastClient;
+            client.TryGetIntegerStatecastValue(integerVariableUpDown.Value ?? 0, integerAliasBox.Text, out var);
+            integerBox.Text = var.ToString();
+        }
+    }
 }

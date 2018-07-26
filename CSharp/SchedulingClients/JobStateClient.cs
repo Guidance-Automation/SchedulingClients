@@ -7,7 +7,7 @@ namespace SchedulingClients
 {
     internal class JobStateClient : AbstractCallbackClient<IJobStateService>, IJobStateClient
     {
-        public JobStateServiceCallback callback = new JobStateServiceCallback();
+        private JobStateServiceCallback callback = new JobStateServiceCallback();
 
         private TimeSpan heartbeat;
 
@@ -23,10 +23,10 @@ namespace SchedulingClients
             this.heartbeat = heartbeat < TimeSpan.FromMilliseconds(1000) ? TimeSpan.FromMilliseconds(1000) : heartbeat;
         }
 
-        public event Action<TaskProgressData> TaskStateUpdated
+        public event Action<JobProgressData> JobProgressUpdated
         {
-            add { callback.TaskProgressUpdate += value; }
-            remove { callback.TaskProgressUpdate -= value; }
+            add { callback.JobProgressUpdated += value; }
+            remove { callback.JobProgressUpdated -= value; }
         }
 
         /// <summary>
@@ -40,45 +40,90 @@ namespace SchedulingClients
         /// <param name="jobId">Job id</param>
         /// <param name="jobState">State job is in</param>
         /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryGetJobState(int jobId, out JobStateData jobStateData)
+        public ServiceOperationResult TryGetJobSummary(int jobId, out JobSummaryData jobSummaryData)
         {
             Logger.Info("TryGetJobState()");
 
             try
             {
-                var result = GetJobState(jobId);
-                jobStateData = result.Item1;
+                var result = GetJobSummary(jobId);
+                jobSummaryData = result.Item1;
                 return ServiceOperationResultFactory.FromJobStateServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
-                jobStateData = null;
+                jobSummaryData = null;
                 return HandleClientException(ex);
             }
         }
 
         /// <summary>
-        /// Gets the state of a specific job form the id one of its child tasks
+        /// Gets the summary of a specific job form the id one of its child tasks
         /// </summary>
         /// <param name="taskId">Task id</param>
-        /// <param name="jobState">State job is in</param>
+        /// <param name="jobSummaryData">Job summary</param>
         /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryGetParentJobStateFromTaskId(int taskId, out JobStateData jobStateData)
+        public ServiceOperationResult TryGetParentJobSummaryFromTaskId(int taskId, out JobSummaryData jobSummaryData)
         {
             Logger.Info("TryGetJobState()");
 
             try
             {
-                var result = GetParentJobStateFromTaskId(taskId);
-                jobStateData = result.Item1;
+                var result = GetParentJobSummaryFromTaskId(taskId);
+                jobSummaryData = result.Item1;
                 return ServiceOperationResultFactory.FromJobStateServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
-                jobStateData = null;
+                jobSummaryData = null;
                 return HandleClientException(ex);
             }
         }
+
+        /// <summary>
+        /// Gets the summary of the curent job for an agent
+        /// </summary>
+        /// <param name="agentId">Agent id</param>
+        /// <param name="jobSummaryData">Job summary</param>
+        /// <returns>ServiceOperationResult</return
+        public ServiceOperationResult TryGetCurrentJobSummaryForAgentId(int agentId, out JobSummaryData jobSummaryData)
+        {
+            Logger.Info("TryGetCurrentJobSummaryForAgentId()");
+
+            try
+            {
+                var result = GetCurrentJobSummaryForAgentId(agentId);
+                jobSummaryData = result.Item1;
+                return ServiceOperationResultFactory.FromJobStateServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                jobSummaryData = null;
+                return HandleClientException(ex);
+            }
+        }
+
+
+        private Tuple<JobSummaryData, ServiceCallData> GetCurrentJobSummaryForAgentId(int agentId)
+        {
+            Logger.Debug("GetCurrentJobSummaryForAgentId()");
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobStateClient");
+            }
+            Tuple<JobSummaryData, ServiceCallData> result;
+
+            using (ChannelFactory<IJobStateService> channelFactory = CreateChannelFactory())
+            {
+                IJobStateService channel = channelFactory.CreateChannel();
+                result = channel.GetCurrentJobSummaryForAgentId(agentId);
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
 
         protected override void Dispose(bool isDisposing)
         {
@@ -143,41 +188,41 @@ namespace SchedulingClients
             this.context = new InstanceContext(this.callback);
         }
 
-        private Tuple<JobStateData, ServiceCallData> GetJobState(int jobId)
+        private Tuple<JobSummaryData, ServiceCallData> GetJobSummary(int jobId)
         {
-            Logger.Debug("GetJobState()");
+            Logger.Debug("GetJobSummary()");
 
             if (isDisposed)
             {
                 throw new ObjectDisposedException("JobStateClient");
             }
-            Tuple<JobStateData, ServiceCallData> result;
+            Tuple<JobSummaryData, ServiceCallData> result;
 
             using (ChannelFactory<IJobStateService> channelFactory = CreateChannelFactory())
             {
                 IJobStateService channel = channelFactory.CreateChannel();
-                result = channel.GetJobState(jobId);
+                result = channel.GetJobSummary(jobId);
                 channelFactory.Close();
             }
 
             return result;
         }
 
-        private Tuple<JobStateData, ServiceCallData> GetParentJobStateFromTaskId(int taskId)
+        private Tuple<JobSummaryData, ServiceCallData> GetParentJobSummaryFromTaskId(int taskId)
         {
-            Logger.Debug("GetParentJobStateFromTaskId()");
+            Logger.Debug("GetParentJobSummaryFromTaskId()");
 
             if (isDisposed)
             {
                 throw new ObjectDisposedException("JobStateClient");
             }
 
-            Tuple<JobStateData, ServiceCallData> result;
+            Tuple<JobSummaryData, ServiceCallData> result;
 
             using (ChannelFactory<IJobStateService> channelFactory = CreateChannelFactory())
             {
                 IJobStateService channel = channelFactory.CreateChannel();
-                result = channel.GetParentJobStateFromTaskId(taskId);
+                result = channel.GetParentJobSummaryFromTaskId(taskId);
                 channelFactory.Close();
             }
 

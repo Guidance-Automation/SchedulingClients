@@ -23,7 +23,10 @@ namespace SchedulingClients.AgentAttentionServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Tuple<int, SchedulingClients.AgentAttentionServiceReference.AttentionType>[] RequiringAttentionField;
+        private int AgentIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SchedulingClients.AgentAttentionServiceReference.AttentionType AttentionTypeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -36,14 +39,27 @@ namespace SchedulingClients.AgentAttentionServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Tuple<int, SchedulingClients.AgentAttentionServiceReference.AttentionType>[] RequiringAttention {
+        public int AgentId {
             get {
-                return this.RequiringAttentionField;
+                return this.AgentIdField;
             }
             set {
-                if ((object.ReferenceEquals(this.RequiringAttentionField, value) != true)) {
-                    this.RequiringAttentionField = value;
-                    this.RaisePropertyChanged("RequiringAttention");
+                if ((this.AgentIdField.Equals(value) != true)) {
+                    this.AgentIdField = value;
+                    this.RaisePropertyChanged("AgentId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SchedulingClients.AgentAttentionServiceReference.AttentionType AttentionType {
+            get {
+                return this.AttentionTypeField;
+            }
+            set {
+                if ((this.AttentionTypeField.Equals(value) != true)) {
+                    this.AttentionTypeField = value;
+                    this.RaisePropertyChanged("AttentionType");
                 }
             }
         }
@@ -108,7 +124,7 @@ namespace SchedulingClients.AgentAttentionServiceReference {
     public interface IAgentAttentionServiceCallback {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentAttentionService/OnCallback", ReplyAction="http://tempuri.org/IAgentAttentionService/OnCallbackResponse")]
-        void OnCallback(SchedulingClients.AgentAttentionServiceReference.AgentAttentionData callbackObject);
+        void OnCallback(SchedulingClients.AgentAttentionServiceReference.AgentAttentionData[] callbackObject);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

@@ -63,7 +63,7 @@ namespace SchedulingClients
 
         public static string ToJobDataString(this JobData jobData)
         {
-            return string.Format("JobData: JobId:{0}, OrderedListTaskId:{1}", jobData.JobId, jobData.OrderedListTaskId);
+            return string.Format("JobData: JobId:{0}, OrderedListTaskId:{1}", jobData.JobId, jobData.RootOrderedListTaskId);
         }
 
         public static string ToNodeDataString(this NodeData nodeData)

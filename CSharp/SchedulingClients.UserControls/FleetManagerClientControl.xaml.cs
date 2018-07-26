@@ -133,6 +133,7 @@ namespace SchedulingClients.UserControls
             IFleetManagerClient client = DataContext as IFleetManagerClient;
 
             bool success;
+#warning Angle conversion not performed correctly here
             client.TryCreateVirtualVehicle(ipAddressControl.IPAddress, poseControl.Pose, out success);
 
             if (success)

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Scheduling.Core" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Scheduling.Core" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="TaskStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unstarted" />
+      <xs:enumeration value="InProgress" />
+      <xs:enumeration value="Completed" />
+      <xs:enumeration value="Aborted" />
+      <xs:enumeration value="Assembly" />
+      <xs:enumeration value="AttemptingAbort" />
+      <xs:enumeration value="AwaitingAbort" />
+      <xs:enumeration value="PendingFurtherInstruction" />
+      <xs:enumeration value="Editing" />
+      <xs:enumeration value="InProgressUnderFault" />
+      <xs:enumeration value="CompletedUnderFault" />
+      <xs:enumeration value="AttemptingEarlyFailure" />
+      <xs:enumeration value="AwaitingEarlyFailure" />
+      <xs:enumeration value="AwaitingFailure" />
+      <xs:enumeration value="Failed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TaskStatus" nillable="true" type="tns:TaskStatus" />
+</xs:schema>

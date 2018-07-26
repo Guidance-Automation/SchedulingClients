@@ -53,7 +53,7 @@
   <xs:element name="OnCallback">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Scheduling.Services.Agents" minOccurs="0" name="callbackObject" nillable="true" type="q2:AgentAttentionData" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Scheduling.Services.Agents" minOccurs="0" name="callbackObject" nillable="true" type="q2:ArrayOfAgentAttentionData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -15,9 +15,9 @@ namespace SchedulingClients.JobStateServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="JobStateData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="JobSummaryData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs")]
     [System.SerializableAttribute()]
-    public partial class JobStateData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class JobSummaryData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -26,13 +26,19 @@ namespace SchedulingClients.JobStateServiceReference {
         private int AssignedAgentIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int JobIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private SchedulingClients.JobStateServiceReference.JobStatus JobStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SchedulingClients.JobStateServiceReference.NodeTaskStateData[] TasksField;
+        private int RootOrderedListTaskIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SchedulingClients.JobStateServiceReference.TaskSummaryData[] TaskSummariesField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -53,6 +59,19 @@ namespace SchedulingClients.JobStateServiceReference {
                 if ((this.AssignedAgentIdField.Equals(value) != true)) {
                     this.AssignedAgentIdField = value;
                     this.RaisePropertyChanged("AssignedAgentId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
                 }
             }
         }
@@ -84,14 +103,27 @@ namespace SchedulingClients.JobStateServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SchedulingClients.JobStateServiceReference.NodeTaskStateData[] Tasks {
+        public int RootOrderedListTaskId {
             get {
-                return this.TasksField;
+                return this.RootOrderedListTaskIdField;
             }
             set {
-                if ((object.ReferenceEquals(this.TasksField, value) != true)) {
-                    this.TasksField = value;
-                    this.RaisePropertyChanged("Tasks");
+                if ((this.RootOrderedListTaskIdField.Equals(value) != true)) {
+                    this.RootOrderedListTaskIdField = value;
+                    this.RaisePropertyChanged("RootOrderedListTaskId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SchedulingClients.JobStateServiceReference.TaskSummaryData[] TaskSummaries {
+            get {
+                return this.TaskSummariesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TaskSummariesField, value) != true)) {
+                    this.TaskSummariesField = value;
+                    this.RaisePropertyChanged("TaskSummaries");
                 }
             }
         }
@@ -245,18 +277,18 @@ namespace SchedulingClients.JobStateServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="NodeTaskStateData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TaskSummaryData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs")]
     [System.SerializableAttribute()]
-    public partial class NodeTaskStateData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class TaskSummaryData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MetaDataField;
+        private SchedulingClients.JobStateServiceReference.NodeTaskSummaryData NodeTaskSummaryDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int NodeIdField;
+        private System.Nullable<int> ParentTaskIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int TaskIdField;
@@ -265,7 +297,7 @@ namespace SchedulingClients.JobStateServiceReference {
         private SchedulingClients.JobStateServiceReference.TaskStatus TaskStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TaskTypeField;
+        private SchedulingClients.JobStateServiceReference.TaskType TaskTypeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -278,27 +310,27 @@ namespace SchedulingClients.JobStateServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string MetaData {
+        public SchedulingClients.JobStateServiceReference.NodeTaskSummaryData NodeTaskSummaryData {
             get {
-                return this.MetaDataField;
+                return this.NodeTaskSummaryDataField;
             }
             set {
-                if ((object.ReferenceEquals(this.MetaDataField, value) != true)) {
-                    this.MetaDataField = value;
-                    this.RaisePropertyChanged("MetaData");
+                if ((object.ReferenceEquals(this.NodeTaskSummaryDataField, value) != true)) {
+                    this.NodeTaskSummaryDataField = value;
+                    this.RaisePropertyChanged("NodeTaskSummaryData");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int NodeId {
+        public System.Nullable<int> ParentTaskId {
             get {
-                return this.NodeIdField;
+                return this.ParentTaskIdField;
             }
             set {
-                if ((this.NodeIdField.Equals(value) != true)) {
-                    this.NodeIdField = value;
-                    this.RaisePropertyChanged("NodeId");
+                if ((this.ParentTaskIdField.Equals(value) != true)) {
+                    this.ParentTaskIdField = value;
+                    this.RaisePropertyChanged("ParentTaskId");
                 }
             }
         }
@@ -330,14 +362,59 @@ namespace SchedulingClients.JobStateServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TaskType {
+        public SchedulingClients.JobStateServiceReference.TaskType TaskType {
             get {
                 return this.TaskTypeField;
             }
             set {
-                if ((object.ReferenceEquals(this.TaskTypeField, value) != true)) {
+                if ((this.TaskTypeField.Equals(value) != true)) {
                     this.TaskTypeField = value;
                     this.RaisePropertyChanged("TaskType");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="NodeTaskSummaryData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs")]
+    [System.SerializableAttribute()]
+    public partial class NodeTaskSummaryData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int NodeIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int NodeId {
+            get {
+                return this.NodeIdField;
+            }
+            set {
+                if ((this.NodeIdField.Equals(value) != true)) {
+                    this.NodeIdField = value;
+                    this.RaisePropertyChanged("NodeId");
                 }
             }
         }
@@ -400,6 +477,32 @@ namespace SchedulingClients.JobStateServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Failed = 14,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TaskType", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Core")]
+    public enum TaskType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UnorderedList = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OrderedList = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PipelinedList = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ServiceAtNode = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AwaitAtNode = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SleepAtNode = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MoveToNode = 6,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -554,6 +657,9 @@ namespace SchedulingClients.JobStateServiceReference {
         SETPOSEFAILED = 7011,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        RESETKINGPINFAILED = 7012,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         DOWNLOADFAILED = 8001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -574,18 +680,21 @@ namespace SchedulingClients.JobStateServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TaskProgressData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="JobProgressData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs")]
     [System.SerializableAttribute()]
-    public partial class TaskProgressData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class JobProgressData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int TaskIdField;
+        private int AssignedAgentIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SchedulingClients.JobStateServiceReference.TaskStatus TaskStatusField;
+        private int JobIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SchedulingClients.JobStateServiceReference.JobStatus JobStatusField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -598,27 +707,40 @@ namespace SchedulingClients.JobStateServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int TaskId {
+        public int AssignedAgentId {
             get {
-                return this.TaskIdField;
+                return this.AssignedAgentIdField;
             }
             set {
-                if ((this.TaskIdField.Equals(value) != true)) {
-                    this.TaskIdField = value;
-                    this.RaisePropertyChanged("TaskId");
+                if ((this.AssignedAgentIdField.Equals(value) != true)) {
+                    this.AssignedAgentIdField = value;
+                    this.RaisePropertyChanged("AssignedAgentId");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SchedulingClients.JobStateServiceReference.TaskStatus TaskStatus {
+        public int JobId {
             get {
-                return this.TaskStatusField;
+                return this.JobIdField;
             }
             set {
-                if ((this.TaskStatusField.Equals(value) != true)) {
-                    this.TaskStatusField = value;
-                    this.RaisePropertyChanged("TaskStatus");
+                if ((this.JobIdField.Equals(value) != true)) {
+                    this.JobIdField = value;
+                    this.RaisePropertyChanged("JobId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SchedulingClients.JobStateServiceReference.JobStatus JobStatus {
+            get {
+                return this.JobStatusField;
+            }
+            set {
+                if ((this.JobStatusField.Equals(value) != true)) {
+                    this.JobStatusField = value;
+                    this.RaisePropertyChanged("JobStatus");
                 }
             }
         }
@@ -661,24 +783,30 @@ namespace SchedulingClients.JobStateServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse")]
         System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetJobState", ReplyAction="http://tempuri.org/IJobStateService/GetJobStateResponse")]
-        System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetJobState(int jobId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetJobSummary", ReplyAction="http://tempuri.org/IJobStateService/GetJobSummaryResponse")]
+        System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetJobSummary(int jobId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetJobState", ReplyAction="http://tempuri.org/IJobStateService/GetJobStateResponse")]
-        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.ServiceCallData>> GetJobStateAsync(int jobId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetJobSummary", ReplyAction="http://tempuri.org/IJobStateService/GetJobSummaryResponse")]
+        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData>> GetJobSummaryAsync(int jobId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetParentJobStateFromTaskId", ReplyAction="http://tempuri.org/IJobStateService/GetParentJobStateFromTaskIdResponse")]
-        System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetParentJobStateFromTaskId(int taskId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentId", ReplyAction="http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentIdResponse")]
+        System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetCurrentJobSummaryForAgentId(int agentId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetParentJobStateFromTaskId", ReplyAction="http://tempuri.org/IJobStateService/GetParentJobStateFromTaskIdResponse")]
-        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.ServiceCallData>> GetParentJobStateFromTaskIdAsync(int taskId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentId", ReplyAction="http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentIdResponse")]
+        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData>> GetCurrentJobSummaryForAgentIdAsync(int agentId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetParentJobSummaryFromTaskId", ReplyAction="http://tempuri.org/IJobStateService/GetParentJobSummaryFromTaskIdResponse")]
+        System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetParentJobSummaryFromTaskId(int taskId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetParentJobSummaryFromTaskId", ReplyAction="http://tempuri.org/IJobStateService/GetParentJobSummaryFromTaskIdResponse")]
+        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData>> GetParentJobSummaryFromTaskIdAsync(int taskId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IJobStateServiceCallback {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/OnCallback", ReplyAction="http://tempuri.org/IJobStateService/OnCallbackResponse")]
-        void OnCallback(SchedulingClients.JobStateServiceReference.TaskProgressData callbackObject);
+        void OnCallback(SchedulingClients.JobStateServiceReference.JobProgressData callbackObject);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -741,20 +869,28 @@ namespace SchedulingClients.JobStateServiceReference {
             return base.Channel.SubscriptionHeartbeatAsync(guid);
         }
         
-        public System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetJobState(int jobId) {
-            return base.Channel.GetJobState(jobId);
+        public System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetJobSummary(int jobId) {
+            return base.Channel.GetJobSummary(jobId);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.ServiceCallData>> GetJobStateAsync(int jobId) {
-            return base.Channel.GetJobStateAsync(jobId);
+        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData>> GetJobSummaryAsync(int jobId) {
+            return base.Channel.GetJobSummaryAsync(jobId);
         }
         
-        public System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetParentJobStateFromTaskId(int taskId) {
-            return base.Channel.GetParentJobStateFromTaskId(taskId);
+        public System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetCurrentJobSummaryForAgentId(int agentId) {
+            return base.Channel.GetCurrentJobSummaryForAgentId(agentId);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.ServiceCallData>> GetParentJobStateFromTaskIdAsync(int taskId) {
-            return base.Channel.GetParentJobStateFromTaskIdAsync(taskId);
+        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData>> GetCurrentJobSummaryForAgentIdAsync(int agentId) {
+            return base.Channel.GetCurrentJobSummaryForAgentIdAsync(agentId);
+        }
+        
+        public System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetParentJobSummaryFromTaskId(int taskId) {
+            return base.Channel.GetParentJobSummaryFromTaskId(taskId);
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData>> GetParentJobSummaryFromTaskIdAsync(int taskId) {
+            return base.Channel.GetParentJobSummaryFromTaskIdAsync(taskId);
         }
     }
 }

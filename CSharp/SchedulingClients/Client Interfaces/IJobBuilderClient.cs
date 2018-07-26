@@ -21,7 +21,9 @@ namespace SchedulingClients
 
 		ServiceOperationResult TryCreateSleepingTask(int parentListTaskId, int nodeId, out int sleepingTaskId, TimeSpan expectedDuration = default(TimeSpan));
 
-		ServiceOperationResult TryCreateMovingTask(int parentListTaskId, int nodeId, out int moveTaskId, TimeSpan expectedDuration = default(TimeSpan));
+		ServiceOperationResult TryCreateMovingTask(int parentListTaskId, int nodeId, out int moveTaskId);
+
+        ServiceOperationResult TryCreateAwaitingTask(int parentListTaskId, int nodeId, out int awaitTaskId);
 
 		ServiceOperationResult TryIssueDirective(int taskId, int parameterId, byte value);
 

@@ -2,8 +2,8 @@
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Services" />
   <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
-  <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Mapping" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
   <xs:element name="VersionMajor">
     <xs:complexType>
@@ -101,14 +101,28 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="parentTaskId" type="xs:int" />
         <xs:element minOccurs="0" name="nodeId" type="xs:int" />
-        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="expectedDuration" type="q5:duration" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateMovingTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateMovingTaskResult" nillable="true" type="q6:TupleOfintServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateMovingTaskResult" nillable="true" type="q5:TupleOfintServiceCallDatayG81JSvh" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAwaitingTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parentTaskId" type="xs:int" />
+        <xs:element minOccurs="0" name="nodeId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAwaitingTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateAwaitingTaskResult" nillable="true" type="q6:TupleOfintServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

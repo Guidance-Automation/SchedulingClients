@@ -19,7 +19,11 @@ namespace SchedulingClients
 
 		ServiceOperationResult TryGetUShortStatecastValue(int agentId, string parameterAlias, out ushort parameterValue);
 
-		ServiceOperationResult TryGetIPAddressStatecastValue(int agentId, string parameterAlias, out IPAddress parameterValue);
+        ServiceOperationResult TryGetUIntegerStatecastValue(int agentId, string parameterAlias, out uint parameterValue);
+
+        ServiceOperationResult TryGetIntegerStatecastValue(int agentId, string parameterAlias, out int parameterValue);
+
+        ServiceOperationResult TryGetIPAddressStatecastValue(int agentId, string parameterAlias, out IPAddress parameterValue);
 
 		ServiceOperationResult TryGetStatecastDescription(int agentId, out CastType statecastDescription);
 	}
