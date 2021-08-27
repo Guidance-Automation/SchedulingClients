@@ -46,12 +46,6 @@
   <wsdl:message name="IJobBuilderService_BeginEditingJob_OutputMessage">
     <wsdl:part name="parameters" element="tns:BeginEditingJobResponse" />
   </wsdl:message>
-  <wsdl:message name="IJobBuilderService_BeginEditingTask_InputMessage">
-    <wsdl:part name="parameters" element="tns:BeginEditingTask" />
-  </wsdl:message>
-  <wsdl:message name="IJobBuilderService_BeginEditingTask_OutputMessage">
-    <wsdl:part name="parameters" element="tns:BeginEditingTaskResponse" />
-  </wsdl:message>
   <wsdl:message name="IJobBuilderService_CommitJob_InputMessage">
     <wsdl:part name="parameters" element="tns:CommitJob" />
   </wsdl:message>
@@ -118,12 +112,6 @@
   <wsdl:message name="IJobBuilderService_FinishEditingJob_OutputMessage">
     <wsdl:part name="parameters" element="tns:FinishEditingJobResponse" />
   </wsdl:message>
-  <wsdl:message name="IJobBuilderService_FinishEditingTask_InputMessage">
-    <wsdl:part name="parameters" element="tns:FinishEditingTask" />
-  </wsdl:message>
-  <wsdl:message name="IJobBuilderService_FinishEditingTask_OutputMessage">
-    <wsdl:part name="parameters" element="tns:FinishEditingTaskResponse" />
-  </wsdl:message>
   <wsdl:message name="IJobBuilderService_IssueEnumDirective_InputMessage">
     <wsdl:part name="parameters" element="tns:IssueEnumDirective" />
   </wsdl:message>
@@ -162,10 +150,6 @@
     <wsdl:operation name="BeginEditingJob">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/BeginEditingJob" message="tns:IJobBuilderService_BeginEditingJob_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/BeginEditingJobResponse" message="tns:IJobBuilderService_BeginEditingJob_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="BeginEditingTask">
-      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/BeginEditingTask" message="tns:IJobBuilderService_BeginEditingTask_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/BeginEditingTaskResponse" message="tns:IJobBuilderService_BeginEditingTask_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CommitJob">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CommitJob" message="tns:IJobBuilderService_CommitJob_InputMessage" />
@@ -211,10 +195,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/FinishEditingJob" message="tns:IJobBuilderService_FinishEditingJob_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/FinishEditingJobResponse" message="tns:IJobBuilderService_FinishEditingJob_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="FinishEditingTask">
-      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/FinishEditingTask" message="tns:IJobBuilderService_FinishEditingTask_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/FinishEditingTaskResponse" message="tns:IJobBuilderService_FinishEditingTask_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="IssueEnumDirective">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/IssueEnumDirective" message="tns:IJobBuilderService_IssueEnumDirective_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/IssueEnumDirectiveResponse" message="tns:IJobBuilderService_IssueEnumDirective_OutputMessage" />
@@ -250,15 +230,6 @@
     </wsdl:operation>
     <wsdl:operation name="BeginEditingJob">
       <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/BeginEditingJob" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="BeginEditingTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/BeginEditingTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -358,15 +329,6 @@
     </wsdl:operation>
     <wsdl:operation name="FinishEditingJob">
       <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/FinishEditingJob" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="FinishEditingTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/FinishEditingTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -441,15 +403,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="BeginEditingTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/BeginEditingTask" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="CommitJob">
       <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CommitJob" style="document" />
       <wsdl:input>
@@ -542,15 +495,6 @@
     </wsdl:operation>
     <wsdl:operation name="FinishEditingJob">
       <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/FinishEditingJob" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="FinishEditingTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/FinishEditingTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

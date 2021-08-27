@@ -90,12 +90,6 @@ namespace SchedulingClients.Core.JobBuilderServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/BeginEditingJob", ReplyAction="http://tempuri.org/IJobBuilderService/BeginEditingJobResponse")]
         System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<bool>> BeginEditingJobAsync(int jobId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/BeginEditingTask", ReplyAction="http://tempuri.org/IJobBuilderService/BeginEditingTaskResponse")]
-        GAAPICommon.Core.Dtos.ServiceCallResultDto<bool> BeginEditingTask(int taskId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/BeginEditingTask", ReplyAction="http://tempuri.org/IJobBuilderService/BeginEditingTaskResponse")]
-        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<bool>> BeginEditingTaskAsync(int taskId);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CommitJob", ReplyAction="http://tempuri.org/IJobBuilderService/CommitJobResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<bool>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<int>))]
@@ -169,16 +163,6 @@ namespace SchedulingClients.Core.JobBuilderServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/FinishEditingJob", ReplyAction="http://tempuri.org/IJobBuilderService/FinishEditingJobResponse")]
         System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto> FinishEditingJobAsync(int jobId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/FinishEditingTask", ReplyAction="http://tempuri.org/IJobBuilderService/FinishEditingTaskResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<bool>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<int>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.JobBuilderServiceReference.JobDto>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.SemVerDto>))]
-        GAAPICommon.Core.Dtos.ServiceCallResultDto FinishEditingTask(int taskId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/FinishEditingTask", ReplyAction="http://tempuri.org/IJobBuilderService/FinishEditingTaskResponse")]
-        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto> FinishEditingTaskAsync(int taskId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/IssueEnumDirective", ReplyAction="http://tempuri.org/IJobBuilderService/IssueEnumDirectiveResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<bool>))]
@@ -274,14 +258,6 @@ namespace SchedulingClients.Core.JobBuilderServiceReference {
             return base.Channel.BeginEditingJobAsync(jobId);
         }
         
-        public GAAPICommon.Core.Dtos.ServiceCallResultDto<bool> BeginEditingTask(int taskId) {
-            return base.Channel.BeginEditingTask(taskId);
-        }
-        
-        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<bool>> BeginEditingTaskAsync(int taskId) {
-            return base.Channel.BeginEditingTaskAsync(taskId);
-        }
-        
         public GAAPICommon.Core.Dtos.ServiceCallResultDto CommitJob(int jobId, int agentId) {
             return base.Channel.CommitJob(jobId, agentId);
         }
@@ -368,14 +344,6 @@ namespace SchedulingClients.Core.JobBuilderServiceReference {
         
         public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto> FinishEditingJobAsync(int jobId) {
             return base.Channel.FinishEditingJobAsync(jobId);
-        }
-        
-        public GAAPICommon.Core.Dtos.ServiceCallResultDto FinishEditingTask(int taskId) {
-            return base.Channel.FinishEditingTask(taskId);
-        }
-        
-        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto> FinishEditingTaskAsync(int taskId) {
-            return base.Channel.FinishEditingTaskAsync(taskId);
         }
         
         public GAAPICommon.Core.Dtos.ServiceCallResultDto IssueEnumDirective(int taskId, string alias, byte value) {
