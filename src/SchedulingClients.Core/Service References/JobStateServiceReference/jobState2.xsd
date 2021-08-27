@@ -59,8 +59,9 @@
       <xs:element minOccurs="0" name="AssignedAgentId" type="xs:int" />
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="JobId" type="xs:int" />
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" minOccurs="0" name="JobStatus" type="q1:JobStatus" />
-      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Notes" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" minOccurs="0" name="JobPriority" type="q1:JobPriority" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" minOccurs="0" name="JobStatus" type="q2:JobStatus" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Notes" nillable="true" type="q3:ArrayOfstring" />
       <xs:element minOccurs="0" name="RootOrderedListTaskId" type="xs:int" />
       <xs:element minOccurs="0" name="TaskSummaries" nillable="true" type="tns:ArrayOfTaskSummaryDto" />
     </xs:sequence>
@@ -77,8 +78,8 @@
       <xs:element minOccurs="0" name="ParentTaskId" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="RoadmapItemTaskSummary" nillable="true" type="tns:RoadmapItemTaskSummaryDto" />
       <xs:element minOccurs="0" name="TaskId" type="xs:int" />
-      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" minOccurs="0" name="TaskStatus" type="q3:TaskStatus" />
-      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" minOccurs="0" name="TaskType" type="q4:TaskType" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" minOccurs="0" name="TaskStatus" type="q4:TaskStatus" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" minOccurs="0" name="TaskType" type="q5:TaskType" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TaskSummaryDto" nillable="true" type="tns:TaskSummaryDto" />
