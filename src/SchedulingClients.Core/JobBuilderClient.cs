@@ -134,17 +134,5 @@ namespace SchedulingClients.Core
             Logger.Trace($"FinishEditingJob() jobId:{jobId}");
             return HandleAPICall(e => e.FinishEditingJob(jobId));
         }
-
-        public IServiceCallResult<bool> BeginEditingTask(int taskId)
-        {
-            Logger.Trace($"BeginEditingTask() taskId:{taskId}");
-            return HandleAPICall<bool>(e => e.BeginEditingTask(taskId));
-        }
-
-        public IServiceCallResult FinishEditingTask(int taskId)
-        {
-            Logger.Trace($"FinishEditingTask() taskId:{taskId}");
-            return HandleAPICall(e => e.FinishEditingTask(taskId));
-        }
     }
 }

@@ -89,11 +89,11 @@ references:
   fullName: SchedulingClients.Core.AgentServiceReference.AgentServiceClient.GetAllAgentDataAsync
   nameWithType: AgentServiceClient.GetAllAgentDataAsync
 - uid: SchedulingClients.Core.AgentServiceReference.AgentServiceClient.GetAllAgentsInLifetimeState(GAAPICommon.Architecture.AgentLifetimeState)
-  name: GetAllAgentsInLifetimeState(AgentLifetimeState)
+  name: GetAllAgentsInLifetimeState(GAAPICommon.Architecture.AgentLifetimeState)
   href: api/SchedulingClients.Core.AgentServiceReference.AgentServiceClient.html#SchedulingClients_Core_AgentServiceReference_AgentServiceClient_GetAllAgentsInLifetimeState_GAAPICommon_Architecture_AgentLifetimeState_
   commentId: M:SchedulingClients.Core.AgentServiceReference.AgentServiceClient.GetAllAgentsInLifetimeState(GAAPICommon.Architecture.AgentLifetimeState)
   fullName: SchedulingClients.Core.AgentServiceReference.AgentServiceClient.GetAllAgentsInLifetimeState(GAAPICommon.Architecture.AgentLifetimeState)
-  nameWithType: AgentServiceClient.GetAllAgentsInLifetimeState(AgentLifetimeState)
+  nameWithType: AgentServiceClient.GetAllAgentsInLifetimeState(GAAPICommon.Architecture.AgentLifetimeState)
 - uid: SchedulingClients.Core.AgentServiceReference.AgentServiceClient.GetAllAgentsInLifetimeState*
   name: GetAllAgentsInLifetimeState
   href: api/SchedulingClients.Core.AgentServiceReference.AgentServiceClient.html#SchedulingClients_Core_AgentServiceReference_AgentServiceClient_GetAllAgentsInLifetimeState_
@@ -102,11 +102,11 @@ references:
   fullName: SchedulingClients.Core.AgentServiceReference.AgentServiceClient.GetAllAgentsInLifetimeState
   nameWithType: AgentServiceClient.GetAllAgentsInLifetimeState
 - uid: SchedulingClients.Core.AgentServiceReference.AgentServiceClient.GetAllAgentsInLifetimeStateAsync(GAAPICommon.Architecture.AgentLifetimeState)
-  name: GetAllAgentsInLifetimeStateAsync(AgentLifetimeState)
+  name: GetAllAgentsInLifetimeStateAsync(GAAPICommon.Architecture.AgentLifetimeState)
   href: api/SchedulingClients.Core.AgentServiceReference.AgentServiceClient.html#SchedulingClients_Core_AgentServiceReference_AgentServiceClient_GetAllAgentsInLifetimeStateAsync_GAAPICommon_Architecture_AgentLifetimeState_
   commentId: M:SchedulingClients.Core.AgentServiceReference.AgentServiceClient.GetAllAgentsInLifetimeStateAsync(GAAPICommon.Architecture.AgentLifetimeState)
   fullName: SchedulingClients.Core.AgentServiceReference.AgentServiceClient.GetAllAgentsInLifetimeStateAsync(GAAPICommon.Architecture.AgentLifetimeState)
-  nameWithType: AgentServiceClient.GetAllAgentsInLifetimeStateAsync(AgentLifetimeState)
+  nameWithType: AgentServiceClient.GetAllAgentsInLifetimeStateAsync(GAAPICommon.Architecture.AgentLifetimeState)
 - uid: SchedulingClients.Core.AgentServiceReference.AgentServiceClient.GetAllAgentsInLifetimeStateAsync*
   name: GetAllAgentsInLifetimeStateAsync
   href: api/SchedulingClients.Core.AgentServiceReference.AgentServiceClient.html#SchedulingClients_Core_AgentServiceReference_AgentServiceClient_GetAllAgentsInLifetimeStateAsync_
@@ -141,11 +141,11 @@ references:
   fullName: SchedulingClients.Core.AgentServiceReference.AgentServiceClient.GetAPISemVerAsync
   nameWithType: AgentServiceClient.GetAPISemVerAsync
 - uid: SchedulingClients.Core.AgentServiceReference.AgentServiceClient.SetAgentLifetimeState(System.Int32,GAAPICommon.Architecture.AgentLifetimeState)
-  name: SetAgentLifetimeState(Int32, AgentLifetimeState)
+  name: SetAgentLifetimeState(Int32, GAAPICommon.Architecture.AgentLifetimeState)
   href: api/SchedulingClients.Core.AgentServiceReference.AgentServiceClient.html#SchedulingClients_Core_AgentServiceReference_AgentServiceClient_SetAgentLifetimeState_System_Int32_GAAPICommon_Architecture_AgentLifetimeState_
   commentId: M:SchedulingClients.Core.AgentServiceReference.AgentServiceClient.SetAgentLifetimeState(System.Int32,GAAPICommon.Architecture.AgentLifetimeState)
   fullName: SchedulingClients.Core.AgentServiceReference.AgentServiceClient.SetAgentLifetimeState(System.Int32, GAAPICommon.Architecture.AgentLifetimeState)
-  nameWithType: AgentServiceClient.SetAgentLifetimeState(Int32, AgentLifetimeState)
+  nameWithType: AgentServiceClient.SetAgentLifetimeState(Int32, GAAPICommon.Architecture.AgentLifetimeState)
 - uid: SchedulingClients.Core.AgentServiceReference.AgentServiceClient.SetAgentLifetimeState*
   name: SetAgentLifetimeState
   href: api/SchedulingClients.Core.AgentServiceReference.AgentServiceClient.html#SchedulingClients_Core_AgentServiceReference_AgentServiceClient_SetAgentLifetimeState_
@@ -154,11 +154,11 @@ references:
   fullName: SchedulingClients.Core.AgentServiceReference.AgentServiceClient.SetAgentLifetimeState
   nameWithType: AgentServiceClient.SetAgentLifetimeState
 - uid: SchedulingClients.Core.AgentServiceReference.AgentServiceClient.SetAgentLifetimeStateAsync(System.Int32,GAAPICommon.Architecture.AgentLifetimeState)
-  name: SetAgentLifetimeStateAsync(Int32, AgentLifetimeState)
+  name: SetAgentLifetimeStateAsync(Int32, GAAPICommon.Architecture.AgentLifetimeState)
   href: api/SchedulingClients.Core.AgentServiceReference.AgentServiceClient.html#SchedulingClients_Core_AgentServiceReference_AgentServiceClient_SetAgentLifetimeStateAsync_System_Int32_GAAPICommon_Architecture_AgentLifetimeState_
   commentId: M:SchedulingClients.Core.AgentServiceReference.AgentServiceClient.SetAgentLifetimeStateAsync(System.Int32,GAAPICommon.Architecture.AgentLifetimeState)
   fullName: SchedulingClients.Core.AgentServiceReference.AgentServiceClient.SetAgentLifetimeStateAsync(System.Int32, GAAPICommon.Architecture.AgentLifetimeState)
-  nameWithType: AgentServiceClient.SetAgentLifetimeStateAsync(Int32, AgentLifetimeState)
+  nameWithType: AgentServiceClient.SetAgentLifetimeStateAsync(Int32, GAAPICommon.Architecture.AgentLifetimeState)
 - uid: SchedulingClients.Core.AgentServiceReference.AgentServiceClient.SetAgentLifetimeStateAsync*
   name: SetAgentLifetimeStateAsync
   href: api/SchedulingClients.Core.AgentServiceReference.AgentServiceClient.html#SchedulingClients_Core_AgentServiceReference_AgentServiceClient_SetAgentLifetimeStateAsync_
@@ -199,11 +199,11 @@ references:
   fullName: SchedulingClients.Core.AgentServiceReference.IAgentService.GetAllAgentDataAsync
   nameWithType: IAgentService.GetAllAgentDataAsync
 - uid: SchedulingClients.Core.AgentServiceReference.IAgentService.GetAllAgentsInLifetimeState(GAAPICommon.Architecture.AgentLifetimeState)
-  name: GetAllAgentsInLifetimeState(AgentLifetimeState)
+  name: GetAllAgentsInLifetimeState(GAAPICommon.Architecture.AgentLifetimeState)
   href: api/SchedulingClients.Core.AgentServiceReference.IAgentService.html#SchedulingClients_Core_AgentServiceReference_IAgentService_GetAllAgentsInLifetimeState_GAAPICommon_Architecture_AgentLifetimeState_
   commentId: M:SchedulingClients.Core.AgentServiceReference.IAgentService.GetAllAgentsInLifetimeState(GAAPICommon.Architecture.AgentLifetimeState)
   fullName: SchedulingClients.Core.AgentServiceReference.IAgentService.GetAllAgentsInLifetimeState(GAAPICommon.Architecture.AgentLifetimeState)
-  nameWithType: IAgentService.GetAllAgentsInLifetimeState(AgentLifetimeState)
+  nameWithType: IAgentService.GetAllAgentsInLifetimeState(GAAPICommon.Architecture.AgentLifetimeState)
 - uid: SchedulingClients.Core.AgentServiceReference.IAgentService.GetAllAgentsInLifetimeState*
   name: GetAllAgentsInLifetimeState
   href: api/SchedulingClients.Core.AgentServiceReference.IAgentService.html#SchedulingClients_Core_AgentServiceReference_IAgentService_GetAllAgentsInLifetimeState_
@@ -212,11 +212,11 @@ references:
   fullName: SchedulingClients.Core.AgentServiceReference.IAgentService.GetAllAgentsInLifetimeState
   nameWithType: IAgentService.GetAllAgentsInLifetimeState
 - uid: SchedulingClients.Core.AgentServiceReference.IAgentService.GetAllAgentsInLifetimeStateAsync(GAAPICommon.Architecture.AgentLifetimeState)
-  name: GetAllAgentsInLifetimeStateAsync(AgentLifetimeState)
+  name: GetAllAgentsInLifetimeStateAsync(GAAPICommon.Architecture.AgentLifetimeState)
   href: api/SchedulingClients.Core.AgentServiceReference.IAgentService.html#SchedulingClients_Core_AgentServiceReference_IAgentService_GetAllAgentsInLifetimeStateAsync_GAAPICommon_Architecture_AgentLifetimeState_
   commentId: M:SchedulingClients.Core.AgentServiceReference.IAgentService.GetAllAgentsInLifetimeStateAsync(GAAPICommon.Architecture.AgentLifetimeState)
   fullName: SchedulingClients.Core.AgentServiceReference.IAgentService.GetAllAgentsInLifetimeStateAsync(GAAPICommon.Architecture.AgentLifetimeState)
-  nameWithType: IAgentService.GetAllAgentsInLifetimeStateAsync(AgentLifetimeState)
+  nameWithType: IAgentService.GetAllAgentsInLifetimeStateAsync(GAAPICommon.Architecture.AgentLifetimeState)
 - uid: SchedulingClients.Core.AgentServiceReference.IAgentService.GetAllAgentsInLifetimeStateAsync*
   name: GetAllAgentsInLifetimeStateAsync
   href: api/SchedulingClients.Core.AgentServiceReference.IAgentService.html#SchedulingClients_Core_AgentServiceReference_IAgentService_GetAllAgentsInLifetimeStateAsync_
@@ -251,11 +251,11 @@ references:
   fullName: SchedulingClients.Core.AgentServiceReference.IAgentService.GetAPISemVerAsync
   nameWithType: IAgentService.GetAPISemVerAsync
 - uid: SchedulingClients.Core.AgentServiceReference.IAgentService.SetAgentLifetimeState(System.Int32,GAAPICommon.Architecture.AgentLifetimeState)
-  name: SetAgentLifetimeState(Int32, AgentLifetimeState)
+  name: SetAgentLifetimeState(Int32, GAAPICommon.Architecture.AgentLifetimeState)
   href: api/SchedulingClients.Core.AgentServiceReference.IAgentService.html#SchedulingClients_Core_AgentServiceReference_IAgentService_SetAgentLifetimeState_System_Int32_GAAPICommon_Architecture_AgentLifetimeState_
   commentId: M:SchedulingClients.Core.AgentServiceReference.IAgentService.SetAgentLifetimeState(System.Int32,GAAPICommon.Architecture.AgentLifetimeState)
   fullName: SchedulingClients.Core.AgentServiceReference.IAgentService.SetAgentLifetimeState(System.Int32, GAAPICommon.Architecture.AgentLifetimeState)
-  nameWithType: IAgentService.SetAgentLifetimeState(Int32, AgentLifetimeState)
+  nameWithType: IAgentService.SetAgentLifetimeState(Int32, GAAPICommon.Architecture.AgentLifetimeState)
 - uid: SchedulingClients.Core.AgentServiceReference.IAgentService.SetAgentLifetimeState*
   name: SetAgentLifetimeState
   href: api/SchedulingClients.Core.AgentServiceReference.IAgentService.html#SchedulingClients_Core_AgentServiceReference_IAgentService_SetAgentLifetimeState_
@@ -264,11 +264,11 @@ references:
   fullName: SchedulingClients.Core.AgentServiceReference.IAgentService.SetAgentLifetimeState
   nameWithType: IAgentService.SetAgentLifetimeState
 - uid: SchedulingClients.Core.AgentServiceReference.IAgentService.SetAgentLifetimeStateAsync(System.Int32,GAAPICommon.Architecture.AgentLifetimeState)
-  name: SetAgentLifetimeStateAsync(Int32, AgentLifetimeState)
+  name: SetAgentLifetimeStateAsync(Int32, GAAPICommon.Architecture.AgentLifetimeState)
   href: api/SchedulingClients.Core.AgentServiceReference.IAgentService.html#SchedulingClients_Core_AgentServiceReference_IAgentService_SetAgentLifetimeStateAsync_System_Int32_GAAPICommon_Architecture_AgentLifetimeState_
   commentId: M:SchedulingClients.Core.AgentServiceReference.IAgentService.SetAgentLifetimeStateAsync(System.Int32,GAAPICommon.Architecture.AgentLifetimeState)
   fullName: SchedulingClients.Core.AgentServiceReference.IAgentService.SetAgentLifetimeStateAsync(System.Int32, GAAPICommon.Architecture.AgentLifetimeState)
-  nameWithType: IAgentService.SetAgentLifetimeStateAsync(Int32, AgentLifetimeState)
+  nameWithType: IAgentService.SetAgentLifetimeStateAsync(Int32, GAAPICommon.Architecture.AgentLifetimeState)
 - uid: SchedulingClients.Core.AgentServiceReference.IAgentService.SetAgentLifetimeStateAsync*
   name: SetAgentLifetimeStateAsync
   href: api/SchedulingClients.Core.AgentServiceReference.IAgentService.html#SchedulingClients_Core_AgentServiceReference_IAgentService_SetAgentLifetimeStateAsync_
@@ -595,17 +595,17 @@ references:
   commentId: T:SchedulingClients.Core.ExtensionMethods
   fullName: SchedulingClients.Core.ExtensionMethods
   nameWithType: ExtensionMethods
-- uid: SchedulingClients.Core.ExtensionMethods.ToCSV(GAAPICommon.Core.Dtos.MoveDto)
+- uid: SchedulingClients.Core.ExtensionMethods.ToCSV(MoveDto)
   name: ToCSV(MoveDto)
-  href: api/SchedulingClients.Core.ExtensionMethods.html#SchedulingClients_Core_ExtensionMethods_ToCSV_GAAPICommon_Core_Dtos_MoveDto_
-  commentId: M:SchedulingClients.Core.ExtensionMethods.ToCSV(GAAPICommon.Core.Dtos.MoveDto)
-  fullName: SchedulingClients.Core.ExtensionMethods.ToCSV(GAAPICommon.Core.Dtos.MoveDto)
+  href: api/SchedulingClients.Core.ExtensionMethods.html#SchedulingClients_Core_ExtensionMethods_ToCSV_MoveDto_
+  commentId: M:SchedulingClients.Core.ExtensionMethods.ToCSV(MoveDto)
+  fullName: SchedulingClients.Core.ExtensionMethods.ToCSV(MoveDto)
   nameWithType: ExtensionMethods.ToCSV(MoveDto)
-- uid: SchedulingClients.Core.ExtensionMethods.ToCSV(GAAPICommon.Core.Dtos.NodeDto)
+- uid: SchedulingClients.Core.ExtensionMethods.ToCSV(NodeDto)
   name: ToCSV(NodeDto)
-  href: api/SchedulingClients.Core.ExtensionMethods.html#SchedulingClients_Core_ExtensionMethods_ToCSV_GAAPICommon_Core_Dtos_NodeDto_
-  commentId: M:SchedulingClients.Core.ExtensionMethods.ToCSV(GAAPICommon.Core.Dtos.NodeDto)
-  fullName: SchedulingClients.Core.ExtensionMethods.ToCSV(GAAPICommon.Core.Dtos.NodeDto)
+  href: api/SchedulingClients.Core.ExtensionMethods.html#SchedulingClients_Core_ExtensionMethods_ToCSV_NodeDto_
+  commentId: M:SchedulingClients.Core.ExtensionMethods.ToCSV(NodeDto)
+  fullName: SchedulingClients.Core.ExtensionMethods.ToCSV(NodeDto)
   nameWithType: ExtensionMethods.ToCSV(NodeDto)
 - uid: SchedulingClients.Core.ExtensionMethods.ToCSV*
   name: ToCSV
@@ -614,22 +614,22 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.ExtensionMethods.ToCSV
   nameWithType: ExtensionMethods.ToCSV
-- uid: SchedulingClients.Core.ExtensionMethods.ToCSVFile(GAAPICommon.Core.Dtos.MoveDto[])
+- uid: SchedulingClients.Core.ExtensionMethods.ToCSVFile(MoveDto[])
   name: ToCSVFile(MoveDto[])
-  href: api/SchedulingClients.Core.ExtensionMethods.html#SchedulingClients_Core_ExtensionMethods_ToCSVFile_GAAPICommon_Core_Dtos_MoveDto___
-  commentId: M:SchedulingClients.Core.ExtensionMethods.ToCSVFile(GAAPICommon.Core.Dtos.MoveDto[])
+  href: api/SchedulingClients.Core.ExtensionMethods.html#SchedulingClients_Core_ExtensionMethods_ToCSVFile_MoveDto___
+  commentId: M:SchedulingClients.Core.ExtensionMethods.ToCSVFile(MoveDto[])
   name.vb: ToCSVFile(MoveDto())
-  fullName: SchedulingClients.Core.ExtensionMethods.ToCSVFile(GAAPICommon.Core.Dtos.MoveDto[])
-  fullName.vb: SchedulingClients.Core.ExtensionMethods.ToCSVFile(GAAPICommon.Core.Dtos.MoveDto())
+  fullName: SchedulingClients.Core.ExtensionMethods.ToCSVFile(MoveDto[])
+  fullName.vb: SchedulingClients.Core.ExtensionMethods.ToCSVFile(MoveDto())
   nameWithType: ExtensionMethods.ToCSVFile(MoveDto[])
   nameWithType.vb: ExtensionMethods.ToCSVFile(MoveDto())
-- uid: SchedulingClients.Core.ExtensionMethods.ToCSVFile(GAAPICommon.Core.Dtos.NodeDto[])
+- uid: SchedulingClients.Core.ExtensionMethods.ToCSVFile(NodeDto[])
   name: ToCSVFile(NodeDto[])
-  href: api/SchedulingClients.Core.ExtensionMethods.html#SchedulingClients_Core_ExtensionMethods_ToCSVFile_GAAPICommon_Core_Dtos_NodeDto___
-  commentId: M:SchedulingClients.Core.ExtensionMethods.ToCSVFile(GAAPICommon.Core.Dtos.NodeDto[])
+  href: api/SchedulingClients.Core.ExtensionMethods.html#SchedulingClients_Core_ExtensionMethods_ToCSVFile_NodeDto___
+  commentId: M:SchedulingClients.Core.ExtensionMethods.ToCSVFile(NodeDto[])
   name.vb: ToCSVFile(NodeDto())
-  fullName: SchedulingClients.Core.ExtensionMethods.ToCSVFile(GAAPICommon.Core.Dtos.NodeDto[])
-  fullName.vb: SchedulingClients.Core.ExtensionMethods.ToCSVFile(GAAPICommon.Core.Dtos.NodeDto())
+  fullName: SchedulingClients.Core.ExtensionMethods.ToCSVFile(NodeDto[])
+  fullName.vb: SchedulingClients.Core.ExtensionMethods.ToCSVFile(NodeDto())
   nameWithType: ExtensionMethods.ToCSVFile(NodeDto[])
   nameWithType.vb: ExtensionMethods.ToCSVFile(NodeDto())
 - uid: SchedulingClients.Core.ExtensionMethods.ToCSVFile*
@@ -658,11 +658,11 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.IAgentClient.GetAllAgents
   nameWithType: IAgentClient.GetAllAgents
-- uid: SchedulingClients.Core.IAgentClient.GetAllAgentsInLifetimeState(GAAPICommon.Architecture.AgentLifetimeState)
+- uid: SchedulingClients.Core.IAgentClient.GetAllAgentsInLifetimeState(AgentLifetimeState)
   name: GetAllAgentsInLifetimeState(AgentLifetimeState)
-  href: api/SchedulingClients.Core.IAgentClient.html#SchedulingClients_Core_IAgentClient_GetAllAgentsInLifetimeState_GAAPICommon_Architecture_AgentLifetimeState_
-  commentId: M:SchedulingClients.Core.IAgentClient.GetAllAgentsInLifetimeState(GAAPICommon.Architecture.AgentLifetimeState)
-  fullName: SchedulingClients.Core.IAgentClient.GetAllAgentsInLifetimeState(GAAPICommon.Architecture.AgentLifetimeState)
+  href: api/SchedulingClients.Core.IAgentClient.html#SchedulingClients_Core_IAgentClient_GetAllAgentsInLifetimeState_AgentLifetimeState_
+  commentId: M:SchedulingClients.Core.IAgentClient.GetAllAgentsInLifetimeState(AgentLifetimeState)
+  fullName: SchedulingClients.Core.IAgentClient.GetAllAgentsInLifetimeState(AgentLifetimeState)
   nameWithType: IAgentClient.GetAllAgentsInLifetimeState(AgentLifetimeState)
 - uid: SchedulingClients.Core.IAgentClient.GetAllAgentsInLifetimeState*
   name: GetAllAgentsInLifetimeState
@@ -671,11 +671,11 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.IAgentClient.GetAllAgentsInLifetimeState
   nameWithType: IAgentClient.GetAllAgentsInLifetimeState
-- uid: SchedulingClients.Core.IAgentClient.SetAgentLifetimeState(System.Int32,GAAPICommon.Architecture.AgentLifetimeState)
+- uid: SchedulingClients.Core.IAgentClient.SetAgentLifetimeState(System.Int32,AgentLifetimeState)
   name: SetAgentLifetimeState(Int32, AgentLifetimeState)
-  href: api/SchedulingClients.Core.IAgentClient.html#SchedulingClients_Core_IAgentClient_SetAgentLifetimeState_System_Int32_GAAPICommon_Architecture_AgentLifetimeState_
-  commentId: M:SchedulingClients.Core.IAgentClient.SetAgentLifetimeState(System.Int32,GAAPICommon.Architecture.AgentLifetimeState)
-  fullName: SchedulingClients.Core.IAgentClient.SetAgentLifetimeState(System.Int32, GAAPICommon.Architecture.AgentLifetimeState)
+  href: api/SchedulingClients.Core.IAgentClient.html#SchedulingClients_Core_IAgentClient_SetAgentLifetimeState_System_Int32_AgentLifetimeState_
+  commentId: M:SchedulingClients.Core.IAgentClient.SetAgentLifetimeState(System.Int32,AgentLifetimeState)
+  fullName: SchedulingClients.Core.IAgentClient.SetAgentLifetimeState(System.Int32, AgentLifetimeState)
   nameWithType: IAgentClient.SetAgentLifetimeState(Int32, AgentLifetimeState)
 - uid: SchedulingClients.Core.IAgentClient.SetAgentLifetimeState*
   name: SetAgentLifetimeState
@@ -781,11 +781,11 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.IJobBuilderClient.CreateGoToNodeTask
   nameWithType: IJobBuilderClient.CreateGoToNodeTask
-- uid: SchedulingClients.Core.IJobBuilderClient.CreateJob(GAAPICommon.Architecture.JobPriority)
+- uid: SchedulingClients.Core.IJobBuilderClient.CreateJob(JobPriority)
   name: CreateJob(JobPriority)
-  href: api/SchedulingClients.Core.IJobBuilderClient.html#SchedulingClients_Core_IJobBuilderClient_CreateJob_GAAPICommon_Architecture_JobPriority_
-  commentId: M:SchedulingClients.Core.IJobBuilderClient.CreateJob(GAAPICommon.Architecture.JobPriority)
-  fullName: SchedulingClients.Core.IJobBuilderClient.CreateJob(GAAPICommon.Architecture.JobPriority)
+  href: api/SchedulingClients.Core.IJobBuilderClient.html#SchedulingClients_Core_IJobBuilderClient_CreateJob_JobPriority_
+  commentId: M:SchedulingClients.Core.IJobBuilderClient.CreateJob(JobPriority)
+  fullName: SchedulingClients.Core.IJobBuilderClient.CreateJob(JobPriority)
   nameWithType: IJobBuilderClient.CreateJob(JobPriority)
 - uid: SchedulingClients.Core.IJobBuilderClient.CreateJob*
   name: CreateJob
@@ -807,11 +807,11 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.IJobBuilderClient.CreateOrderedListTask
   nameWithType: IJobBuilderClient.CreateOrderedListTask
-- uid: SchedulingClients.Core.IJobBuilderClient.CreateServicingTask(System.Int32,System.Int32,GAAPICommon.Architecture.ServiceType,System.TimeSpan)
+- uid: SchedulingClients.Core.IJobBuilderClient.CreateServicingTask(System.Int32,System.Int32,ServiceType,System.TimeSpan)
   name: CreateServicingTask(Int32, Int32, ServiceType, TimeSpan)
-  href: api/SchedulingClients.Core.IJobBuilderClient.html#SchedulingClients_Core_IJobBuilderClient_CreateServicingTask_System_Int32_System_Int32_GAAPICommon_Architecture_ServiceType_System_TimeSpan_
-  commentId: M:SchedulingClients.Core.IJobBuilderClient.CreateServicingTask(System.Int32,System.Int32,GAAPICommon.Architecture.ServiceType,System.TimeSpan)
-  fullName: SchedulingClients.Core.IJobBuilderClient.CreateServicingTask(System.Int32, System.Int32, GAAPICommon.Architecture.ServiceType, System.TimeSpan)
+  href: api/SchedulingClients.Core.IJobBuilderClient.html#SchedulingClients_Core_IJobBuilderClient_CreateServicingTask_System_Int32_System_Int32_ServiceType_System_TimeSpan_
+  commentId: M:SchedulingClients.Core.IJobBuilderClient.CreateServicingTask(System.Int32,System.Int32,ServiceType,System.TimeSpan)
+  fullName: SchedulingClients.Core.IJobBuilderClient.CreateServicingTask(System.Int32, System.Int32, ServiceType, System.TimeSpan)
   nameWithType: IJobBuilderClient.CreateServicingTask(Int32, Int32, ServiceType, TimeSpan)
 - uid: SchedulingClients.Core.IJobBuilderClient.CreateServicingTask*
   name: CreateServicingTask
@@ -1203,13 +1203,13 @@ references:
   commentId: T:SchedulingClients.Core.IMapClient_ExtensionMethods
   fullName: SchedulingClients.Core.IMapClient_ExtensionMethods
   nameWithType: IMapClient_ExtensionMethods
-- uid: SchedulingClients.Core.IMapClient_ExtensionMethods.IsWithin(GAAPICommon.Core.Dtos.MoveDto,System.Collections.Generic.IEnumerable{GAAPICommon.Core.Dtos.NodeDto},System.Windows.Rect)
+- uid: SchedulingClients.Core.IMapClient_ExtensionMethods.IsWithin(MoveDto,System.Collections.Generic.IEnumerable{NodeDto},System.Windows.Rect)
   name: IsWithin(MoveDto, IEnumerable<NodeDto>, Rect)
-  href: api/SchedulingClients.Core.IMapClient_ExtensionMethods.html#SchedulingClients_Core_IMapClient_ExtensionMethods_IsWithin_GAAPICommon_Core_Dtos_MoveDto_System_Collections_Generic_IEnumerable_GAAPICommon_Core_Dtos_NodeDto__System_Windows_Rect_
-  commentId: M:SchedulingClients.Core.IMapClient_ExtensionMethods.IsWithin(GAAPICommon.Core.Dtos.MoveDto,System.Collections.Generic.IEnumerable{GAAPICommon.Core.Dtos.NodeDto},System.Windows.Rect)
+  href: api/SchedulingClients.Core.IMapClient_ExtensionMethods.html#SchedulingClients_Core_IMapClient_ExtensionMethods_IsWithin_MoveDto_System_Collections_Generic_IEnumerable_NodeDto__System_Windows_Rect_
+  commentId: M:SchedulingClients.Core.IMapClient_ExtensionMethods.IsWithin(MoveDto,System.Collections.Generic.IEnumerable{NodeDto},System.Windows.Rect)
   name.vb: IsWithin(MoveDto, IEnumerable(Of NodeDto), Rect)
-  fullName: SchedulingClients.Core.IMapClient_ExtensionMethods.IsWithin(GAAPICommon.Core.Dtos.MoveDto, System.Collections.Generic.IEnumerable<GAAPICommon.Core.Dtos.NodeDto>, System.Windows.Rect)
-  fullName.vb: SchedulingClients.Core.IMapClient_ExtensionMethods.IsWithin(GAAPICommon.Core.Dtos.MoveDto, System.Collections.Generic.IEnumerable(Of GAAPICommon.Core.Dtos.NodeDto), System.Windows.Rect)
+  fullName: SchedulingClients.Core.IMapClient_ExtensionMethods.IsWithin(MoveDto, System.Collections.Generic.IEnumerable<NodeDto>, System.Windows.Rect)
+  fullName.vb: SchedulingClients.Core.IMapClient_ExtensionMethods.IsWithin(MoveDto, System.Collections.Generic.IEnumerable(Of NodeDto), System.Windows.Rect)
   nameWithType: IMapClient_ExtensionMethods.IsWithin(MoveDto, IEnumerable<NodeDto>, Rect)
   nameWithType.vb: IMapClient_ExtensionMethods.IsWithin(MoveDto, IEnumerable(Of NodeDto), Rect)
 - uid: SchedulingClients.Core.IMapClient_ExtensionMethods.IsWithin*
@@ -1241,11 +1241,11 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.IMapClient_ExtensionMethods.ToPercentageComplete
   nameWithType: IMapClient_ExtensionMethods.ToPercentageComplete
-- uid: SchedulingClients.Core.IMapClient_ExtensionMethods.ToPoint(GAAPICommon.Core.Dtos.NodeDto)
+- uid: SchedulingClients.Core.IMapClient_ExtensionMethods.ToPoint(NodeDto)
   name: ToPoint(NodeDto)
-  href: api/SchedulingClients.Core.IMapClient_ExtensionMethods.html#SchedulingClients_Core_IMapClient_ExtensionMethods_ToPoint_GAAPICommon_Core_Dtos_NodeDto_
-  commentId: M:SchedulingClients.Core.IMapClient_ExtensionMethods.ToPoint(GAAPICommon.Core.Dtos.NodeDto)
-  fullName: SchedulingClients.Core.IMapClient_ExtensionMethods.ToPoint(GAAPICommon.Core.Dtos.NodeDto)
+  href: api/SchedulingClients.Core.IMapClient_ExtensionMethods.html#SchedulingClients_Core_IMapClient_ExtensionMethods_ToPoint_NodeDto_
+  commentId: M:SchedulingClients.Core.IMapClient_ExtensionMethods.ToPoint(NodeDto)
+  fullName: SchedulingClients.Core.IMapClient_ExtensionMethods.ToPoint(NodeDto)
   nameWithType: IMapClient_ExtensionMethods.ToPoint(NodeDto)
 - uid: SchedulingClients.Core.IMapClient_ExtensionMethods.ToPoint*
   name: ToPoint
@@ -1254,22 +1254,22 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.IMapClient_ExtensionMethods.ToPoint
   nameWithType: IMapClient_ExtensionMethods.ToPoint
-- uid: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable{GAAPICommon.Core.Dtos.MoveDto},System.Collections.Generic.IEnumerable{GAAPICommon.Core.Dtos.NodeDto},System.Windows.Rect)
+- uid: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable{MoveDto},System.Collections.Generic.IEnumerable{NodeDto},System.Windows.Rect)
   name: Within(IEnumerable<MoveDto>, IEnumerable<NodeDto>, Rect)
-  href: api/SchedulingClients.Core.IMapClient_ExtensionMethods.html#SchedulingClients_Core_IMapClient_ExtensionMethods_Within_System_Collections_Generic_IEnumerable_GAAPICommon_Core_Dtos_MoveDto__System_Collections_Generic_IEnumerable_GAAPICommon_Core_Dtos_NodeDto__System_Windows_Rect_
-  commentId: M:SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable{GAAPICommon.Core.Dtos.MoveDto},System.Collections.Generic.IEnumerable{GAAPICommon.Core.Dtos.NodeDto},System.Windows.Rect)
+  href: api/SchedulingClients.Core.IMapClient_ExtensionMethods.html#SchedulingClients_Core_IMapClient_ExtensionMethods_Within_System_Collections_Generic_IEnumerable_MoveDto__System_Collections_Generic_IEnumerable_NodeDto__System_Windows_Rect_
+  commentId: M:SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable{MoveDto},System.Collections.Generic.IEnumerable{NodeDto},System.Windows.Rect)
   name.vb: Within(IEnumerable(Of MoveDto), IEnumerable(Of NodeDto), Rect)
-  fullName: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable<GAAPICommon.Core.Dtos.MoveDto>, System.Collections.Generic.IEnumerable<GAAPICommon.Core.Dtos.NodeDto>, System.Windows.Rect)
-  fullName.vb: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable(Of GAAPICommon.Core.Dtos.MoveDto), System.Collections.Generic.IEnumerable(Of GAAPICommon.Core.Dtos.NodeDto), System.Windows.Rect)
+  fullName: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable<MoveDto>, System.Collections.Generic.IEnumerable<NodeDto>, System.Windows.Rect)
+  fullName.vb: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable(Of MoveDto), System.Collections.Generic.IEnumerable(Of NodeDto), System.Windows.Rect)
   nameWithType: IMapClient_ExtensionMethods.Within(IEnumerable<MoveDto>, IEnumerable<NodeDto>, Rect)
   nameWithType.vb: IMapClient_ExtensionMethods.Within(IEnumerable(Of MoveDto), IEnumerable(Of NodeDto), Rect)
-- uid: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable{GAAPICommon.Core.Dtos.NodeDto},System.Windows.Rect)
+- uid: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable{NodeDto},System.Windows.Rect)
   name: Within(IEnumerable<NodeDto>, Rect)
-  href: api/SchedulingClients.Core.IMapClient_ExtensionMethods.html#SchedulingClients_Core_IMapClient_ExtensionMethods_Within_System_Collections_Generic_IEnumerable_GAAPICommon_Core_Dtos_NodeDto__System_Windows_Rect_
-  commentId: M:SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable{GAAPICommon.Core.Dtos.NodeDto},System.Windows.Rect)
+  href: api/SchedulingClients.Core.IMapClient_ExtensionMethods.html#SchedulingClients_Core_IMapClient_ExtensionMethods_Within_System_Collections_Generic_IEnumerable_NodeDto__System_Windows_Rect_
+  commentId: M:SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable{NodeDto},System.Windows.Rect)
   name.vb: Within(IEnumerable(Of NodeDto), Rect)
-  fullName: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable<GAAPICommon.Core.Dtos.NodeDto>, System.Windows.Rect)
-  fullName.vb: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable(Of GAAPICommon.Core.Dtos.NodeDto), System.Windows.Rect)
+  fullName: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable<NodeDto>, System.Windows.Rect)
+  fullName.vb: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable(Of NodeDto), System.Windows.Rect)
   nameWithType: IMapClient_ExtensionMethods.Within(IEnumerable<NodeDto>, Rect)
   nameWithType.vb: IMapClient_ExtensionMethods.Within(IEnumerable(Of NodeDto), Rect)
 - uid: SchedulingClients.Core.IMapClient_ExtensionMethods.Within*
@@ -1537,11 +1537,11 @@ references:
   fullName: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateGoToNodeTaskAsync
   nameWithType: IJobBuilderService.CreateGoToNodeTaskAsync
 - uid: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJob(GAAPICommon.Architecture.JobPriority)
-  name: CreateJob(JobPriority)
+  name: CreateJob(GAAPICommon.Architecture.JobPriority)
   href: api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.html#SchedulingClients_Core_JobBuilderServiceReference_IJobBuilderService_CreateJob_GAAPICommon_Architecture_JobPriority_
   commentId: M:SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJob(GAAPICommon.Architecture.JobPriority)
   fullName: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJob(GAAPICommon.Architecture.JobPriority)
-  nameWithType: IJobBuilderService.CreateJob(JobPriority)
+  nameWithType: IJobBuilderService.CreateJob(GAAPICommon.Architecture.JobPriority)
 - uid: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJob*
   name: CreateJob
   href: api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.html#SchedulingClients_Core_JobBuilderServiceReference_IJobBuilderService_CreateJob_
@@ -1550,11 +1550,11 @@ references:
   fullName: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJob
   nameWithType: IJobBuilderService.CreateJob
 - uid: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJobAsync(GAAPICommon.Architecture.JobPriority)
-  name: CreateJobAsync(JobPriority)
+  name: CreateJobAsync(GAAPICommon.Architecture.JobPriority)
   href: api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.html#SchedulingClients_Core_JobBuilderServiceReference_IJobBuilderService_CreateJobAsync_GAAPICommon_Architecture_JobPriority_
   commentId: M:SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJobAsync(GAAPICommon.Architecture.JobPriority)
   fullName: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJobAsync(GAAPICommon.Architecture.JobPriority)
-  nameWithType: IJobBuilderService.CreateJobAsync(JobPriority)
+  nameWithType: IJobBuilderService.CreateJobAsync(GAAPICommon.Architecture.JobPriority)
 - uid: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJobAsync*
   name: CreateJobAsync
   href: api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.html#SchedulingClients_Core_JobBuilderServiceReference_IJobBuilderService_CreateJobAsync_
@@ -1589,11 +1589,11 @@ references:
   fullName: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateOrderedListTaskAsync
   nameWithType: IJobBuilderService.CreateOrderedListTaskAsync
 - uid: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateServicingTask(System.Int32,System.Int32,GAAPICommon.Architecture.ServiceType,System.TimeSpan)
-  name: CreateServicingTask(Int32, Int32, ServiceType, TimeSpan)
+  name: CreateServicingTask(Int32, Int32, GAAPICommon.Architecture.ServiceType, TimeSpan)
   href: api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.html#SchedulingClients_Core_JobBuilderServiceReference_IJobBuilderService_CreateServicingTask_System_Int32_System_Int32_GAAPICommon_Architecture_ServiceType_System_TimeSpan_
   commentId: M:SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateServicingTask(System.Int32,System.Int32,GAAPICommon.Architecture.ServiceType,System.TimeSpan)
   fullName: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateServicingTask(System.Int32, System.Int32, GAAPICommon.Architecture.ServiceType, System.TimeSpan)
-  nameWithType: IJobBuilderService.CreateServicingTask(Int32, Int32, ServiceType, TimeSpan)
+  nameWithType: IJobBuilderService.CreateServicingTask(Int32, Int32, GAAPICommon.Architecture.ServiceType, TimeSpan)
 - uid: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateServicingTask*
   name: CreateServicingTask
   href: api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.html#SchedulingClients_Core_JobBuilderServiceReference_IJobBuilderService_CreateServicingTask_
@@ -1602,11 +1602,11 @@ references:
   fullName: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateServicingTask
   nameWithType: IJobBuilderService.CreateServicingTask
 - uid: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateServicingTaskAsync(System.Int32,System.Int32,GAAPICommon.Architecture.ServiceType,System.TimeSpan)
-  name: CreateServicingTaskAsync(Int32, Int32, ServiceType, TimeSpan)
+  name: CreateServicingTaskAsync(Int32, Int32, GAAPICommon.Architecture.ServiceType, TimeSpan)
   href: api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.html#SchedulingClients_Core_JobBuilderServiceReference_IJobBuilderService_CreateServicingTaskAsync_System_Int32_System_Int32_GAAPICommon_Architecture_ServiceType_System_TimeSpan_
   commentId: M:SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateServicingTaskAsync(System.Int32,System.Int32,GAAPICommon.Architecture.ServiceType,System.TimeSpan)
   fullName: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateServicingTaskAsync(System.Int32, System.Int32, GAAPICommon.Architecture.ServiceType, System.TimeSpan)
-  nameWithType: IJobBuilderService.CreateServicingTaskAsync(Int32, Int32, ServiceType, TimeSpan)
+  nameWithType: IJobBuilderService.CreateServicingTaskAsync(Int32, Int32, GAAPICommon.Architecture.ServiceType, TimeSpan)
 - uid: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateServicingTaskAsync*
   name: CreateServicingTaskAsync
   href: api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.html#SchedulingClients_Core_JobBuilderServiceReference_IJobBuilderService_CreateServicingTaskAsync_
@@ -2106,11 +2106,11 @@ references:
   fullName: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateGoToNodeTaskAsync
   nameWithType: JobBuilderServiceClient.CreateGoToNodeTaskAsync
 - uid: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJob(GAAPICommon.Architecture.JobPriority)
-  name: CreateJob(JobPriority)
+  name: CreateJob(GAAPICommon.Architecture.JobPriority)
   href: api/SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.html#SchedulingClients_Core_JobBuilderServiceReference_JobBuilderServiceClient_CreateJob_GAAPICommon_Architecture_JobPriority_
   commentId: M:SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJob(GAAPICommon.Architecture.JobPriority)
   fullName: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJob(GAAPICommon.Architecture.JobPriority)
-  nameWithType: JobBuilderServiceClient.CreateJob(JobPriority)
+  nameWithType: JobBuilderServiceClient.CreateJob(GAAPICommon.Architecture.JobPriority)
 - uid: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJob*
   name: CreateJob
   href: api/SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.html#SchedulingClients_Core_JobBuilderServiceReference_JobBuilderServiceClient_CreateJob_
@@ -2119,11 +2119,11 @@ references:
   fullName: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJob
   nameWithType: JobBuilderServiceClient.CreateJob
 - uid: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJobAsync(GAAPICommon.Architecture.JobPriority)
-  name: CreateJobAsync(JobPriority)
+  name: CreateJobAsync(GAAPICommon.Architecture.JobPriority)
   href: api/SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.html#SchedulingClients_Core_JobBuilderServiceReference_JobBuilderServiceClient_CreateJobAsync_GAAPICommon_Architecture_JobPriority_
   commentId: M:SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJobAsync(GAAPICommon.Architecture.JobPriority)
   fullName: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJobAsync(GAAPICommon.Architecture.JobPriority)
-  nameWithType: JobBuilderServiceClient.CreateJobAsync(JobPriority)
+  nameWithType: JobBuilderServiceClient.CreateJobAsync(GAAPICommon.Architecture.JobPriority)
 - uid: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJobAsync*
   name: CreateJobAsync
   href: api/SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.html#SchedulingClients_Core_JobBuilderServiceReference_JobBuilderServiceClient_CreateJobAsync_
@@ -2158,11 +2158,11 @@ references:
   fullName: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateOrderedListTaskAsync
   nameWithType: JobBuilderServiceClient.CreateOrderedListTaskAsync
 - uid: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateServicingTask(System.Int32,System.Int32,GAAPICommon.Architecture.ServiceType,System.TimeSpan)
-  name: CreateServicingTask(Int32, Int32, ServiceType, TimeSpan)
+  name: CreateServicingTask(Int32, Int32, GAAPICommon.Architecture.ServiceType, TimeSpan)
   href: api/SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.html#SchedulingClients_Core_JobBuilderServiceReference_JobBuilderServiceClient_CreateServicingTask_System_Int32_System_Int32_GAAPICommon_Architecture_ServiceType_System_TimeSpan_
   commentId: M:SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateServicingTask(System.Int32,System.Int32,GAAPICommon.Architecture.ServiceType,System.TimeSpan)
   fullName: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateServicingTask(System.Int32, System.Int32, GAAPICommon.Architecture.ServiceType, System.TimeSpan)
-  nameWithType: JobBuilderServiceClient.CreateServicingTask(Int32, Int32, ServiceType, TimeSpan)
+  nameWithType: JobBuilderServiceClient.CreateServicingTask(Int32, Int32, GAAPICommon.Architecture.ServiceType, TimeSpan)
 - uid: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateServicingTask*
   name: CreateServicingTask
   href: api/SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.html#SchedulingClients_Core_JobBuilderServiceReference_JobBuilderServiceClient_CreateServicingTask_
@@ -2171,11 +2171,11 @@ references:
   fullName: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateServicingTask
   nameWithType: JobBuilderServiceClient.CreateServicingTask
 - uid: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateServicingTaskAsync(System.Int32,System.Int32,GAAPICommon.Architecture.ServiceType,System.TimeSpan)
-  name: CreateServicingTaskAsync(Int32, Int32, ServiceType, TimeSpan)
+  name: CreateServicingTaskAsync(Int32, Int32, GAAPICommon.Architecture.ServiceType, TimeSpan)
   href: api/SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.html#SchedulingClients_Core_JobBuilderServiceReference_JobBuilderServiceClient_CreateServicingTaskAsync_System_Int32_System_Int32_GAAPICommon_Architecture_ServiceType_System_TimeSpan_
   commentId: M:SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateServicingTaskAsync(System.Int32,System.Int32,GAAPICommon.Architecture.ServiceType,System.TimeSpan)
   fullName: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateServicingTaskAsync(System.Int32, System.Int32, GAAPICommon.Architecture.ServiceType, System.TimeSpan)
-  nameWithType: JobBuilderServiceClient.CreateServicingTaskAsync(Int32, Int32, ServiceType, TimeSpan)
+  nameWithType: JobBuilderServiceClient.CreateServicingTaskAsync(Int32, Int32, GAAPICommon.Architecture.ServiceType, TimeSpan)
 - uid: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateServicingTaskAsync*
   name: CreateServicingTaskAsync
   href: api/SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.html#SchedulingClients_Core_JobBuilderServiceReference_JobBuilderServiceClient_CreateServicingTaskAsync_
@@ -4240,11 +4240,11 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.SchedulingServiceCallback.SchedulingServiceCallback
   nameWithType: SchedulingServiceCallback.SchedulingServiceCallback
-- uid: SchedulingClients.Core.SchedulingServiceCallback.OnCallback(GAAPICommon.Core.Dtos.SchedulerStateDto)
+- uid: SchedulingClients.Core.SchedulingServiceCallback.OnCallback(SchedulerStateDto)
   name: OnCallback(SchedulerStateDto)
-  href: api/SchedulingClients.Core.SchedulingServiceCallback.html#SchedulingClients_Core_SchedulingServiceCallback_OnCallback_GAAPICommon_Core_Dtos_SchedulerStateDto_
-  commentId: M:SchedulingClients.Core.SchedulingServiceCallback.OnCallback(GAAPICommon.Core.Dtos.SchedulerStateDto)
-  fullName: SchedulingClients.Core.SchedulingServiceCallback.OnCallback(GAAPICommon.Core.Dtos.SchedulerStateDto)
+  href: api/SchedulingClients.Core.SchedulingServiceCallback.html#SchedulingClients_Core_SchedulingServiceCallback_OnCallback_SchedulerStateDto_
+  commentId: M:SchedulingClients.Core.SchedulingServiceCallback.OnCallback(SchedulerStateDto)
+  fullName: SchedulingClients.Core.SchedulingServiceCallback.OnCallback(SchedulerStateDto)
   nameWithType: SchedulingServiceCallback.OnCallback(SchedulerStateDto)
 - uid: SchedulingClients.Core.SchedulingServiceCallback.OnCallback*
   name: OnCallback
@@ -4330,11 +4330,11 @@ references:
   fullName: SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceCallback
   nameWithType: ISchedulingServiceCallback
 - uid: SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceCallback.OnCallback(GAAPICommon.Core.Dtos.SchedulerStateDto)
-  name: OnCallback(SchedulerStateDto)
+  name: OnCallback(GAAPICommon.Core.Dtos.SchedulerStateDto)
   href: api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceCallback.html#SchedulingClients_Core_SchedulingServiceReference_ISchedulingServiceCallback_OnCallback_GAAPICommon_Core_Dtos_SchedulerStateDto_
   commentId: M:SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceCallback.OnCallback(GAAPICommon.Core.Dtos.SchedulerStateDto)
   fullName: SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceCallback.OnCallback(GAAPICommon.Core.Dtos.SchedulerStateDto)
-  nameWithType: ISchedulingServiceCallback.OnCallback(SchedulerStateDto)
+  nameWithType: ISchedulingServiceCallback.OnCallback(GAAPICommon.Core.Dtos.SchedulerStateDto)
 - uid: SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceCallback.OnCallback*
   name: OnCallback
   href: api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceCallback.html#SchedulingClients_Core_SchedulingServiceReference_ISchedulingServiceCallback_OnCallback_

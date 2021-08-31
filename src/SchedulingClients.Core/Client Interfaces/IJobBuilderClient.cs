@@ -147,19 +147,5 @@ namespace SchedulingClients.Core
         /// <param name="jobId">Target job Id.</param>
         /// <returns>True on success.</returns>
         IServiceCallResult FinishEditingJob(int jobId);
-
-        /// <summary>
-        /// Begins editing an existing task.
-        /// </summary>
-        /// <param name="taskId">Target task Id.</param>
-        /// <returns>True on success.</returns>
-        IServiceCallResult<bool> BeginEditingTask(int taskId);
-
-        /// <summary>
-        /// Finished editing an existing task, allow the task to be progressed.
-        /// </summary>
-        /// <param name="taskId">Target task Id.</param>
-        /// <returns>True on success.</returns>
-        IServiceCallResult FinishEditingTask(int taskId);
     }
 }

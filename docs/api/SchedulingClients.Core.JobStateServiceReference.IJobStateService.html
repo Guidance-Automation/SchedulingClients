@@ -1,0 +1,504 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IJobStateService
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IJobStateService
+   ">
+    <meta name="generator" content="docfx 2.57.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="SchedulingClients.Core.JobStateServiceReference.IJobStateService">
+  
+  
+  <h1 id="SchedulingClients_Core_JobStateServiceReference_IJobStateService" data-uid="SchedulingClients.Core.JobStateServiceReference.IJobStateService" class="text-break">Interface IJobStateService
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="SchedulingClients.Core.JobStateServiceReference.html">SchedulingClients.Core.JobStateServiceReference</a></h6>
+  <h6><strong>Assembly</strong>: SchedulingClients.Core.dll</h6>
+  <h5 id="SchedulingClients_Core_JobStateServiceReference_IJobStateService_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ServiceContract(ConfigurationName = &quot;JobStateServiceReference.IJobStateService&quot;, CallbackContract = typeof(IJobStateServiceCallback))]
+public interface IJobStateService</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="SchedulingClients_Core_JobStateServiceReference_IJobStateService_GetAPISemVer_" data-uid="SchedulingClients.Core.JobStateServiceReference.IJobStateService.GetAPISemVer*"></a>
+  <h4 id="SchedulingClients_Core_JobStateServiceReference_IJobStateService_GetAPISemVer" data-uid="SchedulingClients.Core.JobStateServiceReference.IJobStateService.GetAPISemVer">GetAPISemVer()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[OperationContract(Action = &quot;http://tempuri.org/IService/GetAPISemVer&quot;, ReplyAction = &quot;http://tempuri.org/IService/GetAPISemVerResponse&quot;)]
+GAAPICommon.Core.Dtos.ServiceCallResultDto&lt;GAAPICommon.Core.Dtos.SemVerDto&gt; GetAPISemVer()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Core.Dtos.ServiceCallResultDto</span>&lt;<span class="xref">GAAPICommon.Core.Dtos.SemVerDto</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_Core_JobStateServiceReference_IJobStateService_GetAPISemVerAsync_" data-uid="SchedulingClients.Core.JobStateServiceReference.IJobStateService.GetAPISemVerAsync*"></a>
+  <h4 id="SchedulingClients_Core_JobStateServiceReference_IJobStateService_GetAPISemVerAsync" data-uid="SchedulingClients.Core.JobStateServiceReference.IJobStateService.GetAPISemVerAsync">GetAPISemVerAsync()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[OperationContract(Action = &quot;http://tempuri.org/IService/GetAPISemVer&quot;, ReplyAction = &quot;http://tempuri.org/IService/GetAPISemVerResponse&quot;)]
+Task&lt;GAAPICommon.Core.Dtos.ServiceCallResultDto&lt;GAAPICommon.Core.Dtos.SemVerDto&gt;&gt; GetAPISemVerAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">GAAPICommon.Core.Dtos.ServiceCallResultDto</span>&lt;<span class="xref">GAAPICommon.Core.Dtos.SemVerDto</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_Core_JobStateServiceReference_IJobStateService_GetCurrentJobSummaryForAgentId_" data-uid="SchedulingClients.Core.JobStateServiceReference.IJobStateService.GetCurrentJobSummaryForAgentId*"></a>
+  <h4 id="SchedulingClients_Core_JobStateServiceReference_IJobStateService_GetCurrentJobSummaryForAgentId_System_Int32_" data-uid="SchedulingClients.Core.JobStateServiceReference.IJobStateService.GetCurrentJobSummaryForAgentId(System.Int32)">GetCurrentJobSummaryForAgentId(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[OperationContract(Action = &quot;http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentId&quot;, ReplyAction = &quot;http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentIdResponse&quot;)]
+GAAPICommon.Core.Dtos.ServiceCallResultDto&lt;GAAPICommon.Core.Dtos.JobSummaryDto&gt; GetCurrentJobSummaryForAgentId(int agentId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">agentId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Core.Dtos.ServiceCallResultDto</span>&lt;<span class="xref">GAAPICommon.Core.Dtos.JobSummaryDto</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_Core_JobStateServiceReference_IJobStateService_GetCurrentJobSummaryForAgentIdAsync_" data-uid="SchedulingClients.Core.JobStateServiceReference.IJobStateService.GetCurrentJobSummaryForAgentIdAsync*"></a>
+  <h4 id="SchedulingClients_Core_JobStateServiceReference_IJobStateService_GetCurrentJobSummaryForAgentIdAsync_System_Int32_" data-uid="SchedulingClients.Core.JobStateServiceReference.IJobStateService.GetCurrentJobSummaryForAgentIdAsync(System.Int32)">GetCurrentJobSummaryForAgentIdAsync(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[OperationContract(Action = &quot;http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentId&quot;, ReplyAction = &quot;http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentIdResponse&quot;)]
+Task&lt;GAAPICommon.Core.Dtos.ServiceCallResultDto&lt;GAAPICommon.Core.Dtos.JobSummaryDto&gt;&gt; GetCurrentJobSummaryForAgentIdAsync(int agentId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">agentId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">GAAPICommon.Core.Dtos.ServiceCallResultDto</span>&lt;<span class="xref">GAAPICommon.Core.Dtos.JobSummaryDto</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_Core_JobStateServiceReference_IJobStateService_GetJobSummary_" data-uid="SchedulingClients.Core.JobStateServiceReference.IJobStateService.GetJobSummary*"></a>
+  <h4 id="SchedulingClients_Core_JobStateServiceReference_IJobStateService_GetJobSummary_System_Int32_" data-uid="SchedulingClients.Core.JobStateServiceReference.IJobStateService.GetJobSummary(System.Int32)">GetJobSummary(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[OperationContract(Action = &quot;http://tempuri.org/IJobStateService/GetJobSummary&quot;, ReplyAction = &quot;http://tempuri.org/IJobStateService/GetJobSummaryResponse&quot;)]
+GAAPICommon.Core.Dtos.ServiceCallResultDto&lt;GAAPICommon.Core.Dtos.JobSummaryDto&gt; GetJobSummary(int jobId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">jobId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Core.Dtos.ServiceCallResultDto</span>&lt;<span class="xref">GAAPICommon.Core.Dtos.JobSummaryDto</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_Core_JobStateServiceReference_IJobStateService_GetJobSummaryAsync_" data-uid="SchedulingClients.Core.JobStateServiceReference.IJobStateService.GetJobSummaryAsync*"></a>
+  <h4 id="SchedulingClients_Core_JobStateServiceReference_IJobStateService_GetJobSummaryAsync_System_Int32_" data-uid="SchedulingClients.Core.JobStateServiceReference.IJobStateService.GetJobSummaryAsync(System.Int32)">GetJobSummaryAsync(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[OperationContract(Action = &quot;http://tempuri.org/IJobStateService/GetJobSummary&quot;, ReplyAction = &quot;http://tempuri.org/IJobStateService/GetJobSummaryResponse&quot;)]
+Task&lt;GAAPICommon.Core.Dtos.ServiceCallResultDto&lt;GAAPICommon.Core.Dtos.JobSummaryDto&gt;&gt; GetJobSummaryAsync(int jobId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">jobId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">GAAPICommon.Core.Dtos.ServiceCallResultDto</span>&lt;<span class="xref">GAAPICommon.Core.Dtos.JobSummaryDto</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_Core_JobStateServiceReference_IJobStateService_GetParentJobSummaryFromTaskId_" data-uid="SchedulingClients.Core.JobStateServiceReference.IJobStateService.GetParentJobSummaryFromTaskId*"></a>
+  <h4 id="SchedulingClients_Core_JobStateServiceReference_IJobStateService_GetParentJobSummaryFromTaskId_System_Int32_" data-uid="SchedulingClients.Core.JobStateServiceReference.IJobStateService.GetParentJobSummaryFromTaskId(System.Int32)">GetParentJobSummaryFromTaskId(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[OperationContract(Action = &quot;http://tempuri.org/IJobStateService/GetParentJobSummaryFromTaskId&quot;, ReplyAction = &quot;http://tempuri.org/IJobStateService/GetParentJobSummaryFromTaskIdResponse&quot;)]
+GAAPICommon.Core.Dtos.ServiceCallResultDto&lt;GAAPICommon.Core.Dtos.JobSummaryDto&gt; GetParentJobSummaryFromTaskId(int taskId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">taskId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Core.Dtos.ServiceCallResultDto</span>&lt;<span class="xref">GAAPICommon.Core.Dtos.JobSummaryDto</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_Core_JobStateServiceReference_IJobStateService_GetParentJobSummaryFromTaskIdAsync_" data-uid="SchedulingClients.Core.JobStateServiceReference.IJobStateService.GetParentJobSummaryFromTaskIdAsync*"></a>
+  <h4 id="SchedulingClients_Core_JobStateServiceReference_IJobStateService_GetParentJobSummaryFromTaskIdAsync_System_Int32_" data-uid="SchedulingClients.Core.JobStateServiceReference.IJobStateService.GetParentJobSummaryFromTaskIdAsync(System.Int32)">GetParentJobSummaryFromTaskIdAsync(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[OperationContract(Action = &quot;http://tempuri.org/IJobStateService/GetParentJobSummaryFromTaskId&quot;, ReplyAction = &quot;http://tempuri.org/IJobStateService/GetParentJobSummaryFromTaskIdResponse&quot;)]
+Task&lt;GAAPICommon.Core.Dtos.ServiceCallResultDto&lt;GAAPICommon.Core.Dtos.JobSummaryDto&gt;&gt; GetParentJobSummaryFromTaskIdAsync(int taskId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">taskId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">GAAPICommon.Core.Dtos.ServiceCallResultDto</span>&lt;<span class="xref">GAAPICommon.Core.Dtos.JobSummaryDto</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_Core_JobStateServiceReference_IJobStateService_SubscriptionHeartbeat_" data-uid="SchedulingClients.Core.JobStateServiceReference.IJobStateService.SubscriptionHeartbeat*"></a>
+  <h4 id="SchedulingClients_Core_JobStateServiceReference_IJobStateService_SubscriptionHeartbeat_System_Guid_" data-uid="SchedulingClients.Core.JobStateServiceReference.IJobStateService.SubscriptionHeartbeat(System.Guid)">SubscriptionHeartbeat(Guid)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[OperationContract(Action = &quot;http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat&quot;, ReplyAction = &quot;http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse&quot;)]
+void SubscriptionHeartbeat(Guid guid)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">guid</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_Core_JobStateServiceReference_IJobStateService_SubscriptionHeartbeatAsync_" data-uid="SchedulingClients.Core.JobStateServiceReference.IJobStateService.SubscriptionHeartbeatAsync*"></a>
+  <h4 id="SchedulingClients_Core_JobStateServiceReference_IJobStateService_SubscriptionHeartbeatAsync_System_Guid_" data-uid="SchedulingClients.Core.JobStateServiceReference.IJobStateService.SubscriptionHeartbeatAsync(System.Guid)">SubscriptionHeartbeatAsync(Guid)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[OperationContract(Action = &quot;http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat&quot;, ReplyAction = &quot;http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse&quot;)]
+Task SubscriptionHeartbeatAsync(Guid guid)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">guid</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

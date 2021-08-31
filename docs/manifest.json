@@ -1,0 +1,1011 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/WORK/GIT/GA/SchedulingClients/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.AgentServiceReference.AgentServiceClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.AgentServiceReference.AgentServiceClient.html",
+          "hash": "8Kz7su+ho9Ovgpr+nLocQuDwAsyqDp3FqW3yZQaPkZE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.AgentServiceReference.IAgentService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.AgentServiceReference.IAgentService.html",
+          "hash": "gPAqe5dAFbc6hOsFJ3zsxSCxYDXfVfZojPN5XuTjzrk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.AgentServiceReference.IAgentServiceChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.AgentServiceReference.IAgentServiceChannel.html",
+          "hash": "HmuZVbsa7hQcstVQCZqEilo7cRkJ2knX5WhlUUFmm5o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.AgentServiceReference.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.AgentServiceReference.html",
+          "hash": "aTjNyfEI1r5q4ThUXMIaUZLAl989Sx4JogP9KKg6Xko="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.ClientFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.ClientFactory.html",
+          "hash": "gq4zcbVpR7uU/+xcuGKCBoObaFdmUnE+VWusAAt2X7I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.EndpointSettings_ExtensionMethods.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.EndpointSettings_ExtensionMethods.html",
+          "hash": "OeAOToOH+gGrcl0e0+ftsyw+zNmuApMaythbXkHe2L8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.ExtensionMethods.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.ExtensionMethods.html",
+          "hash": "iV+W+hQde63gAYnQBAyezK/3hyHu+Q+8ViXnE2xxoic="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.IAgentClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.IAgentClient.html",
+          "hash": "G25aX4eVeOrVvdQW1ERA/ZF1RfroFLVm34OHWg39J28="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.IJobBuilderClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.IJobBuilderClient.html",
+          "hash": "ahcAG73NiKVDT++1CYV3abXTtSq9s9PRhhp5zbhwV0w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.IJobStateClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.IJobStateClient.html",
+          "hash": "RbJEeBYln6/+vVZ2rm5+vNzQEPnmGPu/ADIpdaFJ7nI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.IJobsStateClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.IJobsStateClient.html",
+          "hash": "ub3KMmjw/ihAxgZwt2zA5GF/IoO0105ZROd+A6tlNX8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.IMapClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.IMapClient.html",
+          "hash": "7igJyplENlmuRX7AGTMAQZXzzzZmwzEs/TR+4heY2p4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.IMapClient_ExtensionMethods.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.IMapClient_ExtensionMethods.html",
+          "hash": "SiY8QHuhiokMHE8FPUqM96FVPWvGEcDKVS6x+jjxuX8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.ISchedulingClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.ISchedulingClient.html",
+          "hash": "36gXsiG8Wvx/yg+B/IfAUAWk8Lbg6HJuNN0Uqi0QsWU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.IServicingClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.IServicingClient.html",
+          "hash": "XCDoZljdUnoyONq1fYivp7egWrmOfvZya8y2FFBvUrY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.html",
+          "hash": "rIS9YHlIYO9M5zzvvGB44foMO4EoD2bzn4NcEkZMvBw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderServiceChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderServiceChannel.html",
+          "hash": "4snNGi0DKKXMlnzQbrrgTTpf6SdoL0JAaNXv0iFerDM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.html",
+          "hash": "FLeQG9rW4LWiHlJ2NMEZ8llG3nh9WPWNKPLGolqkrjA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.JobBuilderServiceReference.JobDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.JobBuilderServiceReference.JobDto.html",
+          "hash": "jcA0Swh1T3UjEXFbFLJRy5Tc1es1zmeYVnksG0p+3mg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.JobBuilderServiceReference.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.JobBuilderServiceReference.html",
+          "hash": "1IuwZv7aNLtk47h40XthqJ/Eio/k2HiGhIGKEb68FSQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.JobStateServiceReference.IJobStateService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.JobStateServiceReference.IJobStateService.html",
+          "hash": "929PvjrjRItTEbnX7/c6dg3vNk6ystbPn9IQJ/SLlRg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.JobStateServiceReference.IJobStateServiceCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.JobStateServiceReference.IJobStateServiceCallback.html",
+          "hash": "4DnhylPduBgzxnawWsDGqwSuelq+SebQwhyY9+AD+Tc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.JobStateServiceReference.IJobStateServiceChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.JobStateServiceReference.IJobStateServiceChannel.html",
+          "hash": "cst0ERhIpJLutohSuEmq3rp6ifc4Qb0SaTMwxGFbIHw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.JobStateServiceReference.JobProgressDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.JobStateServiceReference.JobProgressDto.html",
+          "hash": "uEfhAq3EcYyUId6Fcb+QBsFuBuRL4T3f87jwxUD6Cto="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.JobStateServiceReference.JobStateServiceClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.JobStateServiceReference.JobStateServiceClient.html",
+          "hash": "A+2H6Zq7w81zhNfzteS6yUJexKkDeV5sofiv/EfxbRc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.JobStateServiceReference.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.JobStateServiceReference.html",
+          "hash": "p2Stqhvk+HbEIMapi1C+o0MFNahb0PofDj2KKmHOxus="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.JobsStateServiceReference.IJobsStateService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.JobsStateServiceReference.IJobsStateService.html",
+          "hash": "Mv3KPk0kUZRvLvNhytspME2+u+OBpJPFYITS0y1NCQk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.JobsStateServiceReference.IJobsStateServiceCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.JobsStateServiceReference.IJobsStateServiceCallback.html",
+          "hash": "jN/7f0PyKniK8BI2IADu+Qo8bBGFusvyYX9WK56z+8g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.JobsStateServiceReference.IJobsStateServiceChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.JobsStateServiceReference.IJobsStateServiceChannel.html",
+          "hash": "ZADR1gP4xx6jCvQ8/TxGkz1OcLjJ0f8MMmGBnPLa2NI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.JobsStateServiceReference.JobsStateDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.JobsStateServiceReference.JobsStateDto.html",
+          "hash": "R8YUx8N+KXSx2ZWuGd/pUOO+jcuEt8jVS64InEvDdyQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.JobsStateServiceReference.JobsStateServiceClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.JobsStateServiceReference.JobsStateServiceClient.html",
+          "hash": "+E9tCTUDA1v5ZDNTsWRfvdIl0onN8zcLVo8W5Y2+46w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.JobsStateServiceReference.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.JobsStateServiceReference.html",
+          "hash": "/nZyXjoUA71imDFuZuAykjG+8D/NPJTbiEaYTp2Pe+8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.MapServiceReference.IMapService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.MapServiceReference.IMapService.html",
+          "hash": "KpQt4tk+ahlgx4NTqxk1nNRt5CArAtfjaEas/PelU04="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.MapServiceReference.IMapServiceCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.MapServiceReference.IMapServiceCallback.html",
+          "hash": "5n/DMC2bmKM8tMZZGxfTuB2XT+UJ/5WEQhBpiuvADgo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.MapServiceReference.IMapServiceChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.MapServiceReference.IMapServiceChannel.html",
+          "hash": "uegk3FlLJBG7H3ijbkGTxzB9B3RVGhKBlq+K0OvocPo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.MapServiceReference.MapServiceClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.MapServiceReference.MapServiceClient.html",
+          "hash": "rc1n4PnrmdmfwSxjy7nC/P9XlRLVIZvgNX7CdxLhm8U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.MapServiceReference.OccupyingMandateMapItemDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.MapServiceReference.OccupyingMandateMapItemDto.html",
+          "hash": "dv347o4cE+SKQKjlvzZI0+ustkrDaLNcSRwspuCF7zs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.MapServiceReference.OccupyingMandateProgressDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.MapServiceReference.OccupyingMandateProgressDto.html",
+          "hash": "NWMfF79M48M6OhZ1PmhvTOim1zAsn9chDeNt0R8FBmw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.MapServiceReference.ParameterDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.MapServiceReference.ParameterDto.html",
+          "hash": "9dZll2pp3pNKKVUBj4aWApmPjS++u3ZIsC/lgm5rYsU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.MapServiceReference.WaypointDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.MapServiceReference.WaypointDto.html",
+          "hash": "hcksBCSMH7V6Xf6fHgnRRKUQL5uPgjGx/AZ3gQjWndU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.MapServiceReference.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.MapServiceReference.html",
+          "hash": "HOGSefexXXGD22F71lRnkVwh4I/n5svljx171GyfR1U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.SchedulingClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.SchedulingClient.html",
+          "hash": "lecnOLZHx1LcpOCsexGjaToHFOs0VB/TYC5Vptb9a9Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.SchedulingServiceCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.SchedulingServiceCallback.html",
+          "hash": "4lTak6BKW/d/LvQXRjwdzyJGZC9Z7uWVsYuNtH1iF+8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.html",
+          "hash": "wwEkJJvjzBWqWcHRGiTIEqBZDCuCZX/NZmUYKyE4OKA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceCallback.html",
+          "hash": "oILls2ZNdLHTQXakXuw9l5cOg2WkF+dNG1XjUtahbWA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceChannel.html",
+          "hash": "LQHDGrYcSY1shKgV2r0VeUllm8EfPAF3lniNsLi0R7M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.html",
+          "hash": "BDIKKWHxlHzSB+EjSs8Xaz0JvqnrMvOpdL3TbxZnspw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.SchedulingServiceReference.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.SchedulingServiceReference.html",
+          "hash": "ooIZ9fjN2uepy5rGoJGWYeV+NpfcQ2x+xF9haQf+1ME="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.ServicingServiceReference.IServicingService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.ServicingServiceReference.IServicingService.html",
+          "hash": "s5oD65emUtmnp78EZz1skJ4YunxjS4fg1qSSd1pV13o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.ServicingServiceReference.IServicingServiceCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.ServicingServiceReference.IServicingServiceCallback.html",
+          "hash": "+N03f7CQBgwjGXyj9AZsHDoTKIKxmdNOBBCOeBcx9dw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.ServicingServiceReference.IServicingServiceChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.ServicingServiceReference.IServicingServiceChannel.html",
+          "hash": "vnjEHvlPQeZ+FWBw8vOwt6YUEYzaIozkXAUFcTIe1Zs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.ServicingServiceReference.ServiceStateDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.ServicingServiceReference.ServiceStateDto.html",
+          "hash": "jHsXd/gl2kel2vqf/k+qJNYxwIKGp/Hl+GTx1LIOan8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.ServicingServiceReference.ServicingServiceClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.ServicingServiceReference.ServicingServiceClient.html",
+          "hash": "QXge2E4oKN2M7vEPNH8Pf7iuF728zPN0syh/I/eg4dA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.ServicingServiceReference.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.ServicingServiceReference.html",
+          "hash": "tMPDGqoen44p0zzV6YJFwrXmNs3WZt9fdVET8kIfNcE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.TaskStateServiceReference.ITaskStateService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.TaskStateServiceReference.ITaskStateService.html",
+          "hash": "YWDvpUQ2AmA3xW5soYIOjmND+CU1cL5Oa2XXr//ObiU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.TaskStateServiceReference.ITaskStateServiceCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.TaskStateServiceReference.ITaskStateServiceCallback.html",
+          "hash": "RtJIJ2EDSqpOTmxDMmLaHdBX0+YYq69oI27vT+Xfrf0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.TaskStateServiceReference.ITaskStateServiceChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.TaskStateServiceReference.ITaskStateServiceChannel.html",
+          "hash": "i7R44qIk4Baz/eaOUah7FYWRfAngDUqBtXxUR8v4Xsk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.TaskStateServiceReference.TaskProgressDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.TaskStateServiceReference.TaskProgressDto.html",
+          "hash": "hqnfdKRKyBmxffXIX/4OGsdAMQ5H2/y4tUkGPO9C52U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.TaskStateServiceReference.TaskStateServiceClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.TaskStateServiceReference.TaskStateServiceClient.html",
+          "hash": "FJs3nm/nHvDPgI22TJzd73f4NW5oBdHZS6Br5SyiFq0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.TaskStateServiceReference.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.TaskStateServiceReference.html",
+          "hash": "dhlLF/WLazBoZ0f20HHrymQ3iCYCUMQe5GnoWW8vWWE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.Core.html",
+          "hash": "Nbo7gP11xqpPkP/E6uu3w03dXUI8FTCLzqzMl6CHZwo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.ITaskStateClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.ITaskStateClient.html",
+          "hash": "+XgEqS9EwSOPpyTUH6GIEudtz75qoCRkhpG5XswaeRU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.UI.View.MapView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.UI.View.MapView.html",
+          "hash": "qTTXGrviysgps0/BouO3Uyfu9dwmPUWkI3mhlzNw5IA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.UI.View.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.UI.View.html",
+          "hash": "yydc8xHj3zDmulcAAwF4RXL8yQhzB7VudUBqEc/QDvU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.UI.ViewModel.MapOption.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.UI.ViewModel.MapOption.html",
+          "hash": "/aENtFKu7t9WzhX4HFklIgrm0aHKgMbe99NgHi/4Pyw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.UI.ViewModel.MapViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.UI.ViewModel.MapViewModel.html",
+          "hash": "2PCMKuqDYsDmTjJyvsfwYsy3nH85/iiAxyu9TmSmMnQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.UI.ViewModel.ViewModelLocator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.UI.ViewModel.ViewModelLocator.html",
+          "hash": "IYhfzZY7GEvFoNvMMrhoK02UTH6Mx1Qf+2DwXmfMPHI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.UI.ViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.UI.ViewModel.html",
+          "hash": "ydizke8moB9BCHpRgU5B61LsYR5keveKIAuSUrmKVHY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SchedulingClients.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SchedulingClients.html",
+          "hash": "/Pua3QMvcvdIOLoWPXHl/ADSX/WPm9cm7gSSsR/Ige0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "Navxeps4ktMztRYNCFLEA8W6xZvm9bNN1DhKDMBVHq8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "Rl8c1dIWl2PRFiRVZOCmi4+yCeZLWgtJRClOr+gNgR0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Tutorial_01.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Tutorial_01.html",
+          "hash": "YExDrZAk7ttpILOB9Iy4ZOI86Vu+vd2XnB1LMJR/FQ4="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/about.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/about.html",
+          "hash": "Io2JjHqBtOeipqrdrezUkDHQW+VBbU5zpGM6VTTxjXg="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/overview.html",
+          "hash": "EWPlWZHPHGeYdfkp8rt0y2hc1wQakxVbcG+1n056obw="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/releaseNotes.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/releaseNotes.html",
+          "hash": "9Cc9MZks2xRJlx/I2yAyl1TD5HlMbmhwbZLNXcTi01E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "60VKeSHHbW23qZwtWR3k/Jgcbjmb/F6hlEtHoYJafTs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/incaartBw.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/incaartBw.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "vut4OyjLnXOA/yIXS2l3AUb+gX4I2KgEvF5JLCTj6gE="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "DXDrZfMEtVgN8O5b2SVN4P1kR6LmTpVaPflG3LtSW7s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 6,
+          "skipped_file_count": 5
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 69,
+          "skipped_file_count": 21
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

@@ -5,11 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class MapViewModel
-   </title>
+    <title>Tutorial 01 - Creating a job to route a vehicle to a Node </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class MapViewModel
-   ">
+    <meta name="title" content="Tutorial 01 - Creating a job to route a vehicle to a Node ">
     <meta name="generator" content="docfx 2.57.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -68,51 +66,76 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="SchedulingClients.UI.ViewModel.MapViewModel">
-  
-  
-  <h1 id="SchedulingClients_UI_ViewModel_MapViewModel" data-uid="SchedulingClients.UI.ViewModel.MapViewModel" class="text-break">Class MapViewModel
-  </h1>
-  <div class="markdown level0 summary"></div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">MapViewModel</span></div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="SchedulingClients.UI.ViewModel.html">SchedulingClients.UI.ViewModel</a></h6>
-  <h6><strong>Assembly</strong>: SchedulingClients.UI.dll</h6>
-  <h5 id="SchedulingClients_UI_ViewModel_MapViewModel_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class MapViewModel : AbstractViewModel&lt;IMapClient&gt;</code></pre>
-  </div>
-  <h3 id="properties">Properties
-  </h3>
-  
-  
-  <a id="SchedulingClients_UI_ViewModel_MapViewModel_MapOptionCommand_" data-uid="SchedulingClients.UI.ViewModel.MapViewModel.MapOptionCommand*"></a>
-  <h4 id="SchedulingClients_UI_ViewModel_MapViewModel_MapOptionCommand" data-uid="SchedulingClients.UI.ViewModel.MapViewModel.MapOptionCommand">MapOptionCommand</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ICommand MapOptionCommand { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Windows.Input.ICommand</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tutorial-01---creating-a-job-to-route-a-vehicle-to-a-node">Tutorial 01 - Creating a job to route a vehicle to a Node</h1>
+
+<p>Pre-requisites:</p>
+<ul>
+<li>An active fleet management and scheduling service installation
+<ul>
+<li>Hosting HTTP endpoints on 41916.</li>
+<li>Hosting Net.TCP endpoint on 41917.</li>
+</ul>
+</li>
+<li>Visual Studio 2019.</li>
+<li>Basic C# knowledge.</li>
+</ul>
+<h2 id="getting-started">Getting Started</h2>
+<ul>
+<li>Download the source code from <a href="https://github.com/GuidanceAutomation/SchedulingClients">Github</a></li>
+<li>Open the solution <code>SchedulingClients.sln</code> in VS 2019</li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Ensure your fleet management and scheduling services are running and exposing endpoints on localhost.</p>
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Check the http endpoint <a href="http://127.0.0.1:41916/fleetManager.svc">fleetManager.svc</a> is active.
+Check the http endpoint <a href="http://127.0.0.1:41916/map.svc">map.svc</a> is active.</p>
+</div>
+<h3 id="run-the-console-application">Run the Console application</h3>
+<p>Select <code>Tutorial 01</code> as the startup project, build and run the solution.</p>
+<p>A simple demo will run where initially a map client is used to obtain a list of all the nodes in the map. Then, using a fleet manager client a virtual vehicle is placed at the first node in the map. A node is then picked at random, and the job builder client is used to route the vehicle to a random node.</p>
+<h2 id="code-snippets">Code Snippets</h2>
+<p>Check the code in <code>Tutorial01\Program.cs</code> for a commented walkthrough.</p>
+<h3 id="endpointsettings">EndpointSettings</h3>
+<p><code>EndpointSettings</code> is a lightweight object that tightly couples:</p>
+<ul>
+<li>IP Address</li>
+<li>Http port (41916 default)</li>
+<li>TCP port (41917 default)</li>
+<li>UDP port (41918 default)</li>
+</ul>
+<p>of the host (server). Use this in conjunction with the client factory to create a client.</p>
+<h3 id="imapclient">IMapClient</h3>
+<p>The map client is created via the static factory class <code>ClientFactory</code></p>
+<pre><code>IMapClient mapClient = SchedulingClients.Core.ClientFactory.CreateTcpMapClient(endpointSettings);
+</code></pre>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>The map client has its own background thread for auto-subscribing to server events. Dispose of the client when it is no longer required: <code>mapClient.Dispose()</code></p>
+</div>
+<h3 id="ijobbuilderclient">IJobBuilderClient</h3>
+<p>Job building takes place in three stages:</p>
+<ol>
+<li>A new job is created:</li>
+</ol>
+<p><code>IServiceCallResult&lt;JobDto&gt; createResult = jobBuilder.CreateJob();</code></p>
+<ol start="2">
+<li>A new task is added to the job:</li>
+</ol>
+<p><code>IServiceCallResult&lt;int&gt; gotoResult = jobBuilder.CreateGoToNodeTask(createResult.Value.RootOrderedListTaskId, nodeId);</code></p>
+<p>This is a GoTo task, a task which sends a vehicle to a node. Once the vehicle arrive there the task is complete.</p>
+<ol start="3">
+<li>Commit job</li>
+</ol>
+<p><code>IServiceCallResult commitResult = jobBuilder.CommitJob(createResult.Value.JobId);</code></p>
+<p>Committing the job instructs the scheduler the job is fully described, and ready for assignment.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Remember to check the success of your <code>IServiceCallResult</code> for client or server errors.</p>
+</div>
 </article>
           </div>
           
