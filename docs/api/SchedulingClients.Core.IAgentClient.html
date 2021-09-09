@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IAgentClient
    ">
-    <meta name="generator" content="docfx 2.57.2.0">
+    <meta name="generator" content="docfx 2.52.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -99,8 +99,13 @@
   </div>
   <h3 id="methods">Methods
   </h3>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/devel/apiSpec/new?filename=SchedulingClients_Core_IAgentClient_GetAllAgents.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IAgentClient.GetAllAgents%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/devel/src/SchedulingClients.Core/Client Interfaces/IAgentClient.cs/#L17">View Source</a>
+  </span>
   <a id="SchedulingClients_Core_IAgentClient_GetAllAgents_" data-uid="SchedulingClients.Core.IAgentClient.GetAllAgents*"></a>
   <h4 id="SchedulingClients_Core_IAgentClient_GetAllAgents" data-uid="SchedulingClients.Core.IAgentClient.GetAllAgents">GetAllAgents()</h4>
   <div class="markdown level1 summary"><p>Gets all agents known to the scheduler.</p>
@@ -120,16 +125,21 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IServiceCallResult</span>&lt;<span class="xref">AgentDto</span>[]&gt;</td>
+        <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span>&lt;<span class="xref">GAAPICommon.Core.Dtos.AgentDto</span>[]&gt;</td>
         <td><p>Array of agent dtos</p>
 </td>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/devel/apiSpec/new?filename=SchedulingClients_Core_IAgentClient_GetAllAgentsInLifetimeState_GAAPICommon_Architecture_AgentLifetimeState_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IAgentClient.GetAllAgentsInLifetimeState(GAAPICommon.Architecture.AgentLifetimeState)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/devel/src/SchedulingClients.Core/Client Interfaces/IAgentClient.cs/#L24">View Source</a>
+  </span>
   <a id="SchedulingClients_Core_IAgentClient_GetAllAgentsInLifetimeState_" data-uid="SchedulingClients.Core.IAgentClient.GetAllAgentsInLifetimeState*"></a>
-  <h4 id="SchedulingClients_Core_IAgentClient_GetAllAgentsInLifetimeState_AgentLifetimeState_" data-uid="SchedulingClients.Core.IAgentClient.GetAllAgentsInLifetimeState(AgentLifetimeState)">GetAllAgentsInLifetimeState(AgentLifetimeState)</h4>
+  <h4 id="SchedulingClients_Core_IAgentClient_GetAllAgentsInLifetimeState_GAAPICommon_Architecture_AgentLifetimeState_" data-uid="SchedulingClients.Core.IAgentClient.GetAllAgentsInLifetimeState(GAAPICommon.Architecture.AgentLifetimeState)">GetAllAgentsInLifetimeState(AgentLifetimeState)</h4>
   <div class="markdown level1 summary"><p>Gets all agents known to the scheduler in a given lifetime state.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -148,7 +158,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">AgentLifetimeState</span></td>
+        <td><span class="xref">GAAPICommon.Architecture.AgentLifetimeState</span></td>
         <td><span class="parametername">agentLifetimeState</span></td>
         <td><p>Target lifetime state</p>
 </td>
@@ -165,16 +175,21 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IServiceCallResult</span>&lt;<span class="xref">AgentDto</span>[]&gt;</td>
+        <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span>&lt;<span class="xref">GAAPICommon.Core.Dtos.AgentDto</span>[]&gt;</td>
         <td><p>Array of agent dtos</p>
 </td>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/devel/apiSpec/new?filename=SchedulingClients_Core_IAgentClient_SetAgentLifetimeState_System_Int32_GAAPICommon_Architecture_AgentLifetimeState_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IAgentClient.SetAgentLifetimeState(System.Int32%2CGAAPICommon.Architecture.AgentLifetimeState)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/devel/src/SchedulingClients.Core/Client Interfaces/IAgentClient.cs/#L32">View Source</a>
+  </span>
   <a id="SchedulingClients_Core_IAgentClient_SetAgentLifetimeState_" data-uid="SchedulingClients.Core.IAgentClient.SetAgentLifetimeState*"></a>
-  <h4 id="SchedulingClients_Core_IAgentClient_SetAgentLifetimeState_System_Int32_AgentLifetimeState_" data-uid="SchedulingClients.Core.IAgentClient.SetAgentLifetimeState(System.Int32,AgentLifetimeState)">SetAgentLifetimeState(Int32, AgentLifetimeState)</h4>
+  <h4 id="SchedulingClients_Core_IAgentClient_SetAgentLifetimeState_System_Int32_GAAPICommon_Architecture_AgentLifetimeState_" data-uid="SchedulingClients.Core.IAgentClient.SetAgentLifetimeState(System.Int32,GAAPICommon.Architecture.AgentLifetimeState)">SetAgentLifetimeState(Int32, AgentLifetimeState)</h4>
   <div class="markdown level1 summary"><p>Sets the lifetime state of an agent.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -199,7 +214,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">AgentLifetimeState</span></td>
+        <td><span class="xref">GAAPICommon.Architecture.AgentLifetimeState</span></td>
         <td><span class="parametername">desiredState</span></td>
         <td><p>Target state</p>
 </td>
@@ -216,7 +231,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IServiceCallResult</span></td>
+        <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span></td>
         <td><p>Successful service call result on success</p>
 </td>
       </tr>
@@ -229,11 +244,16 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/devel/apiSpec/new?filename=SchedulingClients_Core_IAgentClient.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IAgentClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/devel/src/SchedulingClients.Core/Client Interfaces/IAgentClient.cs/#L11" class="contribution-link">View Source</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
-                <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
               </nav>
             </div>
           </div>

@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/WORK/GIT/GA/SchedulingClients/docfx_project",
+  "source_base_path": "C:/Users/callum.clarke/Documents/Work/GitHub/SchedulingClients/docfx_project",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.AgentServiceReference.AgentServiceClient.html",
-          "hash": "8Kz7su+ho9Ovgpr+nLocQuDwAsyqDp3FqW3yZQaPkZE="
+          "hash": "Csy+bkSLg0UTreSsr7WPvg=="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.AgentServiceReference.IAgentService.html",
-          "hash": "gPAqe5dAFbc6hOsFJ3zsxSCxYDXfVfZojPN5XuTjzrk="
+          "hash": "RdctC0P4J7GXFeXTlfa4gA=="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.AgentServiceReference.IAgentServiceChannel.html",
-          "hash": "HmuZVbsa7hQcstVQCZqEilo7cRkJ2knX5WhlUUFmm5o="
+          "hash": "GHdjjcy8YGmOFngIS4nJsg=="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.AgentServiceReference.html",
-          "hash": "aTjNyfEI1r5q4ThUXMIaUZLAl989Sx4JogP9KKg6Xko="
+          "hash": "LMiyW5klkD8lClm4nW/jtA=="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.ClientFactory.html",
-          "hash": "gq4zcbVpR7uU/+xcuGKCBoObaFdmUnE+VWusAAt2X7I="
+          "hash": "SaWZnsDTSSyJUrd1PnhIlw=="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.EndpointSettings_ExtensionMethods.html",
-          "hash": "OeAOToOH+gGrcl0e0+ftsyw+zNmuApMaythbXkHe2L8="
+          "hash": "aIiVjZnOM4/x+iovpOx01w=="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.ExtensionMethods.html",
-          "hash": "iV+W+hQde63gAYnQBAyezK/3hyHu+Q+8ViXnE2xxoic="
+          "hash": "jII0fR+6snQPoZPEFGZwXw=="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.IAgentClient.html",
-          "hash": "G25aX4eVeOrVvdQW1ERA/ZF1RfroFLVm34OHWg39J28="
+          "hash": "vXzj4F/Xy41cNIMt21w7mA=="
         }
       },
       "is_incremental": false,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.IJobBuilderClient.html",
-          "hash": "ahcAG73NiKVDT++1CYV3abXTtSq9s9PRhhp5zbhwV0w="
+          "hash": "w+fs0QMkZ03YgpkP4Qbb+A=="
         }
       },
       "is_incremental": false,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.IJobStateClient.html",
-          "hash": "RbJEeBYln6/+vVZ2rm5+vNzQEPnmGPu/ADIpdaFJ7nI="
+          "hash": "o3n38SlJhhpkw9m7iBjdLA=="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.IJobsStateClient.html",
-          "hash": "ub3KMmjw/ihAxgZwt2zA5GF/IoO0105ZROd+A6tlNX8="
+          "hash": "SHBIQ6tXzHiEcYaqnDcNmw=="
         }
       },
       "is_incremental": false,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.IMapClient.html",
-          "hash": "7igJyplENlmuRX7AGTMAQZXzzzZmwzEs/TR+4heY2p4="
+          "hash": "wsbKNLgG3EywhtBRuqLdbA=="
         }
       },
       "is_incremental": false,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.IMapClient_ExtensionMethods.html",
-          "hash": "SiY8QHuhiokMHE8FPUqM96FVPWvGEcDKVS6x+jjxuX8="
+          "hash": "PqgYnXNTNJrZs9AJHd+3EA=="
         }
       },
       "is_incremental": false,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.ISchedulingClient.html",
-          "hash": "36gXsiG8Wvx/yg+B/IfAUAWk8Lbg6HJuNN0Uqi0QsWU="
+          "hash": "753nO3Us2MZbygdyHXqnug=="
         }
       },
       "is_incremental": false,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.IServicingClient.html",
-          "hash": "XCDoZljdUnoyONq1fYivp7egWrmOfvZya8y2FFBvUrY="
+          "hash": "l6vAtdSy/JZ4bVpzCr3Etg=="
         }
       },
       "is_incremental": false,
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.html",
-          "hash": "rIS9YHlIYO9M5zzvvGB44foMO4EoD2bzn4NcEkZMvBw="
+          "hash": "oz8l68mCL+jsOz33CuDwfQ=="
         }
       },
       "is_incremental": false,
@@ -201,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderServiceChannel.html",
-          "hash": "4snNGi0DKKXMlnzQbrrgTTpf6SdoL0JAaNXv0iFerDM="
+          "hash": "LIa0Rl1+jDwaDiMGHnBHTQ=="
         }
       },
       "is_incremental": false,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.html",
-          "hash": "FLeQG9rW4LWiHlJ2NMEZ8llG3nh9WPWNKPLGolqkrjA="
+          "hash": "S7pkF079SZBxrWiEEXtIdw=="
         }
       },
       "is_incremental": false,
@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.JobBuilderServiceReference.JobDto.html",
-          "hash": "jcA0Swh1T3UjEXFbFLJRy5Tc1es1zmeYVnksG0p+3mg="
+          "hash": "dyokSp+tnfKjJJ34HgUhfA=="
         }
       },
       "is_incremental": false,
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.JobBuilderServiceReference.html",
-          "hash": "1IuwZv7aNLtk47h40XthqJ/Eio/k2HiGhIGKEb68FSQ="
+          "hash": "8UnrnDGB5CRTGMlxAMlD6Q=="
         }
       },
       "is_incremental": false,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.JobStateServiceReference.IJobStateService.html",
-          "hash": "929PvjrjRItTEbnX7/c6dg3vNk6ystbPn9IQJ/SLlRg="
+          "hash": "y0u/tLFuKIWkmGov1LD0nQ=="
         }
       },
       "is_incremental": false,
@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.JobStateServiceReference.IJobStateServiceCallback.html",
-          "hash": "4DnhylPduBgzxnawWsDGqwSuelq+SebQwhyY9+AD+Tc="
+          "hash": "NkzS+JL+6j6ksxsDcL65qw=="
         }
       },
       "is_incremental": false,
@@ -273,7 +273,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.JobStateServiceReference.IJobStateServiceChannel.html",
-          "hash": "cst0ERhIpJLutohSuEmq3rp6ifc4Qb0SaTMwxGFbIHw="
+          "hash": "/hUej9MBcgTrjL48oU9v7A=="
         }
       },
       "is_incremental": false,
@@ -285,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.JobStateServiceReference.JobProgressDto.html",
-          "hash": "uEfhAq3EcYyUId6Fcb+QBsFuBuRL4T3f87jwxUD6Cto="
+          "hash": "0Q/2Nia4T5jig3kKh/ksGw=="
         }
       },
       "is_incremental": false,
@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.JobStateServiceReference.JobStateServiceClient.html",
-          "hash": "A+2H6Zq7w81zhNfzteS6yUJexKkDeV5sofiv/EfxbRc="
+          "hash": "zuQ932ggiftTr8q/JQwtxg=="
         }
       },
       "is_incremental": false,
@@ -309,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.JobStateServiceReference.html",
-          "hash": "p2Stqhvk+HbEIMapi1C+o0MFNahb0PofDj2KKmHOxus="
+          "hash": "oLPHL1OelZufJ8KZjarK2g=="
         }
       },
       "is_incremental": false,
@@ -321,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.JobsStateServiceReference.IJobsStateService.html",
-          "hash": "Mv3KPk0kUZRvLvNhytspME2+u+OBpJPFYITS0y1NCQk="
+          "hash": "5igDHp3fQ8PsNFQzGLkgGA=="
         }
       },
       "is_incremental": false,
@@ -333,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.JobsStateServiceReference.IJobsStateServiceCallback.html",
-          "hash": "jN/7f0PyKniK8BI2IADu+Qo8bBGFusvyYX9WK56z+8g="
+          "hash": "GIEGn3jVzOhqs7OrI3jXiA=="
         }
       },
       "is_incremental": false,
@@ -345,7 +345,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.JobsStateServiceReference.IJobsStateServiceChannel.html",
-          "hash": "ZADR1gP4xx6jCvQ8/TxGkz1OcLjJ0f8MMmGBnPLa2NI="
+          "hash": "LaMs0ViuGj+FSL3Vz3HOHA=="
         }
       },
       "is_incremental": false,
@@ -357,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.JobsStateServiceReference.JobsStateDto.html",
-          "hash": "R8YUx8N+KXSx2ZWuGd/pUOO+jcuEt8jVS64InEvDdyQ="
+          "hash": "gaD6X0XFRgMbfYtcMpmayQ=="
         }
       },
       "is_incremental": false,
@@ -369,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.JobsStateServiceReference.JobsStateServiceClient.html",
-          "hash": "+E9tCTUDA1v5ZDNTsWRfvdIl0onN8zcLVo8W5Y2+46w="
+          "hash": "yrEEdtb0oidTNDjYuEUfGw=="
         }
       },
       "is_incremental": false,
@@ -381,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.JobsStateServiceReference.html",
-          "hash": "/nZyXjoUA71imDFuZuAykjG+8D/NPJTbiEaYTp2Pe+8="
+          "hash": "jh1049CBKsRBB0+IAEJzdA=="
         }
       },
       "is_incremental": false,
@@ -393,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.MapServiceReference.IMapService.html",
-          "hash": "KpQt4tk+ahlgx4NTqxk1nNRt5CArAtfjaEas/PelU04="
+          "hash": "8uZvjYo3RQD2KwYVvBNyPA=="
         }
       },
       "is_incremental": false,
@@ -405,7 +405,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.MapServiceReference.IMapServiceCallback.html",
-          "hash": "5n/DMC2bmKM8tMZZGxfTuB2XT+UJ/5WEQhBpiuvADgo="
+          "hash": "sYxgkgneHQQfSQjmnIY5Dg=="
         }
       },
       "is_incremental": false,
@@ -417,7 +417,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.MapServiceReference.IMapServiceChannel.html",
-          "hash": "uegk3FlLJBG7H3ijbkGTxzB9B3RVGhKBlq+K0OvocPo="
+          "hash": "Smq5MRnM/7dA7XZG3yl9dQ=="
         }
       },
       "is_incremental": false,
@@ -429,7 +429,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.MapServiceReference.MapServiceClient.html",
-          "hash": "rc1n4PnrmdmfwSxjy7nC/P9XlRLVIZvgNX7CdxLhm8U="
+          "hash": "GzmuFgroec/bKT6s7RBdgw=="
         }
       },
       "is_incremental": false,
@@ -441,7 +441,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.MapServiceReference.OccupyingMandateMapItemDto.html",
-          "hash": "dv347o4cE+SKQKjlvzZI0+ustkrDaLNcSRwspuCF7zs="
+          "hash": "sGLQjZAt+jMLoUpx4LkGmw=="
         }
       },
       "is_incremental": false,
@@ -453,7 +453,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.MapServiceReference.OccupyingMandateProgressDto.html",
-          "hash": "NWMfF79M48M6OhZ1PmhvTOim1zAsn9chDeNt0R8FBmw="
+          "hash": "EPTlCyHLAIRDUvSB1yYdWQ=="
         }
       },
       "is_incremental": false,
@@ -465,7 +465,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.MapServiceReference.ParameterDto.html",
-          "hash": "9dZll2pp3pNKKVUBj4aWApmPjS++u3ZIsC/lgm5rYsU="
+          "hash": "MTMROoPaz+SBqDqEb3X+JQ=="
         }
       },
       "is_incremental": false,
@@ -477,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.MapServiceReference.WaypointDto.html",
-          "hash": "hcksBCSMH7V6Xf6fHgnRRKUQL5uPgjGx/AZ3gQjWndU="
+          "hash": "ht10pXdXkEGnhqY0sJb7KQ=="
         }
       },
       "is_incremental": false,
@@ -489,7 +489,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.MapServiceReference.html",
-          "hash": "HOGSefexXXGD22F71lRnkVwh4I/n5svljx171GyfR1U="
+          "hash": "ljr0tCMgYsBKPd67ysT1uQ=="
         }
       },
       "is_incremental": false,
@@ -501,7 +501,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.SchedulingClient.html",
-          "hash": "lecnOLZHx1LcpOCsexGjaToHFOs0VB/TYC5Vptb9a9Q="
+          "hash": "mlHiTtFCmUSuIYFf0lK7zw=="
         }
       },
       "is_incremental": false,
@@ -513,7 +513,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.SchedulingServiceCallback.html",
-          "hash": "4lTak6BKW/d/LvQXRjwdzyJGZC9Z7uWVsYuNtH1iF+8="
+          "hash": "s6dkNFnbrvNGuQpx/3ouqw=="
         }
       },
       "is_incremental": false,
@@ -525,7 +525,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.html",
-          "hash": "wwEkJJvjzBWqWcHRGiTIEqBZDCuCZX/NZmUYKyE4OKA="
+          "hash": "VrcZLM3wBE+ETEkrSca52w=="
         }
       },
       "is_incremental": false,
@@ -537,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceCallback.html",
-          "hash": "oILls2ZNdLHTQXakXuw9l5cOg2WkF+dNG1XjUtahbWA="
+          "hash": "QDVib6I+1ZImOdGnesdXCw=="
         }
       },
       "is_incremental": false,
@@ -549,7 +549,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceChannel.html",
-          "hash": "LQHDGrYcSY1shKgV2r0VeUllm8EfPAF3lniNsLi0R7M="
+          "hash": "6m2rOWLRwFFzpFe5zHbBPg=="
         }
       },
       "is_incremental": false,
@@ -561,7 +561,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.html",
-          "hash": "BDIKKWHxlHzSB+EjSs8Xaz0JvqnrMvOpdL3TbxZnspw="
+          "hash": "fv1vLSMH8eR51AipOVEq7w=="
         }
       },
       "is_incremental": false,
@@ -573,7 +573,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.SchedulingServiceReference.html",
-          "hash": "ooIZ9fjN2uepy5rGoJGWYeV+NpfcQ2x+xF9haQf+1ME="
+          "hash": "HeBEH0B2pag1bHQ7PxdTiQ=="
         }
       },
       "is_incremental": false,
@@ -585,7 +585,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.ServicingServiceReference.IServicingService.html",
-          "hash": "s5oD65emUtmnp78EZz1skJ4YunxjS4fg1qSSd1pV13o="
+          "hash": "T9sTQfULmzGmUb7E6r/jgQ=="
         }
       },
       "is_incremental": false,
@@ -597,7 +597,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.ServicingServiceReference.IServicingServiceCallback.html",
-          "hash": "+N03f7CQBgwjGXyj9AZsHDoTKIKxmdNOBBCOeBcx9dw="
+          "hash": "ZNlWgmDn2jKH2o9VCjGQyA=="
         }
       },
       "is_incremental": false,
@@ -609,7 +609,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.ServicingServiceReference.IServicingServiceChannel.html",
-          "hash": "vnjEHvlPQeZ+FWBw8vOwt6YUEYzaIozkXAUFcTIe1Zs="
+          "hash": "J6c9mrnkdVqJu28a9CaA0A=="
         }
       },
       "is_incremental": false,
@@ -621,7 +621,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.ServicingServiceReference.ServiceStateDto.html",
-          "hash": "jHsXd/gl2kel2vqf/k+qJNYxwIKGp/Hl+GTx1LIOan8="
+          "hash": "4v3q+p6870z42NxRn2HqIw=="
         }
       },
       "is_incremental": false,
@@ -633,7 +633,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.ServicingServiceReference.ServicingServiceClient.html",
-          "hash": "QXge2E4oKN2M7vEPNH8Pf7iuF728zPN0syh/I/eg4dA="
+          "hash": "AMOCz5VfFUtfxahcy4SNCg=="
         }
       },
       "is_incremental": false,
@@ -645,7 +645,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.ServicingServiceReference.html",
-          "hash": "tMPDGqoen44p0zzV6YJFwrXmNs3WZt9fdVET8kIfNcE="
+          "hash": "ZFaOxKrZM7NnrhzYy/cUuw=="
         }
       },
       "is_incremental": false,
@@ -657,7 +657,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.TaskStateServiceReference.ITaskStateService.html",
-          "hash": "YWDvpUQ2AmA3xW5soYIOjmND+CU1cL5Oa2XXr//ObiU="
+          "hash": "bcYg+y6ofEJkym6AdHkidw=="
         }
       },
       "is_incremental": false,
@@ -669,7 +669,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.TaskStateServiceReference.ITaskStateServiceCallback.html",
-          "hash": "RtJIJ2EDSqpOTmxDMmLaHdBX0+YYq69oI27vT+Xfrf0="
+          "hash": "HUA+RnGSGTk3f4e+ndyBEA=="
         }
       },
       "is_incremental": false,
@@ -681,7 +681,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.TaskStateServiceReference.ITaskStateServiceChannel.html",
-          "hash": "i7R44qIk4Baz/eaOUah7FYWRfAngDUqBtXxUR8v4Xsk="
+          "hash": "z6pg94mlqbqZhzzNzskkWw=="
         }
       },
       "is_incremental": false,
@@ -693,7 +693,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.TaskStateServiceReference.TaskProgressDto.html",
-          "hash": "hqnfdKRKyBmxffXIX/4OGsdAMQ5H2/y4tUkGPO9C52U="
+          "hash": "LobWA9SK2rNFPCAfVTTtiw=="
         }
       },
       "is_incremental": false,
@@ -705,7 +705,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.TaskStateServiceReference.TaskStateServiceClient.html",
-          "hash": "FJs3nm/nHvDPgI22TJzd73f4NW5oBdHZS6Br5SyiFq0="
+          "hash": "bA/dcoB5Fx6u8ZifBm/iYg=="
         }
       },
       "is_incremental": false,
@@ -717,7 +717,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.TaskStateServiceReference.html",
-          "hash": "dhlLF/WLazBoZ0f20HHrymQ3iCYCUMQe5GnoWW8vWWE="
+          "hash": "Sj8ZKhNOqoRqaQ9NC0aS1w=="
         }
       },
       "is_incremental": false,
@@ -729,7 +729,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Core.html",
-          "hash": "Nbo7gP11xqpPkP/E6uu3w03dXUI8FTCLzqzMl6CHZwo="
+          "hash": "WYWQkbL3V2y4Jv0Soa0WnQ=="
         }
       },
       "is_incremental": false,
@@ -741,7 +741,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.ITaskStateClient.html",
-          "hash": "+XgEqS9EwSOPpyTUH6GIEudtz75qoCRkhpG5XswaeRU="
+          "hash": "PuBQnPdrKRAZKNOJc8XS9g=="
         }
       },
       "is_incremental": false,
@@ -753,7 +753,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.UI.View.MapView.html",
-          "hash": "qTTXGrviysgps0/BouO3Uyfu9dwmPUWkI3mhlzNw5IA="
+          "hash": "qMwLHrfj/Oz6ueLvPU9SCA=="
         }
       },
       "is_incremental": false,
@@ -765,7 +765,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.UI.View.html",
-          "hash": "yydc8xHj3zDmulcAAwF4RXL8yQhzB7VudUBqEc/QDvU="
+          "hash": "Mz7hVZWEyN09Rq/SHSARpw=="
         }
       },
       "is_incremental": false,
@@ -777,7 +777,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.UI.ViewModel.MapOption.html",
-          "hash": "/aENtFKu7t9WzhX4HFklIgrm0aHKgMbe99NgHi/4Pyw="
+          "hash": "OdkmlgKJEIQYv200Au4RDQ=="
         }
       },
       "is_incremental": false,
@@ -789,7 +789,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.UI.ViewModel.MapViewModel.html",
-          "hash": "2PCMKuqDYsDmTjJyvsfwYsy3nH85/iiAxyu9TmSmMnQ="
+          "hash": "5RS0c3VCJBx3mGF6Gxksug=="
         }
       },
       "is_incremental": false,
@@ -801,7 +801,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.UI.ViewModel.ViewModelLocator.html",
-          "hash": "IYhfzZY7GEvFoNvMMrhoK02UTH6Mx1Qf+2DwXmfMPHI="
+          "hash": "0VyotJEeRf+SfNLZ08f4WQ=="
         }
       },
       "is_incremental": false,
@@ -813,7 +813,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.UI.ViewModel.html",
-          "hash": "ydizke8moB9BCHpRgU5B61LsYR5keveKIAuSUrmKVHY="
+          "hash": "7aSEY/D9bqILnLrrWMkuhQ=="
         }
       },
       "is_incremental": false,
@@ -825,7 +825,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.html",
-          "hash": "/Pua3QMvcvdIOLoWPXHl/ADSX/WPm9cm7gSSsR/Ige0="
+          "hash": "nFbsOxteI3d4xHiLR/VVJQ=="
         }
       },
       "is_incremental": false,
@@ -837,7 +837,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "Navxeps4ktMztRYNCFLEA8W6xZvm9bNN1DhKDMBVHq8="
+          "hash": "JV7N71M8yrCciFv74kzSyg=="
         }
       },
       "is_incremental": false,
@@ -849,7 +849,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "Rl8c1dIWl2PRFiRVZOCmi4+yCeZLWgtJRClOr+gNgR0="
+          "hash": "AkCPkLLrvN7vQO/iwLPiNQ=="
         }
       },
       "is_incremental": false,
@@ -861,10 +861,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/Tutorial_01.html",
-          "hash": "YExDrZAk7ttpILOB9Iy4ZOI86Vu+vd2XnB1LMJR/FQ4="
+          "hash": "L0CRNdxiN4S4ohh0eUr7ow=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -873,10 +873,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/about.html",
-          "hash": "Io2JjHqBtOeipqrdrezUkDHQW+VBbU5zpGM6VTTxjXg="
+          "hash": "H2JOGQMEyBZysgrW8QDTZQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -885,10 +885,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/overview.html",
-          "hash": "EWPlWZHPHGeYdfkp8rt0y2hc1wQakxVbcG+1n056obw="
+          "hash": "eQoBh7QxFP0JE9gC1vpV+Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -897,7 +897,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/releaseNotes.html",
-          "hash": "9Cc9MZks2xRJlx/I2yAyl1TD5HlMbmhwbZLNXcTi01E="
+          "hash": "+g8B1fVUbK2ts2w06SDPNg=="
         }
       },
       "is_incremental": false,
@@ -909,7 +909,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "60VKeSHHbW23qZwtWR3k/Jgcbjmb/F6hlEtHoYJafTs="
+          "hash": "uyN71m8HApFIukGvBlO3xA=="
         }
       },
       "is_incremental": false,
@@ -935,10 +935,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "vut4OyjLnXOA/yIXS2l3AUb+gX4I2KgEvF5JLCTj6gE="
+          "hash": "29CH4gaFmdoNDrNVfeRPfw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -947,7 +947,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "DXDrZfMEtVgN8O5b2SVN4P1kR6LmTpVaPflG3LtSW7s="
+          "hash": "ngXmgyexScqJU/ILMpkgJQ=="
         }
       },
       "is_incremental": false,
@@ -957,23 +957,25 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 6,
-          "skipped_file_count": 5
+          "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 69,
-          "skipped_file_count": 21
+          "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
@@ -993,8 +995,8 @@
     },
     {
       "status": {
-        "can_incremental": true,
-        "details": "Can support incremental post processing.",
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0
