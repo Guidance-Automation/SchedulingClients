@@ -28,6 +28,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="UnsubscribeHeartbeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="guid" type="q3:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnsubscribeHeartbeatResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ClearOccupyingMandate">
     <xs:complexType>
       <xs:sequence />
@@ -36,7 +48,7 @@
   <xs:element name="ClearOccupyingMandateResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="ClearOccupyingMandateResult" nillable="true" type="q3:ServiceCallResultDto" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="ClearOccupyingMandateResult" nillable="true" type="q4:ServiceCallResultDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -48,22 +60,22 @@
   <xs:element name="GetOccupyingMandateProgressDataResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetOccupyingMandateProgressDataResult" nillable="true" type="q4:ServiceCallResultDtoOfOccupyingMandateProgressDtoB6RnT2op" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetOccupyingMandateProgressDataResult" nillable="true" type="q5:ServiceCallResultDtoOfOccupyingMandateProgressDtoB6RnT2op" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SetOccupyingMandate">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="mapItemIds" nillable="true" type="q5:ArrayOfint" />
-        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="timeout" type="q6:duration" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="mapItemIds" nillable="true" type="q6:ArrayOfint" />
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="timeout" type="q7:duration" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SetOccupyingMandateResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="SetOccupyingMandateResult" nillable="true" type="q7:ServiceCallResultDto" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="SetOccupyingMandateResult" nillable="true" type="q8:ServiceCallResultDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -75,7 +87,7 @@
   <xs:element name="GetAllMoveDataResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetAllMoveDataResult" nillable="true" type="q8:ServiceCallResultDtoOfArrayOfMoveDtoroFpNV7u" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetAllMoveDataResult" nillable="true" type="q9:ServiceCallResultDtoOfArrayOfMoveDtoroFpNV7u" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -87,7 +99,7 @@
   <xs:element name="GetAllNodeDataResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetAllNodeDataResult" nillable="true" type="q9:ServiceCallResultDtoOfArrayOfNodeDtoroFpNV7u" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetAllNodeDataResult" nillable="true" type="q10:ServiceCallResultDtoOfArrayOfNodeDtoroFpNV7u" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -99,7 +111,7 @@
   <xs:element name="GetAllParameterDataResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetAllParameterDataResult" nillable="true" type="q10:ServiceCallResultDtoOfArrayOfParameterDtodBU2_SIuL" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetAllParameterDataResult" nillable="true" type="q11:ServiceCallResultDtoOfArrayOfParameterDtodBU2_SIuL" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -113,14 +125,14 @@
   <xs:element name="GetTrajectoryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetTrajectoryResult" nillable="true" type="q11:ServiceCallResultDtoOfArrayOfWaypointDtoB6RnT2op" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetTrajectoryResult" nillable="true" type="q12:ServiceCallResultDtoOfArrayOfWaypointDtoB6RnT2op" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="OnCallback">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps.Dtos" minOccurs="0" name="callbackObject" nillable="true" type="q12:OccupyingMandateProgressDto" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps.Dtos" minOccurs="0" name="callbackObject" nillable="true" type="q13:OccupyingMandateProgressDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

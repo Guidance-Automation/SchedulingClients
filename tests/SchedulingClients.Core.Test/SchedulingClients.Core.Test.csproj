@@ -34,11 +34,11 @@
     <OutputPath>bin\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BaseClients.Architecture, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\BaseClients.2.2.0\lib\net472\BaseClients.Architecture.dll</HintPath>
+    <Reference Include="BaseClients.Architecture, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\BaseClients.2.2.1\lib\net472\BaseClients.Architecture.dll</HintPath>
     </Reference>
-    <Reference Include="BaseClients.Core, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\BaseClients.2.2.0\lib\net472\BaseClients.Core.dll</HintPath>
+    <Reference Include="BaseClients.Core, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\BaseClients.2.2.1\lib\net472\BaseClients.Core.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Castle.Core.4.4.1\lib\net45\Castle.Core.dll</HintPath>

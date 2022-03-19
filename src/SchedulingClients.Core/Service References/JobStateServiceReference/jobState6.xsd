@@ -27,6 +27,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="UnsubscribeHeartbeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="guid" type="q3:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnsubscribeHeartbeatResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetCurrentJobSummaryForAgentId">
     <xs:complexType>
       <xs:sequence>
@@ -37,7 +49,7 @@
   <xs:element name="GetCurrentJobSummaryForAgentIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetCurrentJobSummaryForAgentIdResult" nillable="true" type="q3:ServiceCallResultDtoOfJobSummaryDtoroFpNV7u" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetCurrentJobSummaryForAgentIdResult" nillable="true" type="q4:ServiceCallResultDtoOfJobSummaryDtoroFpNV7u" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -51,7 +63,7 @@
   <xs:element name="GetJobSummaryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetJobSummaryResult" nillable="true" type="q4:ServiceCallResultDtoOfJobSummaryDtoroFpNV7u" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetJobSummaryResult" nillable="true" type="q5:ServiceCallResultDtoOfJobSummaryDtoroFpNV7u" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -65,14 +77,14 @@
   <xs:element name="GetParentJobSummaryFromTaskIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetParentJobSummaryFromTaskIdResult" nillable="true" type="q5:ServiceCallResultDtoOfJobSummaryDtoroFpNV7u" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetParentJobSummaryFromTaskIdResult" nillable="true" type="q6:ServiceCallResultDtoOfJobSummaryDtoroFpNV7u" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="OnCallback">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs.Dtos" minOccurs="0" name="callbackObject" nillable="true" type="q6:JobProgressDto" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs.Dtos" minOccurs="0" name="callbackObject" nillable="true" type="q7:JobProgressDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -26,6 +26,12 @@ namespace SchedulingClients.Core.SchedulingServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse")]
         System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/UnsubscribeHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/UnsubscribeHeartbeatResponse")]
+        void UnsubscribeHeartbeat(System.Guid guid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/UnsubscribeHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/UnsubscribeHeartbeatResponse")]
+        System.Threading.Tasks.Task UnsubscribeHeartbeatAsync(System.Guid guid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -77,6 +83,14 @@ namespace SchedulingClients.Core.SchedulingServiceReference {
         
         public System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid) {
             return base.Channel.SubscriptionHeartbeatAsync(guid);
+        }
+        
+        public void UnsubscribeHeartbeat(System.Guid guid) {
+            base.Channel.UnsubscribeHeartbeat(guid);
+        }
+        
+        public System.Threading.Tasks.Task UnsubscribeHeartbeatAsync(System.Guid guid) {
+            return base.Channel.UnsubscribeHeartbeatAsync(guid);
         }
     }
 }

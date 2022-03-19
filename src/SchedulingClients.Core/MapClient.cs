@@ -125,5 +125,10 @@ namespace SchedulingClients.Core
         {
             channel.SubscriptionHeartbeat(key);
         }
+
+        protected override void HandleUnsubscribeHeartbeat(IMapService channel, Guid key)
+        {
+            channel.UnsubscribeHeartbeat(key);
+        }
     }
 }

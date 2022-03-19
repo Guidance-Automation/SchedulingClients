@@ -27,10 +27,22 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="UnsubscribeHeartbeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="guid" type="q3:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnsubscribeHeartbeatResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="OnCallback">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs.Dtos" minOccurs="0" name="callbackObject" nillable="true" type="q3:TaskProgressDto" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs.Dtos" minOccurs="0" name="callbackObject" nillable="true" type="q4:TaskProgressDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

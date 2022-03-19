@@ -44,6 +44,12 @@
   <wsdl:message name="IJobStateService_SubscriptionHeartbeat_OutputMessage">
     <wsdl:part name="parameters" element="tns:SubscriptionHeartbeatResponse" />
   </wsdl:message>
+  <wsdl:message name="IJobStateService_UnsubscribeHeartbeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnsubscribeHeartbeat" />
+  </wsdl:message>
+  <wsdl:message name="IJobStateService_UnsubscribeHeartbeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnsubscribeHeartbeatResponse" />
+  </wsdl:message>
   <wsdl:message name="IJobStateService_GetCurrentJobSummaryForAgentId_InputMessage">
     <wsdl:part name="parameters" element="tns:GetCurrentJobSummaryForAgentId" />
   </wsdl:message>
@@ -77,6 +83,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat" message="tns:IJobStateService_SubscriptionHeartbeat_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse" message="tns:IJobStateService_SubscriptionHeartbeat_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="UnsubscribeHeartbeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISubscriptionService/UnsubscribeHeartbeat" message="tns:IJobStateService_UnsubscribeHeartbeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISubscriptionService/UnsubscribeHeartbeatResponse" message="tns:IJobStateService_UnsubscribeHeartbeat_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetCurrentJobSummaryForAgentId">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentId" message="tns:IJobStateService_GetCurrentJobSummaryForAgentId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentIdResponse" message="tns:IJobStateService_GetCurrentJobSummaryForAgentId_OutputMessage" />
@@ -108,6 +118,15 @@
     </wsdl:operation>
     <wsdl:operation name="SubscriptionHeartbeat">
       <soap12:operation soapAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnsubscribeHeartbeat">
+      <soap12:operation soapAction="http://tempuri.org/ISubscriptionService/UnsubscribeHeartbeat" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -166,6 +185,15 @@
     </wsdl:operation>
     <wsdl:operation name="SubscriptionHeartbeat">
       <soap12:operation soapAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnsubscribeHeartbeat">
+      <soap12:operation soapAction="http://tempuri.org/ISubscriptionService/UnsubscribeHeartbeat" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
