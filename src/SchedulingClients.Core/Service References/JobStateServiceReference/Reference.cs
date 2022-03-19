@@ -106,6 +106,12 @@ namespace SchedulingClients.Core.JobStateServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse")]
         System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/UnsubscribeHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/UnsubscribeHeartbeatResponse")]
+        void UnsubscribeHeartbeat(System.Guid guid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/UnsubscribeHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/UnsubscribeHeartbeatResponse")]
+        System.Threading.Tasks.Task UnsubscribeHeartbeatAsync(System.Guid guid);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentId", ReplyAction="http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentIdResponse")]
         GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.JobSummaryDto> GetCurrentJobSummaryForAgentId(int agentId);
         
@@ -174,6 +180,14 @@ namespace SchedulingClients.Core.JobStateServiceReference {
         
         public System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid) {
             return base.Channel.SubscriptionHeartbeatAsync(guid);
+        }
+        
+        public void UnsubscribeHeartbeat(System.Guid guid) {
+            base.Channel.UnsubscribeHeartbeat(guid);
+        }
+        
+        public System.Threading.Tasks.Task UnsubscribeHeartbeatAsync(System.Guid guid) {
+            return base.Channel.UnsubscribeHeartbeatAsync(guid);
         }
         
         public GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.JobSummaryDto> GetCurrentJobSummaryForAgentId(int agentId) {

@@ -63,6 +63,11 @@ namespace SchedulingClients.Core
             channel.SubscriptionHeartbeat(key);
         }
 
+        protected override void HandleUnsubscribeHeartbeat(ISchedulingService channel, Guid key)
+        {
+            channel.UnsubscribeHeartbeat(key);
+        }
+
         protected override void SetInstanceContext()
         {
             context = new InstanceContext(callback);

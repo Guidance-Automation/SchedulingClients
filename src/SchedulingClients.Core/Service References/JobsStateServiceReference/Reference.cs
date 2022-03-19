@@ -100,6 +100,9 @@ namespace SchedulingClients.Core.JobsStateServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse")]
         void SubscriptionHeartbeat(System.Guid guid);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/UnsubscribeHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/UnsubscribeHeartbeatResponse")]
+        void UnsubscribeHeartbeat(System.Guid guid);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/AbortAllJobs", ReplyAction="http://tempuri.org/IJobsStateService/AbortAllJobsResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<int[]>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.SemVerDto>))]
@@ -165,6 +168,10 @@ namespace SchedulingClients.Core.JobsStateServiceReference {
         
         public void SubscriptionHeartbeat(System.Guid guid) {
             base.Channel.SubscriptionHeartbeat(guid);
+        }
+        
+        public void UnsubscribeHeartbeat(System.Guid guid) {
+            base.Channel.UnsubscribeHeartbeat(guid);
         }
         
         public GAAPICommon.Core.Dtos.ServiceCallResultDto AbortAllJobs() {

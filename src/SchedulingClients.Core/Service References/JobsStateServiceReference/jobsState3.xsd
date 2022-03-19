@@ -27,6 +27,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="UnsubscribeHeartbeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="guid" type="q3:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnsubscribeHeartbeatResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AbortAllJobs">
     <xs:complexType>
       <xs:sequence />
@@ -35,7 +47,7 @@
   <xs:element name="AbortAllJobsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="AbortAllJobsResult" nillable="true" type="q3:ServiceCallResultDto" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="AbortAllJobsResult" nillable="true" type="q4:ServiceCallResultDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -49,7 +61,7 @@
   <xs:element name="AbortAllJobsForAgentResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="AbortAllJobsForAgentResult" nillable="true" type="q4:ServiceCallResultDto" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="AbortAllJobsForAgentResult" nillable="true" type="q5:ServiceCallResultDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -64,7 +76,7 @@
   <xs:element name="AbortJobResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="AbortJobResult" nillable="true" type="q5:ServiceCallResultDto" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="AbortJobResult" nillable="true" type="q6:ServiceCallResultDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -78,7 +90,7 @@
   <xs:element name="AbortTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="AbortTaskResult" nillable="true" type="q6:ServiceCallResultDto" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="AbortTaskResult" nillable="true" type="q7:ServiceCallResultDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -92,14 +104,14 @@
   <xs:element name="GetActiveJobIdsForAgentResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetActiveJobIdsForAgentResult" nillable="true" type="q7:ServiceCallResultDtoOfArrayOfintuHEDJ7Dj" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetActiveJobIdsForAgentResult" nillable="true" type="q8:ServiceCallResultDtoOfArrayOfintuHEDJ7Dj" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="OnCallback">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs.Dtos" minOccurs="0" name="callbackObject" nillable="true" type="q8:JobsStateDto" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs.Dtos" minOccurs="0" name="callbackObject" nillable="true" type="q9:JobsStateDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -353,6 +353,12 @@ namespace SchedulingClients.Core.MapServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse")]
         System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/UnsubscribeHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/UnsubscribeHeartbeatResponse")]
+        void UnsubscribeHeartbeat(System.Guid guid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/UnsubscribeHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/UnsubscribeHeartbeatResponse")]
+        System.Threading.Tasks.Task UnsubscribeHeartbeatAsync(System.Guid guid);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/ClearOccupyingMandate", ReplyAction="http://tempuri.org/IMapService/ClearOccupyingMandateResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.MapServiceReference.OccupyingMandateProgressDto>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.MoveDto[]>))]
@@ -457,6 +463,14 @@ namespace SchedulingClients.Core.MapServiceReference {
         
         public System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid) {
             return base.Channel.SubscriptionHeartbeatAsync(guid);
+        }
+        
+        public void UnsubscribeHeartbeat(System.Guid guid) {
+            base.Channel.UnsubscribeHeartbeat(guid);
+        }
+        
+        public System.Threading.Tasks.Task UnsubscribeHeartbeatAsync(System.Guid guid) {
+            return base.Channel.UnsubscribeHeartbeatAsync(guid);
         }
         
         public GAAPICommon.Core.Dtos.ServiceCallResultDto ClearOccupyingMandate() {
