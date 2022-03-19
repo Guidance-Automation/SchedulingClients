@@ -61,5 +61,10 @@ namespace SchedulingClients.Core
         {
             channel.SubscriptionHeartbeat(key);
         }
+
+        protected override void HandleUnsubscribeHeartbeat(IJobStateService channel, Guid key)
+        {
+            channel.UnsubscribeHeartbeat(key);
+        }
     }
 }

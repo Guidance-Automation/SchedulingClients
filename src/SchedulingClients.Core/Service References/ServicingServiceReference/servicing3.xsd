@@ -27,6 +27,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="UnsubscribeHeartbeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="guid" type="q3:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnsubscribeHeartbeatResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetOutstandingServiceRequests">
     <xs:complexType>
       <xs:sequence />
@@ -35,7 +47,7 @@
   <xs:element name="GetOutstandingServiceRequestsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetOutstandingServiceRequestsResult" nillable="true" type="q3:ServiceCallResultDtoOfArrayOfServiceStateDtoNJ_PpSeaL" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetOutstandingServiceRequestsResult" nillable="true" type="q4:ServiceCallResultDtoOfArrayOfServiceStateDtoNJ_PpSeaL" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -49,14 +61,14 @@
   <xs:element name="SetServiceCompleteResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="SetServiceCompleteResult" nillable="true" type="q4:ServiceCallResultDto" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="SetServiceCompleteResult" nillable="true" type="q5:ServiceCallResultDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="OnCallback">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Scheduling.Services.Servicing.Dtos" minOccurs="0" name="callbackObject" nillable="true" type="q5:ServiceStateDto" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Scheduling.Services.Servicing.Dtos" minOccurs="0" name="callbackObject" nillable="true" type="q6:ServiceStateDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
