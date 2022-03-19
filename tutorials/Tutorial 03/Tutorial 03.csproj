@@ -39,11 +39,11 @@
     <Reference Include="BaseClients.Core, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\BaseClients.2.2.1\lib\net472\BaseClients.Core.dll</HintPath>
     </Reference>
-    <Reference Include="FleetClients.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\FleetClients.999.9.9\lib\net472\FleetClients.Core.dll</HintPath>
+    <Reference Include="FleetClients.Core, Version=3.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FleetClients.3.3.0\lib\net472\FleetClients.Core.dll</HintPath>
     </Reference>
-    <Reference Include="FleetClients.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\FleetClients.999.9.9\lib\net472\FleetClients.UI.dll</HintPath>
+    <Reference Include="FleetClients.UI, Version=3.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FleetClients.3.3.0\lib\net472\FleetClients.UI.dll</HintPath>
     </Reference>
     <Reference Include="GAAPICommon.Architecture, Version=1.39.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GAAPICommon.1.39.1\lib\netstandard2.0\GAAPICommon.Architecture.dll</HintPath>
