@@ -9,17 +9,28 @@ namespace SchedulingClients.Core
 {
     public class SchedulingClient : AbstractCallbackClient<ISchedulingService>, ISchedulingClient
     {
-        private SchedulingServiceCallback callback = new SchedulingServiceCallback();
+        private SchedulingServiceCallback callbackOnCycle = new SchedulingServiceCallback();
+        private SchedulingServiceCallback callbackOnSpotManagerChanged = new SchedulingServiceCallback();
 
         private bool isDisposed = false;
 
         public SchedulingClient(Uri netTcpUri, TimeSpan heartbeat = default)
             : base(netTcpUri, heartbeat)
         {
-            callback.Updated += Callback_Updated;
+            callbackOnCycle.Updated += CallbackOnCycle_Updated;
+            callbackOnSpotManagerChanged.Updated += callbackOnSpotManagerChanged_Updated;
         }
 
-        private void Callback_Updated(SchedulerStateDto schedulerState)
+        private void CallbackOnCycle_Updated(SchedulerStateDto schedulerState)
+        {
+            SchedulerState = schedulerState;
+            if (schedulerState?.SpotManagerState != null && schedulerState.SpotManagerState.IsChanged)
+            {
+                callbackOnSpotManagerChanged.OnCallback(schedulerState);
+            }
+        }
+
+        private void callbackOnSpotManagerChanged_Updated(SchedulerStateDto schedulerState)
         {
             SchedulerState = schedulerState;
         }
@@ -39,9 +50,16 @@ namespace SchedulingClients.Core
 
         public event Action<SchedulerStateDto> Updated
         {
-            add { callback.Updated += value; }
-            remove { callback.Updated -= value; }
+            add { callbackOnCycle.Updated += value; }
+            remove { callbackOnCycle.Updated -= value; }
         }
+
+        public event Action<SchedulerStateDto> SpotManagerChanged
+        {
+            add { callbackOnSpotManagerChanged.Updated += value; }
+            remove { callbackOnSpotManagerChanged.Updated -= value; }
+        }
+
 
         protected override void Dispose(bool isDisposing)
         {
@@ -51,7 +69,10 @@ namespace SchedulingClients.Core
                 return;
 
             if (isDisposing)
-                callback.Updated -= Callback_Updated;
+            {
+                callbackOnCycle.Updated -= CallbackOnCycle_Updated;
+                callbackOnSpotManagerChanged.Updated -= callbackOnSpotManagerChanged_Updated;
+            }
 
             isDisposed = true;
 
@@ -70,7 +91,7 @@ namespace SchedulingClients.Core
 
         protected override void SetInstanceContext()
         {
-            context = new InstanceContext(callback);
+            context = new InstanceContext(callbackOnCycle);
         }
     }
 }
