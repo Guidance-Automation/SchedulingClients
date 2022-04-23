@@ -14,6 +14,30 @@
 
 # Release Notes
 
+## v16.5.0 (22 Apr 22)
+
+* New SpotManagerChanged event added to ISchedulingClient to notify clients when SpotManager state changes.
+
+## v16.4.1 (21 Mar 22)
+
+* Update to FleetClients v3.3.1 to get AI-1158 bugfix for TCP connection leakage.
+
+## v16.4.0 (8 Feb 22)
+
+* Package updates
+
+## v16.2.2 (9 Sep 21)
+
+* Fix to build issue re: packages. 
+
+## v16.2.1 (9 Sep 21)
+
+* Dependencies in nuspec file update.
+
+## v16.2.0 (31 Aug 21)
+
+* BeginEditingTask and FinishEditingTask deprecated. Putting a job into editing state now puts each task in the job into editing state.
+
 ## v16.1.3 (25th March 21)
 
 * Removes the abilty to set charge commands via the comms (AI-290 bugfix). Charging is now handled entirely via the spot manager. 

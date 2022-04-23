@@ -2,6 +2,7 @@
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://127.0.0.1:41916/agent.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" />
   <xs:import schemaLocation="http://127.0.0.1:41916/agent.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/agent.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:complexType name="ServiceCallResultDtoOfSemVerDtoroFpNV7u">
     <xs:annotation>
       <xs:appinfo>
@@ -64,9 +65,69 @@
     <xs:sequence>
       <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" minOccurs="0" name="AgentLifetimeState" type="q1:AgentLifetimeState" />
       <xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrentJobId" type="xs:int" />
+      <xs:element minOccurs="0" name="CurrentNodeId" type="xs:int" />
       <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.Net" minOccurs="0" name="IPAddress" nillable="true" type="q2:IPAddress" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="MarkovState" type="tns:AgentMarkovState" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="AgentDto" nillable="true" type="tns:AgentDto" />
+  <xs:simpleType name="AgentMarkovState">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Moving">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Error">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Fatal">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Servicing">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Ready">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Sleeping">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Waiting">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Stationary" />
+      <xs:enumeration value="Executing" />
+      <xs:enumeration value="Aborting" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AgentMarkovState" nillable="true" type="tns:AgentMarkovState" />
 </xs:schema>

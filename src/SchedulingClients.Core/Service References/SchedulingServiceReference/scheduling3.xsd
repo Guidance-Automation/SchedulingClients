@@ -49,6 +49,7 @@
   <xs:complexType name="SpotManagerStateDto">
     <xs:sequence>
       <xs:element minOccurs="0" name="ChargingSpotStateDtos" nillable="true" type="tns:ArrayOfChargingSpotStateDto" />
+      <xs:element minOccurs="0" name="IsChanged" type="xs:boolean" />
       <xs:element minOccurs="0" name="ParkingSpotStateDtos" nillable="true" type="tns:ArrayOfParkingSpotStateDto" />
       <xs:element minOccurs="0" name="Tick" type="xs:unsignedByte" />
     </xs:sequence>

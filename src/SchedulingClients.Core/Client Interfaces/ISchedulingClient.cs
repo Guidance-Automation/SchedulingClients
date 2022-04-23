@@ -16,6 +16,11 @@ namespace SchedulingClients.Core
         event Action<SchedulerStateDto> Updated;
 
         /// <summary>
+        /// Fired whenever SpotManager is enabled or disabled, or spot bookings change.
+        /// </summary>
+        event Action<SchedulerStateDto> SpotManagerChanged;
+
+        /// <summary>
         /// The current state of the scheduler.
         /// </summary>
         SchedulerStateDto SchedulerState { get; }
