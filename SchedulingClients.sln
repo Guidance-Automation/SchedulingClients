@@ -1,73 +1,51 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28803.156
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulingClients.Core", "src\SchedulingClients.Core\SchedulingClients.Core.csproj", "{44C76564-FCEA-466C-B7A6-56747A99BADA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchedulingClients", "src\SchedulingClients.csproj", "{63308ACC-B7B2-4472-8E17-7D960A9A72CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulingClients.Core.Test", "tests\SchedulingClients.Core.Test\SchedulingClients.Core.Test.csproj", "{B0CA7A61-9502-40CB-BA07-844BEC10A33D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{83DD0B7B-36FA-4A59-9266-A12E18B6B573}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulingClients.DemoApp", "tests\SchedulingClients.DemoApp\SchedulingClients.DemoApp.csproj", "{9B569289-5195-44BB-B7A7-0694C11C1B84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchedulingClients.JobState.DevConsoleApp", "tests\SchedulingClients.JobState.DevConsoleApp\SchedulingClients.JobState.DevConsoleApp.csproj", "{ED7D7380-19B6-4692-A031-F72FA7C37610}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulingClients.UI", "src\SchedulingClients.UI\SchedulingClients.UI.csproj", "{98FDE265-F5F7-416D-9B85-499A6DDF75E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchedulingClients.TaskState.DevConsoleApp", "tests\SchedulingClients.TaskState.DevConsoleApp\SchedulingClients.TaskState.DevConsoleApp.csproj", "{705D435E-49C9-4E50-A4E5-B9479FD93D91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial 01", "tutorials\Tutorial 01\Tutorial 01.csproj", "{73EA04CD-143A-4129-8C8D-03DCF6D9F1FB}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1791C9D0-92C0-47C0-B5EC-E44E968364F8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{22854B52-2331-4506-9039-C099E3BDA727}"
 	ProjectSection(SolutionItems) = preProject
-		docfx_project\articles\releaseNotes.md = docfx_project\articles\releaseNotes.md
-		SchedulingClients.nuspec = SchedulingClients.nuspec
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		LICENCE = LICENCE
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulingClients.Core.SchedulingClientsConsole", "tests\SchedulingClients.Core.SchedulingClientsConsole\SchedulingClients.Core.SchedulingClientsConsole.csproj", "{C05308D7-D0A3-449D-8A55-557A093B0E87}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial 02", "tutorials\Tutorial 02\Tutorial 02.csproj", "{639A13AB-2E49-4934-9E43-546C535DB3CF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial 03", "tutorials\Tutorial 03\Tutorial 03.csproj", "{22B6E318-DE77-4B99-8625-0DACB05C7C5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{44C76564-FCEA-466C-B7A6-56747A99BADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{44C76564-FCEA-466C-B7A6-56747A99BADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{44C76564-FCEA-466C-B7A6-56747A99BADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{44C76564-FCEA-466C-B7A6-56747A99BADA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B0CA7A61-9502-40CB-BA07-844BEC10A33D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B0CA7A61-9502-40CB-BA07-844BEC10A33D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B0CA7A61-9502-40CB-BA07-844BEC10A33D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B0CA7A61-9502-40CB-BA07-844BEC10A33D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9B569289-5195-44BB-B7A7-0694C11C1B84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9B569289-5195-44BB-B7A7-0694C11C1B84}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9B569289-5195-44BB-B7A7-0694C11C1B84}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9B569289-5195-44BB-B7A7-0694C11C1B84}.Release|Any CPU.Build.0 = Release|Any CPU
-		{98FDE265-F5F7-416D-9B85-499A6DDF75E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98FDE265-F5F7-416D-9B85-499A6DDF75E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98FDE265-F5F7-416D-9B85-499A6DDF75E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98FDE265-F5F7-416D-9B85-499A6DDF75E0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{73EA04CD-143A-4129-8C8D-03DCF6D9F1FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{73EA04CD-143A-4129-8C8D-03DCF6D9F1FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{73EA04CD-143A-4129-8C8D-03DCF6D9F1FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{73EA04CD-143A-4129-8C8D-03DCF6D9F1FB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C05308D7-D0A3-449D-8A55-557A093B0E87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C05308D7-D0A3-449D-8A55-557A093B0E87}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C05308D7-D0A3-449D-8A55-557A093B0E87}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C05308D7-D0A3-449D-8A55-557A093B0E87}.Release|Any CPU.Build.0 = Release|Any CPU
-		{639A13AB-2E49-4934-9E43-546C535DB3CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{639A13AB-2E49-4934-9E43-546C535DB3CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{639A13AB-2E49-4934-9E43-546C535DB3CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{639A13AB-2E49-4934-9E43-546C535DB3CF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{22B6E318-DE77-4B99-8625-0DACB05C7C5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{22B6E318-DE77-4B99-8625-0DACB05C7C5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{22B6E318-DE77-4B99-8625-0DACB05C7C5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{22B6E318-DE77-4B99-8625-0DACB05C7C5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63308ACC-B7B2-4472-8E17-7D960A9A72CB}.Debug|x64.ActiveCfg = Debug|x64
+		{63308ACC-B7B2-4472-8E17-7D960A9A72CB}.Debug|x64.Build.0 = Debug|x64
+		{63308ACC-B7B2-4472-8E17-7D960A9A72CB}.Release|x64.ActiveCfg = Release|x64
+		{63308ACC-B7B2-4472-8E17-7D960A9A72CB}.Release|x64.Build.0 = Release|x64
+		{ED7D7380-19B6-4692-A031-F72FA7C37610}.Debug|x64.ActiveCfg = Debug|x64
+		{ED7D7380-19B6-4692-A031-F72FA7C37610}.Debug|x64.Build.0 = Debug|x64
+		{ED7D7380-19B6-4692-A031-F72FA7C37610}.Release|x64.ActiveCfg = Release|x64
+		{ED7D7380-19B6-4692-A031-F72FA7C37610}.Release|x64.Build.0 = Release|x64
+		{705D435E-49C9-4E50-A4E5-B9479FD93D91}.Debug|x64.ActiveCfg = Debug|x64
+		{705D435E-49C9-4E50-A4E5-B9479FD93D91}.Debug|x64.Build.0 = Debug|x64
+		{705D435E-49C9-4E50-A4E5-B9479FD93D91}.Release|x64.ActiveCfg = Release|x64
+		{705D435E-49C9-4E50-A4E5-B9479FD93D91}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ED7D7380-19B6-4692-A031-F72FA7C37610} = {83DD0B7B-36FA-4A59-9266-A12E18B6B573}
+		{705D435E-49C9-4E50-A4E5-B9479FD93D91} = {83DD0B7B-36FA-4A59-9266-A12E18B6B573}
+	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7A8A7633-5315-44BE-9F59-E8B26AFB6C4E}
+		SolutionGuid = {62094A8E-D365-4464-A044-65225E0F289E}
 	EndGlobalSection
 EndGlobal
