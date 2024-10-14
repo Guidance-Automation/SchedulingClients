@@ -53,5 +53,31 @@ namespace SchedulingClients.Test
                 CollectionAssert.IsNotEmpty(waypointData);
             }
         }
+
+        [Test]
+        public void SetMaintenanceNode()
+        {
+            MapClient.TryGetAllNodeData(out IEnumerable<NodeData> nodeDataset);
+            Assert.IsNotNull(nodeDataset);
+
+            NodeData nodeToSet = nodeDataset.FirstOrDefault();
+            Assert.IsNotNull(nodeToSet);
+
+            HashSet<int> nodes = new HashSet<int>()
+            {
+                nodeToSet.MapItemId
+            };
+            MapClient.TrySetInMaintenance(nodes);
+
+            MapClient.TryGetAllMaintenanceItems(out var mapItemsInMaintenance);
+
+            Assert.IsNotNull(mapItemsInMaintenance);
+            Assert.That(mapItemsInMaintenance.Any(m => m.Id == nodeToSet.MapItemId));
+
+            MapClient.TryRemoveFromMaintenance(nodes);
+            MapClient.TryGetAllMaintenanceItems(out var mapItemsInMaintenanceAgain);
+            Assert.IsNotNull(mapItemsInMaintenanceAgain);
+            Assert.That(!mapItemsInMaintenanceAgain.Any(m => m.Id == nodeToSet.MapItemId));
+        }
     }
 }

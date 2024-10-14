@@ -15,6 +15,83 @@ namespace SchedulingClients.MapServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SemVerData", Namespace="http://schemas.datacontract.org/2004/07/GACore")]
+    [System.SerializableAttribute()]
+    public partial class SemVerData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int MajorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int MinorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PatchField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Major {
+            get {
+                return this.MajorField;
+            }
+            set {
+                if ((this.MajorField.Equals(value) != true)) {
+                    this.MajorField = value;
+                    this.RaisePropertyChanged("Major");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Minor {
+            get {
+                return this.MinorField;
+            }
+            set {
+                if ((this.MinorField.Equals(value) != true)) {
+                    this.MinorField = value;
+                    this.RaisePropertyChanged("Minor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Patch {
+            get {
+                return this.PatchField;
+            }
+            set {
+                if ((this.PatchField.Equals(value) != true)) {
+                    this.PatchField = value;
+                    this.RaisePropertyChanged("Patch");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ServiceCallData", Namespace="http://schemas.datacontract.org/2004/07/Services")]
     [System.SerializableAttribute()]
     public partial class ServiceCallData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -129,6 +206,9 @@ namespace SchedulingClients.MapServiceReference {
         INTERNALERROR = 5,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETSEMVERFAILED = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         COMMITJOBFAILED = 1001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -178,6 +258,9 @@ namespace SchedulingClients.MapServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         CREATEAWAITINGTASKFAILED = 1017,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATECHARGETASKFAILED = 1018,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ABORTALLJOBSFAILED = 2001,
@@ -241,6 +324,15 @@ namespace SchedulingClients.MapServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETOCCUPYINGMANDATEPROGRESSDATAFAILED = 4011,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETMAINTENANCEITEMSFAILED = 4012,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SETMAINTENANCEITEMSFAILED = 4013,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        REMOVEMAINTENANCEITEMSFAILED = 4014,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETOUTSTANDINGSERVICEREQUESTSFAILED = 5001,
@@ -475,7 +567,7 @@ namespace SchedulingClients.MapServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OccupyingMandateState", Namespace="http://schemas.datacontract.org/2004/07/Mapping.Architecture")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OccupyingMandateState", Namespace="http://schemas.datacontract.org/2004/07/GACore.Architecture")]
     public enum OccupyingMandateState : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -716,7 +808,7 @@ namespace SchedulingClients.MapServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceType", Namespace="http://schemas.datacontract.org/2004/07/Mapping")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceType", Namespace="http://schemas.datacontract.org/2004/07/GACore.Architecture")]
     public enum ServiceType : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -921,27 +1013,76 @@ namespace SchedulingClients.MapServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MapItemData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps")]
+    [System.SerializableAttribute()]
+    public partial class MapItemData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AliasField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Alias {
+            get {
+                return this.AliasField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AliasField, value) != true)) {
+                    this.AliasField = value;
+                    this.RaisePropertyChanged("Alias");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MapServiceReference.IMapService", CallbackContract=typeof(SchedulingClients.MapServiceReference.IMapServiceCallback))]
     public interface IMapService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMajor", ReplyAction="http://tempuri.org/IService/VersionMajorResponse")]
-        int VersionMajor();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSemVer", ReplyAction="http://tempuri.org/IService/GetSemVerResponse")]
+        System.Tuple<SchedulingClients.MapServiceReference.SemVerData, SchedulingClients.MapServiceReference.ServiceCallData> GetSemVer();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMajor", ReplyAction="http://tempuri.org/IService/VersionMajorResponse")]
-        System.Threading.Tasks.Task<int> VersionMajorAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMinor", ReplyAction="http://tempuri.org/IService/VersionMinorResponse")]
-        int VersionMinor();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMinor", ReplyAction="http://tempuri.org/IService/VersionMinorResponse")]
-        System.Threading.Tasks.Task<int> VersionMinorAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionPatch", ReplyAction="http://tempuri.org/IService/VersionPatchResponse")]
-        int VersionPatch();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionPatch", ReplyAction="http://tempuri.org/IService/VersionPatchResponse")]
-        System.Threading.Tasks.Task<int> VersionPatchAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSemVer", ReplyAction="http://tempuri.org/IService/GetSemVerResponse")]
+        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.SemVerData, SchedulingClients.MapServiceReference.ServiceCallData>> GetSemVerAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse")]
         void SubscriptionHeartbeat(System.Guid guid);
@@ -990,6 +1131,24 @@ namespace SchedulingClients.MapServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetTrajectory", ReplyAction="http://tempuri.org/IMapService/GetTrajectoryResponse")]
         System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.WaypointData[], SchedulingClients.MapServiceReference.ServiceCallData>> GetTrajectoryAsync(int moveId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/RemoveItemsInMaintenance", ReplyAction="http://tempuri.org/IMapService/RemoveItemsInMaintenanceResponse")]
+        SchedulingClients.MapServiceReference.ServiceCallData RemoveItemsInMaintenance(int[] mapItemIds);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/RemoveItemsInMaintenance", ReplyAction="http://tempuri.org/IMapService/RemoveItemsInMaintenanceResponse")]
+        System.Threading.Tasks.Task<SchedulingClients.MapServiceReference.ServiceCallData> RemoveItemsInMaintenanceAsync(int[] mapItemIds);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/SetItemsInMaintenance", ReplyAction="http://tempuri.org/IMapService/SetItemsInMaintenanceResponse")]
+        SchedulingClients.MapServiceReference.ServiceCallData SetItemsInMaintenance(int[] mapItemIds);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/SetItemsInMaintenance", ReplyAction="http://tempuri.org/IMapService/SetItemsInMaintenanceResponse")]
+        System.Threading.Tasks.Task<SchedulingClients.MapServiceReference.ServiceCallData> SetItemsInMaintenanceAsync(int[] mapItemIds);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetMapItemsInMaintenance", ReplyAction="http://tempuri.org/IMapService/GetMapItemsInMaintenanceResponse")]
+        System.Tuple<SchedulingClients.MapServiceReference.MapItemData[], SchedulingClients.MapServiceReference.ServiceCallData> GetMapItemsInMaintenance();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetMapItemsInMaintenance", ReplyAction="http://tempuri.org/IMapService/GetMapItemsInMaintenanceResponse")]
+        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.MapItemData[], SchedulingClients.MapServiceReference.ServiceCallData>> GetMapItemsInMaintenanceAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1027,28 +1186,12 @@ namespace SchedulingClients.MapServiceReference {
                 base(callbackInstance, binding, remoteAddress) {
         }
         
-        public int VersionMajor() {
-            return base.Channel.VersionMajor();
+        public System.Tuple<SchedulingClients.MapServiceReference.SemVerData, SchedulingClients.MapServiceReference.ServiceCallData> GetSemVer() {
+            return base.Channel.GetSemVer();
         }
         
-        public System.Threading.Tasks.Task<int> VersionMajorAsync() {
-            return base.Channel.VersionMajorAsync();
-        }
-        
-        public int VersionMinor() {
-            return base.Channel.VersionMinor();
-        }
-        
-        public System.Threading.Tasks.Task<int> VersionMinorAsync() {
-            return base.Channel.VersionMinorAsync();
-        }
-        
-        public int VersionPatch() {
-            return base.Channel.VersionPatch();
-        }
-        
-        public System.Threading.Tasks.Task<int> VersionPatchAsync() {
-            return base.Channel.VersionPatchAsync();
+        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.SemVerData, SchedulingClients.MapServiceReference.ServiceCallData>> GetSemVerAsync() {
+            return base.Channel.GetSemVerAsync();
         }
         
         public void SubscriptionHeartbeat(System.Guid guid) {
@@ -1113,6 +1256,30 @@ namespace SchedulingClients.MapServiceReference {
         
         public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.WaypointData[], SchedulingClients.MapServiceReference.ServiceCallData>> GetTrajectoryAsync(int moveId) {
             return base.Channel.GetTrajectoryAsync(moveId);
+        }
+        
+        public SchedulingClients.MapServiceReference.ServiceCallData RemoveItemsInMaintenance(int[] mapItemIds) {
+            return base.Channel.RemoveItemsInMaintenance(mapItemIds);
+        }
+        
+        public System.Threading.Tasks.Task<SchedulingClients.MapServiceReference.ServiceCallData> RemoveItemsInMaintenanceAsync(int[] mapItemIds) {
+            return base.Channel.RemoveItemsInMaintenanceAsync(mapItemIds);
+        }
+        
+        public SchedulingClients.MapServiceReference.ServiceCallData SetItemsInMaintenance(int[] mapItemIds) {
+            return base.Channel.SetItemsInMaintenance(mapItemIds);
+        }
+        
+        public System.Threading.Tasks.Task<SchedulingClients.MapServiceReference.ServiceCallData> SetItemsInMaintenanceAsync(int[] mapItemIds) {
+            return base.Channel.SetItemsInMaintenanceAsync(mapItemIds);
+        }
+        
+        public System.Tuple<SchedulingClients.MapServiceReference.MapItemData[], SchedulingClients.MapServiceReference.ServiceCallData> GetMapItemsInMaintenance() {
+            return base.Channel.GetMapItemsInMaintenance();
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.MapItemData[], SchedulingClients.MapServiceReference.ServiceCallData>> GetMapItemsInMaintenanceAsync() {
+            return base.Channel.GetMapItemsInMaintenanceAsync();
         }
     }
 }

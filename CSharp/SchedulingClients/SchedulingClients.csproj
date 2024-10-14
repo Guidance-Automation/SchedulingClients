@@ -65,15 +65,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractCast.cs" />
-    <Compile Include="AgentAttentionClient.cs" />
-    <Compile Include="AgentAttentionServiceCallback.cs" />
-    <Compile Include="AgentBatteryStatusClient.cs" />
     <Compile Include="AgentClient.cs" />
-    <Compile Include="AgentStatecastClient.cs" />
-    <Compile Include="Client Interfaces\IAgentAttentionClient.cs" />
-    <Compile Include="Client Interfaces\IAgentBatteryStatusClient.cs" />
     <Compile Include="Client Interfaces\IAgentClient.cs" />
-    <Compile Include="Client Interfaces\IAgentStatecastClient.cs" />
     <Compile Include="Client Interfaces\IJobBuilderClient.cs" />
     <Compile Include="Client Interfaces\IJobsStateClient.cs" />
     <Compile Include="Client Interfaces\IJobStateClient.cs" />
@@ -93,22 +86,7 @@
     <Compile Include="MapClient.cs" />
     <Compile Include="MapServiceCallback.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\AgentAttentionServiceReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\AgentBatteryStatusServiceReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Service References\AgentServiceReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\AgentStatecastServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -158,53 +136,6 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\System.Net.IPAddress.datasource" />
-    <None Include="Service References\AgentAttentionServiceReference\agentAttention.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AgentAttentionServiceReference\agentAttention1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AgentAttentionServiceReference\agentAttention2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AgentAttentionServiceReference\agentAttention3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AgentAttentionServiceReference\agentAttention31.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AgentAttentionServiceReference\agentAttention32.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AgentAttentionServiceReference\AgentAttentionService.wsdl" />
-    <None Include="Service References\AgentAttentionServiceReference\SchedulingClients.AgentAttentionServiceReference.AgentAttentionData.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AgentAttentionServiceReference\SchedulingClients.AgentAttentionServiceReference.ServiceCallData.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AgentBatteryStatusServiceReference\agentBatteryStatus.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AgentBatteryStatusServiceReference\agentBatteryStatus1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AgentBatteryStatusServiceReference\agentBatteryStatus2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AgentBatteryStatusServiceReference\agentBatteryStatus3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AgentBatteryStatusServiceReference\agentBatteryStatus4.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AgentBatteryStatusServiceReference\AgentBatteryStatusService.wsdl" />
-    <None Include="Service References\AgentBatteryStatusServiceReference\SchedulingClients.AgentBatteryStatusServiceReference.AgentBatteryStatusData.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AgentBatteryStatusServiceReference\SchedulingClients.AgentBatteryStatusServiceReference.ServiceCallData.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\AgentServiceReference\agent.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -237,37 +168,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AgentServiceReference\SchedulingClients.AgentServiceReference.ServiceCallData.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AgentStatecastServiceReference\agentStatecast.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AgentStatecastServiceReference\agentStatecast1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AgentStatecastServiceReference\agentStatecast2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AgentStatecastServiceReference\agentStatecast3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AgentStatecastServiceReference\agentStatecast4.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AgentStatecastServiceReference\agentStatecast5.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AgentStatecastServiceReference\agentStatecast6.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AgentStatecastServiceReference\agentStatecast7.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AgentStatecastServiceReference\AgentStatecastService.wsdl" />
-    <None Include="Service References\AgentStatecastServiceReference\SchedulingClients.AgentStatecastServiceReference.ServiceCallData.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AgentStatecastServiceReference\SchedulingClients.AgentStatecastServiceReference.StateCastVariableDefinitionData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\JobBuilderServiceReference\jobBuilder.xsd">
@@ -379,6 +279,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\MapServiceReference\MapService.wsdl" />
+    <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.MapItemData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.MoveData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -389,6 +292,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.ParameterData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.SemVerData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.ServiceCallData.datasource">
@@ -434,10 +340,7 @@
     <None Include="Service References\TaskStateServiceReference\TaskStateService.wsdl" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\AgentAttentionServiceReference\" />
-    <WCFMetadataStorage Include="Service References\AgentBatteryStatusServiceReference\" />
     <WCFMetadataStorage Include="Service References\AgentServiceReference\" />
-    <WCFMetadataStorage Include="Service References\AgentStatecastServiceReference\" />
     <WCFMetadataStorage Include="Service References\JobBuilderServiceReference\" />
     <WCFMetadataStorage Include="Service References\JobsStateServiceReference\" />
     <WCFMetadataStorage Include="Service References\JobStateServiceReference\" />
@@ -470,30 +373,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AgentBatteryStatusServiceReference\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\AgentBatteryStatusServiceReference\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\AgentBatteryStatusServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\AgentAttentionServiceReference\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\AgentAttentionServiceReference\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\AgentAttentionServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\JobStateServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -501,18 +380,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\JobStateServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\AgentStatecastServiceReference\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\AgentStatecastServiceReference\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\AgentStatecastServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

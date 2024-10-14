@@ -80,17 +80,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgentAttentionClientControl.xaml.cs">
-      <DependentUpon>AgentAttentionClientControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="AgentBatteryStatusClientControl.xaml.cs">
-      <DependentUpon>AgentBatteryStatusClientControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="AgentClientControl.xaml.cs">
       <DependentUpon>AgentClientControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="AgentStateCastClientControl.xaml.cs">
-      <DependentUpon>AgentStateCastClientControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="AutoServicer.cs" />
     <Compile Include="AutoServicerControl.xaml.cs">
@@ -157,19 +148,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="AgentAttentionClientControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="AgentBatteryStatusClientControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="AgentClientControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="AgentStateCastClientControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

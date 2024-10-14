@@ -20,6 +20,9 @@ namespace SchedulingClients
         ServiceOperationResult TrySetOccupyingMandate(HashSet<int> mapItemIds, TimeSpan timeout);
 
         ServiceOperationResult TryClearOccupyingMandate();
+        ServiceOperationResult TryGetAllMaintenanceItems(out IEnumerable<MapItemData> mapItemsInMaintenance);
+        ServiceOperationResult TrySetInMaintenance(HashSet<int> mapItemIds);
+        ServiceOperationResult TryRemoveFromMaintenance(HashSet<int> mapItemIds);
 
         OccupyingMandateProgressData OccupyingMandateProgressData { get; }
     }

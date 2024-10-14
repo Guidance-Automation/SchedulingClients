@@ -48,14 +48,6 @@
             </TabItem>
             <TabItem>
                 <TabItem.Header>
-                    Agent Battery Status Client
-                </TabItem.Header>
-                <Grid>
-                    <clientsUC:AgentBatteryStatusClientControl x:Name="agentBatteryStatusClientControl" DataContext="{Binding Path=AgentBatteryStatusClient}" />
-                </Grid>
-            </TabItem>
-            <TabItem>
-                <TabItem.Header>
                     Job Builder Client
                 </TabItem.Header>
                 <Grid>
@@ -108,22 +100,6 @@
                 </TabItem.Header>
                 <Grid>
                     <clientsUC:ServicingClientControl x:Name="servicingClientControl" DataContext="{Binding Path=ServicingClient}" />
-                </Grid>
-            </TabItem>
-			<TabItem>
-				<TabItem.Header>
-					Agent Attention Client
-				</TabItem.Header>
-				<Grid>
-					<clientsUC:AgentAttentionClientControl x:Name="agentAttentionClientControl" DataContext="{Binding Path=AgentAttentionClient}" />
-				</Grid>
-			</TabItem>
-            <TabItem>
-                <TabItem.Header>
-                    Agent StateCast Client
-                </TabItem.Header>
-                <Grid>
-                    <clientsUC:AgentStateCastClientControl x:Name="agentStateCastClientControl" DataContext="{Binding Path=AgentStatecastClient}" />
                 </Grid>
             </TabItem>
         </TabControl>

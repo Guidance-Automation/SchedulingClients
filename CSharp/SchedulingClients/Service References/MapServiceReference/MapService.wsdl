@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MapService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="MapService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsp:Policy wsu:Id="NetTcpBinding_IMapService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -25,31 +25,19 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Services" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Mapping.Architecture" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Mapping" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/GACore" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Services" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/GACore.Architecture" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IMapService_VersionMajor_InputMessage">
-    <wsdl:part name="parameters" element="tns:VersionMajor" />
+  <wsdl:message name="IMapService_GetSemVer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSemVer" />
   </wsdl:message>
-  <wsdl:message name="IMapService_VersionMajor_OutputMessage">
-    <wsdl:part name="parameters" element="tns:VersionMajorResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMapService_VersionMinor_InputMessage">
-    <wsdl:part name="parameters" element="tns:VersionMinor" />
-  </wsdl:message>
-  <wsdl:message name="IMapService_VersionMinor_OutputMessage">
-    <wsdl:part name="parameters" element="tns:VersionMinorResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMapService_VersionPatch_InputMessage">
-    <wsdl:part name="parameters" element="tns:VersionPatch" />
-  </wsdl:message>
-  <wsdl:message name="IMapService_VersionPatch_OutputMessage">
-    <wsdl:part name="parameters" element="tns:VersionPatchResponse" />
+  <wsdl:message name="IMapService_GetSemVer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSemVerResponse" />
   </wsdl:message>
   <wsdl:message name="IMapService_SubscriptionHeartbeat_InputMessage">
     <wsdl:part name="parameters" element="tns:SubscriptionHeartbeat" />
@@ -99,6 +87,24 @@
   <wsdl:message name="IMapService_GetTrajectory_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetTrajectoryResponse" />
   </wsdl:message>
+  <wsdl:message name="IMapService_RemoveItemsInMaintenance_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveItemsInMaintenance" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_RemoveItemsInMaintenance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveItemsInMaintenanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_SetItemsInMaintenance_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetItemsInMaintenance" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_SetItemsInMaintenance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetItemsInMaintenanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_GetMapItemsInMaintenance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMapItemsInMaintenance" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_GetMapItemsInMaintenance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMapItemsInMaintenanceResponse" />
+  </wsdl:message>
   <wsdl:message name="IMapService_OnCallback_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:OnCallback" />
   </wsdl:message>
@@ -106,17 +112,9 @@
     <wsdl:part name="parameters" element="tns:OnCallbackResponse" />
   </wsdl:message>
   <wsdl:portType name="IMapService">
-    <wsdl:operation name="VersionMajor">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/VersionMajor" message="tns:IMapService_VersionMajor_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/VersionMajorResponse" message="tns:IMapService_VersionMajor_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="VersionMinor">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/VersionMinor" message="tns:IMapService_VersionMinor_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/VersionMinorResponse" message="tns:IMapService_VersionMinor_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="VersionPatch">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/VersionPatch" message="tns:IMapService_VersionPatch_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/VersionPatchResponse" message="tns:IMapService_VersionPatch_OutputMessage" />
+    <wsdl:operation name="GetSemVer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSemVer" message="tns:IMapService_GetSemVer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSemVerResponse" message="tns:IMapService_GetSemVer_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SubscriptionHeartbeat">
       <wsdl:input wsaw:Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat" message="tns:IMapService_SubscriptionHeartbeat_InputMessage" />
@@ -150,6 +148,18 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IMapService/GetTrajectory" message="tns:IMapService_GetTrajectory_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMapService/GetTrajectoryResponse" message="tns:IMapService_GetTrajectory_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="RemoveItemsInMaintenance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMapService/RemoveItemsInMaintenance" message="tns:IMapService_RemoveItemsInMaintenance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMapService/RemoveItemsInMaintenanceResponse" message="tns:IMapService_RemoveItemsInMaintenance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetItemsInMaintenance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMapService/SetItemsInMaintenance" message="tns:IMapService_SetItemsInMaintenance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMapService/SetItemsInMaintenanceResponse" message="tns:IMapService_SetItemsInMaintenance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMapItemsInMaintenance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMapService/GetMapItemsInMaintenance" message="tns:IMapService_GetMapItemsInMaintenance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMapService/GetMapItemsInMaintenanceResponse" message="tns:IMapService_GetMapItemsInMaintenance_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="OnCallback">
       <wsdl:output wsaw:Action="http://tempuri.org/IMapService/OnCallback" message="tns:IMapService_OnCallback_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IMapService/OnCallbackResponse" message="tns:IMapService_OnCallback_InputCallbackMessage" />
@@ -158,26 +168,8 @@
   <wsdl:binding name="NetTcpBinding_IMapService" type="tns:IMapService">
     <wsp:PolicyReference URI="#NetTcpBinding_IMapService_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
-    <wsdl:operation name="VersionMajor">
-      <soap12:operation soapAction="http://tempuri.org/IService/VersionMajor" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="VersionMinor">
-      <soap12:operation soapAction="http://tempuri.org/IService/VersionMinor" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="VersionPatch">
-      <soap12:operation soapAction="http://tempuri.org/IService/VersionPatch" style="document" />
+    <wsdl:operation name="GetSemVer">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetSemVer" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -250,6 +242,33 @@
     </wsdl:operation>
     <wsdl:operation name="GetTrajectory">
       <soap12:operation soapAction="http://tempuri.org/IMapService/GetTrajectory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveItemsInMaintenance">
+      <soap12:operation soapAction="http://tempuri.org/IMapService/RemoveItemsInMaintenance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetItemsInMaintenance">
+      <soap12:operation soapAction="http://tempuri.org/IMapService/SetItemsInMaintenance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMapItemsInMaintenance">
+      <soap12:operation soapAction="http://tempuri.org/IMapService/GetMapItemsInMaintenance" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -270,26 +289,8 @@
   <wsdl:binding name="WSDualHttpBinding_IMapService" type="tns:IMapService">
     <wsp:PolicyReference URI="#WSDualHttpBinding_IMapService_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="VersionMajor">
-      <soap12:operation soapAction="http://tempuri.org/IService/VersionMajor" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="VersionMinor">
-      <soap12:operation soapAction="http://tempuri.org/IService/VersionMinor" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="VersionPatch">
-      <soap12:operation soapAction="http://tempuri.org/IService/VersionPatch" style="document" />
+    <wsdl:operation name="GetSemVer">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetSemVer" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -362,6 +363,33 @@
     </wsdl:operation>
     <wsdl:operation name="GetTrajectory">
       <soap12:operation soapAction="http://tempuri.org/IMapService/GetTrajectory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveItemsInMaintenance">
+      <soap12:operation soapAction="http://tempuri.org/IMapService/RemoveItemsInMaintenance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetItemsInMaintenance">
+      <soap12:operation soapAction="http://tempuri.org/IMapService/SetItemsInMaintenance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMapItemsInMaintenance">
+      <soap12:operation soapAction="http://tempuri.org/IMapService/GetMapItemsInMaintenance" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

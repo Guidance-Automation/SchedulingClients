@@ -1,14 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mapping.Architecture" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mapping.Architecture" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:simpleType name="OccupyingMandateState">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="None" />
-      <xs:enumeration value="InProgress" />
-      <xs:enumeration value="Occupied" />
-      <xs:enumeration value="TimedOut" />
-      <xs:enumeration value="AwaitingPreProcess" />
-      <xs:enumeration value="FailedPreProcessing" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="OccupyingMandateState" nillable="true" type="tns:OccupyingMandateState" />
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/GACore.Architecture" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="OccupyingMandateProgressData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OccupyingMandateMapItemData" nillable="true" type="tns:ArrayOfOccupyingMandateMapItemData" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GACore.Architecture" minOccurs="0" name="OccupyingMandateState" type="q1:OccupyingMandateState" />
+      <xs:element minOccurs="0" name="TimeoutRemaining" type="ser:duration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OccupyingMandateProgressData" nillable="true" type="tns:OccupyingMandateProgressData" />
+  <xs:complexType name="ArrayOfOccupyingMandateMapItemData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OccupyingMandateMapItemData" nillable="true" type="tns:OccupyingMandateMapItemData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOccupyingMandateMapItemData" nillable="true" type="tns:ArrayOfOccupyingMandateMapItemData" />
+  <xs:complexType name="OccupyingMandateMapItemData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsOccupied" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MapItemId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OccupyingMandateMapItemData" nillable="true" type="tns:OccupyingMandateMapItemData" />
+  <xs:complexType name="ArrayOfMoveData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MoveData" nillable="true" type="tns:MoveData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMoveData" nillable="true" type="tns:ArrayOfMoveData" />
+  <xs:complexType name="MoveData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestinationId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="SourceId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MoveData" nillable="true" type="tns:MoveData" />
+  <xs:complexType name="ArrayOfNodeData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NodeData" nillable="true" type="tns:NodeData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNodeData" nillable="true" type="tns:ArrayOfNodeData" />
+  <xs:complexType name="NodeData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HeadingRad" type="xs:double" />
+      <xs:element minOccurs="0" name="MapItemId" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GACore.Architecture" minOccurs="0" name="Services" nillable="true" type="q2:ArrayOfServiceType" />
+      <xs:element minOccurs="0" name="X" type="xs:double" />
+      <xs:element minOccurs="0" name="Y" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NodeData" nillable="true" type="tns:NodeData" />
+  <xs:complexType name="ArrayOfParameterData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ParameterData" nillable="true" type="tns:ParameterData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfParameterData" nillable="true" type="tns:ArrayOfParameterData" />
+  <xs:complexType name="ParameterData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AGVType" type="xs:int" />
+      <xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParameterId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParameterData" nillable="true" type="tns:ParameterData" />
+  <xs:complexType name="ArrayOfWaypointData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WaypointData" nillable="true" type="tns:WaypointData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWaypointData" nillable="true" type="tns:ArrayOfWaypointData" />
+  <xs:complexType name="WaypointData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HeadingRad" type="xs:double" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="X" type="xs:double" />
+      <xs:element minOccurs="0" name="Y" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WaypointData" nillable="true" type="tns:WaypointData" />
+  <xs:complexType name="ArrayOfMapItemData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MapItemData" nillable="true" type="tns:MapItemData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMapItemData" nillable="true" type="tns:ArrayOfMapItemData" />
+  <xs:complexType name="MapItemData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MapItemData" nillable="true" type="tns:MapItemData" />
 </xs:schema>

@@ -261,6 +261,65 @@ namespace SchedulingClients
             }
         }
 
+        /// <summary>
+        /// Attempts to get all map items set into maintenance mode.
+        /// </summary>
+        /// <param name="mapItemsInMaintenance">Map Item Ids in maintenance.</param>
+        public ServiceOperationResult TryGetAllMaintenanceItems(out IEnumerable<MapItemData> mapItemsInMaintenance)
+        {
+            Logger.Info("TryGetAllMaintenanceItems()");
+
+            try
+            {
+                Tuple<MapItemData[], ServiceCallData> result = GetItemsInMaintenance();
+                mapItemsInMaintenance = result.Item1;
+                return ServiceOperationResultFactory.FromMapServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                mapItemsInMaintenance = Enumerable.Empty<MapItemData>();
+                return HandleClientException(ex);
+            }
+        }
+
+        /// <summary>
+        /// Attempts to set all given items as in maintenance.
+        /// </summary>
+        /// <param name="mapItemIds">Map items to add into maintenance mode.</param>
+        public ServiceOperationResult TrySetInMaintenance(HashSet<int> mapItemIds)
+        {
+            Logger.Info("TrySetInMaintenance()");
+
+            try
+            {
+                ServiceCallData result = SetInMaintenance(mapItemIds);
+                return ServiceOperationResultFactory.FromMapServiceCallData(result);
+            }
+            catch (Exception ex)
+            {
+                return HandleClientException(ex);
+            }
+        }
+
+        /// <summary>
+        /// Attempts to remove all given items from in maintenance.
+        /// </summary>
+        /// <param name="mapItemIds">Map items to remove from maintenance mode.</param>
+        public ServiceOperationResult TryRemoveFromMaintenance(HashSet<int> mapItemIds)
+        {
+            Logger.Info("TryRemoveFromMaintenance()");
+
+            try
+            {
+                ServiceCallData result = RemoveFromMaintenance(mapItemIds);
+                return ServiceOperationResultFactory.FromMapServiceCallData(result);
+            }
+            catch (Exception ex)
+            {
+                return HandleClientException(ex);
+            }
+        }
+
         protected override void Dispose(bool isDisposing)
         {
             Logger.Debug("Dispose({0})", isDisposing);
@@ -408,6 +467,45 @@ namespace SchedulingClients
             }
 
             return result;
+        }
+
+        private Tuple<MapItemData[], ServiceCallData> GetItemsInMaintenance()
+        {
+            Logger.Debug("GetItemsInMaintenance()");
+
+            if (isDisposed) throw new ObjectDisposedException("MapClient");
+
+            using (ChannelFactory<IMapService> channelFactory = CreateChannelFactory())
+            {
+                IMapService channel = channelFactory.CreateChannel();
+                return channel.GetMapItemsInMaintenance();
+            }
+        }
+
+        private ServiceCallData SetInMaintenance(HashSet<int> mapItemIds)
+        {
+            Logger.Debug("SetInMaintenance()");
+
+            if (isDisposed) throw new ObjectDisposedException("MapClient");
+
+            using (ChannelFactory<IMapService> channelFactory = CreateChannelFactory())
+            {
+                IMapService channel = channelFactory.CreateChannel();
+                return channel.SetItemsInMaintenance(mapItemIds.ToArray());
+            }
+        }
+
+        private ServiceCallData RemoveFromMaintenance(HashSet<int> mapItemIds)
+        {
+            Logger.Debug("RemoveFromMaintenance()");
+
+            if (isDisposed) throw new ObjectDisposedException("MapClient");
+
+            using (ChannelFactory<IMapService> channelFactory = CreateChannelFactory())
+            {
+                IMapService channel = channelFactory.CreateChannel();
+                return channel.RemoveItemsInMaintenance(mapItemIds.ToArray());
+            }
         }
     }
 }

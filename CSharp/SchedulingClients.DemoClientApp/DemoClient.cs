@@ -38,13 +38,7 @@ namespace SchedulingClients.DemoClientApp
             Dispose(false);
         }
 
-		public IAgentAttentionClient AgentAttentionClient { get { return (IAgentAttentionClient)clients.FirstOrDefault(e => e is IAgentAttentionClient); } }
-
 		public IAgentClient AgentClient { get { return (IAgentClient)clients.FirstOrDefault(e => e is IAgentClient); } }
-
-        public IAgentBatteryStatusClient AgentBatteryStatusClient { get { return (IAgentBatteryStatusClient)clients.FirstOrDefault(e => e is IAgentBatteryStatusClient); } }
-
-		public IAgentStatecastClient AgentStatecastClient { get { return (IAgentStatecastClient)clients.FirstOrDefault(e => e is IAgentStatecastClient); } }
 
 		public ReadOnlyObservableCollection<IClient> Clients { get { return readOnlyClients; } }
 
@@ -65,8 +59,6 @@ namespace SchedulingClients.DemoClientApp
         public void Configure()
         {
             clients.Add(ClientFactory.CreateTcpAgentClient(endpointSettings));
-            clients.Add(ClientFactory.CreateTcpAgentBatteryStatusClient(endpointSettings));
-
             clients.Add(ClientFactory.CreateTcpJobBuilderClient(endpointSettings));
 
             clients.Add(ClientFactory.CreateTcpJobStateClient(endpointSettings));
@@ -74,9 +66,6 @@ namespace SchedulingClients.DemoClientApp
 
             clients.Add(ClientFactory.CreateTcpMapClient(endpointSettings));
             clients.Add(ClientFactory.CreateTcpServicingClient(endpointSettings));
-
-			clients.Add(ClientFactory.CreateTcpAgentAttentionClient(endpointSettings));
-			clients.Add(ClientFactory.CreateTcpAgentStatecastClient(endpointSettings));
 
             LogManager.Configuration = new LoggingConfiguration();
 

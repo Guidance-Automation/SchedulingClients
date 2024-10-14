@@ -20,6 +20,8 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <local:LabelContentControl Grid.Row="1" Header="Get All Node Data()">
             <Button x:Name="getAllNodeDataButton" Click="getAllNodeDataButton_Click">Refresh</Button>
@@ -64,5 +66,15 @@
                 <Button x:Name="getTrajectoryButton" Click="getTrajectoryButton_Click">Get</Button>
             </StackPanel>
         </local:LabelContentControl>
+        <local:LabelContentControl Grid.Row="8" Header="Get All Maintenance Items()">
+            <Button x:Name="getMaintenanceItems" Click="getAllMaintenance_Click">Refresh</Button>
+        </local:LabelContentControl>
+        <DataGrid x:Name="maintenanceItemsDataGrid" Grid.Row="9" AutoGenerateColumns="False" ColumnWidth="*"
+          Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Control, AncestorLevel=1}}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Alias" Binding="{Binding Alias}" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

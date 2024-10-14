@@ -50,5 +50,13 @@ namespace SchedulingClients.UserControls
 
             parameterDataDataGrid.ItemsSource = parameterDatas;
         }
+
+        private void getAllMaintenance_Click(object sender, RoutedEventArgs e)
+        {
+            IMapClient client = DataContext as IMapClient;
+            IEnumerable<MapItemData> itemDatas;
+            client.TryGetAllMaintenanceItems(out itemDatas);
+            maintenanceItemsDataGrid.ItemsSource = itemDatas;
+        }
     }
 }
