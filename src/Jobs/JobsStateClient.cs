@@ -2,7 +2,6 @@
 using GAAPICommon.Messages;
 using GAAPICommon.Services.Jobs;
 using Grpc.Core;
-using Grpc.Net.Client;
 using Microsoft.Extensions.Logging;
 
 namespace GAClients.SchedulingClients.Jobs;

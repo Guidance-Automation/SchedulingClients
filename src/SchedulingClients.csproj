@@ -1,11 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
-		<PackageVersion>17.0.1</PackageVersion>
+		<PackageVersion>17.0.2</PackageVersion>
 		<Platforms>x64</Platforms>
-		<ImplicitUsings>true</ImplicitUsings>
-		<Nullable>enable</Nullable>
 		<Authors>Martin Davies, Callum Clarke, Ollie Sharratt</Authors>
 		<Copyright>Guidance Automation 2024</Copyright>
 		<Description>Scheduling client components for Guidance Automation schedulers.</Description>
