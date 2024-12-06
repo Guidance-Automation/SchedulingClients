@@ -6,6 +6,23 @@ namespace GAClients.SchedulingClients.Agents;
 public interface IAgentClient : IDisposable
 {
     /// <summary>
+    /// Triggered upon an update to a agents.
+    /// </summary>
+    public event Func<List<AgentDto>, Task>? AgentsUpdated;
+
+    /// <summary>
+    /// Gets a given agents synchronously.
+    /// </summary>
+    /// <returns>The agents data.</returns>
+    public AgentDto? GetAgent(int agentId);
+
+    /// <summary>
+    /// Gets a given agents asynchronously.
+    /// </summary>
+    /// <returns>A task that represents the asynchronous operation. The task result contains the agents data.</returns>
+    public Task<AgentDto?> GetAgentAsync(int agentId);
+
+    /// <summary>
     /// Gets all agents known to the scheduler. 
     /// </summary>
     /// <returns>Array of agent dtos</returns>

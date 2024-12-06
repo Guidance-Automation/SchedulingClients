@@ -59,7 +59,7 @@ public class SchedulingClient : ISchedulingClient
             catch (Exception ex)
             {
                 _logger?.LogWarning(ex, "[SchedulingClient] Exception during subscription. Retrying...");
-                await Task.Delay(1000);
+                await Task.Delay(1000, _cts.Token);
             }
         }
     }
