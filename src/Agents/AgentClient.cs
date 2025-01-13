@@ -2,6 +2,7 @@
 using GAAPICommon.Enums;
 using GAAPICommon.Messages;
 using GAAPICommon.Services.Agents;
+using Grpc.Core;
 using Microsoft.Extensions.Logging;
 
 namespace GAClients.SchedulingClients.Agents;
@@ -12,8 +13,11 @@ namespace GAClients.SchedulingClients.Agents;
 public class AgentClient : IAgentClient
 {
     private bool _isDisposed;
+    private CancellationTokenSource? _cts;
     private readonly AgentServiceProto.AgentServiceProtoClient _client;
     private readonly ILogger? _logger;
+
+    public event Func<List<AgentDto>, Task>? AgentsUpdated;
 
     /// <summary>
     /// Initializes a new instance of the AgentClient class using an existing client instance.
@@ -21,11 +25,13 @@ public class AgentClient : IAgentClient
     /// </summary>
     /// <param name="client">An existing instance of the AgentServiceProtoClient.</param>
     /// <param name="logger">Logger for logging messages.</param>
-    public AgentClient(AgentServiceProto.AgentServiceProtoClient client, ILogger<AgentClient>? logger)
+    public AgentClient(AgentServiceProto.AgentServiceProtoClient client, ClientSettings settings, ILogger<AgentClient>? logger)
     {
         _client = client;
         _logger = logger;
         _logger?.LogInformation("[AgentClient] AgentClient created with existing client instance");
+        if (settings.Subscribe)
+            Task.Run(Subscribe);
     }
 
     /// <summary>
@@ -229,6 +235,104 @@ public class AgentClient : IAgentClient
     }
 
     /// <summary>
+    /// Gets a given agents synchronously.
+    /// </summary>
+    /// <returns>The agents data.</returns>
+    public AgentDto? GetAgent(int agentId)
+    {
+        _logger?.LogTrace("[AgentClient] GetAgent() called");
+        try
+        {
+            GetAgentDataRequest request = new();
+            _logger?.LogDebug("[AgentClient] Sending GetAgentDataRequest");
+            GetAgentDataResult response = _client.GetAgentData(request);
+            if (response.ServiceCode == (int)ServiceCode.NoError)
+            {
+                _logger?.LogInformation("GetAgentAsync() succeeded");
+                return response.Agent;
+            }
+            else
+            {
+                _logger?.LogError("[AgentClient] Sending GetAllAgentsAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                return null;
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogError(ex, "[AgentClient] Error getting agent {agentId}", agentId);
+            throw;
+        }
+    }
+
+    /// <summary>
+    /// Gets a given agents asynchronously.
+    /// </summary>
+    /// <returns>A task that represents the asynchronous operation. The task result contains the agents data.</returns>
+    public async Task<AgentDto?> GetAgentAsync(int agentId)
+    {
+        _logger?.LogTrace("[AgentClient] GetAgentAsync() called");
+        try
+        {
+            GetAgentDataRequest request = new();
+            _logger?.LogDebug("[AgentClient] Sending GetAgentDataRequest");
+            GetAgentDataResult response = await _client.GetAgentDataAsync(request);
+            if (response.ServiceCode == (int)ServiceCode.NoError)
+            {
+                _logger?.LogInformation("GetAgentAsync() succeeded");
+                return response.Agent;
+            }
+            else
+            {
+                _logger?.LogError("[AgentClient] Sending GetAllAgentsAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                return null;
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogError(ex, "[AgentClient] Error getting agent {agentId}", agentId);
+            throw;
+        }
+    }
+
+    /// <summary>
+    /// Unsubscribe from agent updates.
+    /// </summary>
+    public void Unsubscribe()
+    {
+        _cts?.Cancel();
+    }
+
+    private async Task Subscribe()
+    {
+        _logger?.LogTrace("[AgentClient] Subscribe() started");
+        _cts = new();
+        while (!_cts.IsCancellationRequested)
+        {
+            try
+            {
+                SubscribeRequest request = new();
+                _logger?.LogDebug("[AgentClient] Sending SubscribeRequest");
+                using AsyncServerStreamingCall<AgentSubscribeResult> streamingCall = _client.Subscribe(request);
+                await foreach (AgentSubscribeResult? agentSubscribeResult in streamingCall.ResponseStream.ReadAllAsync(_cts.Token))
+                {
+                    _logger?.LogTrace("[AgentClient] Received AgentSubscribeResult: {agentSubscribeResult}", agentSubscribeResult);
+                    AgentsUpdated?.Invoke([.. agentSubscribeResult.Agents]);
+                }
+            }
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)
+            {
+                _logger?.LogInformation("[SchedulingClient] Subscription cancelled");
+                break;
+            }
+            catch (Exception ex)
+            {
+                _logger?.LogWarning(ex, "[SchedulingClient] Exception during subscription. Retrying...");
+                await Task.Delay(1000, _cts.Token);
+            }
+        }
+    }
+
+    /// <summary>
     /// Disposes of the client resources.
     /// </summary>
     /// <param name="disposing">Indicates whether the method is called from the Dispose method or from a finalizer.</param>
@@ -240,6 +344,8 @@ public class AgentClient : IAgentClient
         if (disposing)
         {
             _logger?.LogTrace("[AgentClient] Disposing resources");
+            Unsubscribe();
+            _cts?.Dispose();
         }
 
         _isDisposed = true;

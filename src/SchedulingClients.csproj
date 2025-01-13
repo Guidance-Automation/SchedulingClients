@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<PackageVersion>17.0.3</PackageVersion>
+		<PackageVersion>17.1.0</PackageVersion>
 		<Platforms>x64</Platforms>
 		<Authors>Martin Davies, Callum Clarke, Ollie Sharratt</Authors>
 		<Copyright>Guidance Automation 2024</Copyright>

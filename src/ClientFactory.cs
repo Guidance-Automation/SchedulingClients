@@ -24,12 +24,13 @@ public static class ClientFactory
     /// </summary>
     /// <param name="portSettings">Endpoint settings specifying port and IP address to use</param>
     /// <returns>HTTP based IAgentClient instance</returns>
-    public static IAgentClient CreateAgentClient(IPAddress ipAddress, ushort httpPort = 41916, ILogger<AgentClient>? logger = null)
+    public static IAgentClient CreateAgentClient(IPAddress ipAddress, ushort httpPort = 41916, bool subscribe = true, ILogger<AgentClient>? logger = null)
     {
         Uri uri = new($"http://{ipAddress}:{httpPort}");
         GrpcChannel channel = GrpcChannel.ForAddress(uri);
         AgentServiceProto.AgentServiceProtoClient client = new(channel);
-        return new AgentClient(client, logger);
+        ClientSettings settings = new(subscribe);
+        return new AgentClient(client, settings, logger);
     }
 
     /// <summary>
