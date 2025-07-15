@@ -1,6 +1,6 @@
 ﻿using GAAPICommon.Messages;
 
-namespace GAClients.SchedulingClients.Servicing;
+namespace Guidance.SchedulingClients.Servicing;
 
 public interface IServicingClient : IDisposable
 {

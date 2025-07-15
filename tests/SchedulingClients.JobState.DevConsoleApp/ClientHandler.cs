@@ -1,16 +1,15 @@
 ﻿using GAAPICommon.Messages;
-using GAClients.SchedulingClients;
-using GAClients.SchedulingClients.Jobs;
+using Guidance.SchedulingClients.Jobs;
 using System.Net;
 
-namespace SchedulingClients.JobState.DevConsoleApp;
+namespace Guidance.SchedulingClients.JobState.DevConsoleApp;
 
-class ClientHandler
+internal class ClientHandler
 {
     static int _counter = 1;
     IJobStateClient? _client;
 
-    public void Init()
+    internal void Init()
     {
         _client = ClientFactory.CreateJobStateClient(IPAddress.Loopback);
         _client.JobProgressUpdated += Client_JobProgressUpdated;

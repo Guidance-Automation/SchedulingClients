@@ -5,7 +5,7 @@ using GAAPICommon.Services.Jobs;
 using Microsoft.Extensions.Logging;
 using System.Net;
 
-namespace GAClients.SchedulingClients.Jobs;
+namespace Guidance.SchedulingClients.Jobs;
 
 /// <summary>
 /// Client for interacting with the JobBuilder service.
@@ -18,7 +18,7 @@ public class JobBuilderClient : IJobBuilderClient
 
     /// <summary>
     /// Initializes a new instance of the JobBuilderClient class using an existing client instance.
-    /// Intended for use with dependancy injection.
+    /// Intended for use with dependency injection.
     /// </summary>
     /// <param name="client">An existing instance of the JobBuilderServiceProtoClient.</param>
     /// <param name="logger">Logger for logging messages.</param>

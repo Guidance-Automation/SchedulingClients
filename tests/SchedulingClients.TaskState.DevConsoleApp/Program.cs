@@ -1,8 +1,8 @@
-﻿namespace SchedulingClients.TaskState.DevConsoleApp;
+﻿namespace Guidance.SchedulingClients.TaskState.DevConsoleApp;
 
-class Program
+internal class Program
 {
-    static void Main(string[] _)
+    internal static void Main(string[] _)
     {
         ClientHandler handler = new();
         handler.Init();

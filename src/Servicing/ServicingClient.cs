@@ -5,7 +5,7 @@ using GAAPICommon.Services.Servicing;
 using Grpc.Core;
 using Microsoft.Extensions.Logging;
 
-namespace GAClients.SchedulingClients.Servicing;
+namespace Guidance.SchedulingClients.Servicing;
 
 /// <summary>
 /// Client for interacting with the Servicing service.

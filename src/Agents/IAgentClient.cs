@@ -1,7 +1,7 @@
 ﻿using GAAPICommon.Enums;
 using GAAPICommon.Messages;
 
-namespace GAClients.SchedulingClients.Agents;
+namespace Guidance.SchedulingClients.Agents;
 
 public interface IAgentClient : IDisposable
 {

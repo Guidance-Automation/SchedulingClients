@@ -1,16 +1,15 @@
 ﻿using GAAPICommon.Messages;
-using GAClients.SchedulingClients;
-using GAClients.SchedulingClients.Jobs;
+using Guidance.SchedulingClients.Jobs;
 using System.Net;
 
-namespace SchedulingClients.TaskState.DevConsoleApp;
+namespace Guidance.SchedulingClients.TaskState.DevConsoleApp;
 
-class ClientHandler
+internal class ClientHandler
 {
     static int _counter = 1;
     ITaskStateClient? _client;
 
-    public void Init()
+    internal void Init()
     {
         _client = ClientFactory.CreateTaskStateClient(IPAddress.Loopback);
         _client.TaskProgressUpdated += Client_TaskProgressUpdated;

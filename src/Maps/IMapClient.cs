@@ -1,6 +1,6 @@
 ﻿using GAAPICommon.Messages;
 
-namespace GAClients.SchedulingClients.Maps;
+namespace Guidance.SchedulingClients.Maps;
 
 /// <summary>
 /// Client for interacting with the Map service.
