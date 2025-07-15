@@ -3,14 +3,14 @@ using GAAPICommon.Services.Jobs;
 using GAAPICommon.Services.Maps;
 using GAAPICommon.Services.Scheduling;
 using GAAPICommon.Services.Servicing;
-using GAClients.SchedulingClients.Agents;
-using GAClients.SchedulingClients.Jobs;
-using GAClients.SchedulingClients.Maps;
-using GAClients.SchedulingClients.Scheduling;
-using GAClients.SchedulingClients.Servicing;
+using Guidance.SchedulingClients.Agents;
+using Guidance.SchedulingClients.Jobs;
+using Guidance.SchedulingClients.Maps;
+using Guidance.SchedulingClients.Scheduling;
+using Guidance.SchedulingClients.Servicing;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace GAClients.SchedulingClients;
+namespace Guidance.SchedulingClients;
 
 public static class DIExtensions
 {

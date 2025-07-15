@@ -3,7 +3,7 @@ using GAAPICommon.Services.Jobs;
 using Grpc.Core;
 using Microsoft.Extensions.Logging;
 
-namespace GAClients.SchedulingClients.Jobs;
+namespace Guidance.SchedulingClients.Jobs;
 
 public class TaskStateClient : ITaskStateClient
 {

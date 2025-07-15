@@ -3,7 +3,7 @@ using GAAPICommon.Services.Scheduling;
 using Grpc.Core;
 using Microsoft.Extensions.Logging;
 
-namespace GAClients.SchedulingClients.Scheduling;
+namespace Guidance.SchedulingClients.Scheduling;
 
 public class SchedulingClient : ISchedulingClient
 {

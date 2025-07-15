@@ -2,7 +2,7 @@
 using GAAPICommon.Messages;
 using System.Net;
 
-namespace GAClients.SchedulingClients.Jobs;
+namespace Guidance.SchedulingClients.Jobs;
 
 public interface IJobBuilderClient : IDisposable 
 {

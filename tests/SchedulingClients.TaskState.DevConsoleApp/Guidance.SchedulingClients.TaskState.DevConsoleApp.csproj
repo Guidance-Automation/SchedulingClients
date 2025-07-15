@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\SchedulingClients.csproj" />
+    <ProjectReference Include="..\..\src\Guidance.SchedulingClients.csproj" />
   </ItemGroup>
 
 </Project>

@@ -5,7 +5,7 @@ using GAAPICommon.Services.Maps;
 using Grpc.Core;
 using Microsoft.Extensions.Logging;
 
-namespace GAClients.SchedulingClients.Maps;
+namespace Guidance.SchedulingClients.Maps;
 
 /// <summary>
 /// Client for interacting with the Map service.

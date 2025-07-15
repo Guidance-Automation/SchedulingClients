@@ -1,6 +1,6 @@
 ﻿using GAAPICommon.Messages;
 
-namespace GAClients.SchedulingClients.Jobs;
+namespace Guidance.SchedulingClients.Jobs;
 
 /// <summary>
 /// For tracking individual jobs.

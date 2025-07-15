@@ -1,4 +1,4 @@
-﻿namespace GAClients.SchedulingClients;
+﻿namespace Guidance.SchedulingClients;
 
 /// <summary>
 /// Settings to pass to the given client.

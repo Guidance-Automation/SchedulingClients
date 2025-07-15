@@ -1,8 +1,8 @@
-﻿namespace SchedulingClients.JobState.DevConsoleApp;
+﻿namespace Guidance.SchedulingClients.JobState.DevConsoleApp;
 
-class Program
+internal class Program
 {
-    static void Main(string[] _)
+    internal static void Main(string[] _)
     {
         ClientHandler handler = new();
         handler.Init();

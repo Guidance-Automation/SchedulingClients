@@ -5,7 +5,7 @@ using GAAPICommon.Services.Agents;
 using Grpc.Core;
 using Microsoft.Extensions.Logging;
 
-namespace GAClients.SchedulingClients.Agents;
+namespace Guidance.SchedulingClients.Agents;
 
 /// <summary>
 /// Client for interacting with the Agent service.
