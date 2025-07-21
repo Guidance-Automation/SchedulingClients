@@ -1,9 +1,9 @@
 # Scheduling Clients
 
-Copyright Guidance Automation Ltd 2024
+Copyright Guidance Automation Ltd 2025
 https://www.guidanceautomation.com/
 
-Copyright (c) 2024 Guidance Automation Ltd
+Copyright (c) 2025 Guidance Automation Ltd
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
