@@ -36,7 +36,7 @@ public class JobsStateClient : IJobsStateClient
     {
         _client = client;
         _logger = logger;
-        _logger?.LogInformation("[JobsStateClient] JobsStateClient created");
+        _logger?.LogInformationIfEnabled("[JobsStateClient] JobsStateClient created");
         if (settings.Subscribe)
             Task.Run(Subscribe);
     }
@@ -54,35 +54,35 @@ public class JobsStateClient : IJobsStateClient
     /// </summary>
     private async Task Subscribe()
     {
-        _logger?.LogTrace("[JobsStateClient] Subscribe() started");
+        _logger?.LogTraceIfEnabled("[JobsStateClient] Subscribe() started");
         _cts = new();
         while (!_cts.IsCancellationRequested)
         {
             try
             {
                 JobsStateSubscribeRequest subscribeRequest = new();
-                _logger?.LogDebug("[JobsStateClient] Sending JobsStateSubscribeRequest");
+                _logger?.LogDebugIfEnabled("[JobsStateClient] Sending JobsStateSubscribeRequest");
                 using AsyncServerStreamingCall<JobStateDto> streamingCall = _client.Subscribe(subscribeRequest);
 
                 await foreach (JobStateDto? jobStateDto in streamingCall.ResponseStream.ReadAllAsync(_cts.Token))
                 {
-                    _logger?.LogTrace("[JobsStateClient] Received JobStateDto: {JobStateDto}", jobStateDto);
+                    _logger?.LogTraceIfEnabled("[JobsStateClient] Received JobStateDto: {JobStateDto}", jobStateDto);
                     JobsStateUpdated?.Invoke(jobStateDto);
                     JobsState = jobStateDto;
                 }
             }
             catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)
             {
-                _logger?.LogInformation("[JobsStateClient] Subscription cancelled");
+                _logger?.LogInformationIfEnabled("[JobsStateClient] Subscription cancelled");
                 break;
             }
             catch (Exception ex)
             {
-                _logger?.LogWarning(ex, "[JobsStateClient] Exception during subscription. Retrying...");
+                _logger?.LogWarningIfEnabled(ex, "[JobsStateClient] Exception during subscription. Retrying...");
                 await Task.Delay(1000);
             }
         }
-        _logger?.LogTrace("[JobsStateClient] Subscribe() ended");
+        _logger?.LogTraceIfEnabled("[JobsStateClient] Subscribe() ended");
     }
 
     /// <summary>
@@ -91,26 +91,26 @@ public class JobsStateClient : IJobsStateClient
     /// <returns>True if the operation succeeded, otherwise false.</returns>
     public bool AbortAllJobs()
     {
-        _logger?.LogTrace("[JobsStateClient] AbortAllJobs() called");
+        _logger?.LogTraceIfEnabled("[JobsStateClient] AbortAllJobs() called");
         try
         {
             AbortAllJobsRequest request = new();
-            _logger?.LogDebug("[JobsStateClient] Sending AbortAllJobsRequest");
+            _logger?.LogDebugIfEnabled("[JobsStateClient] Sending AbortAllJobsRequest");
             GAAPICommon.GenericResult response = _client.AbortAllJobs(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[JobsStateClient] AbortAllJobs() succeeded");
+                _logger?.LogInformationIfEnabled("[JobsStateClient] AbortAllJobs() succeeded");
                 return true;
             }
             else
             {
-                _logger?.LogError("[JobsStateClient] Sending AbortAllJobs() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[JobsStateClient] Sending AbortAllJobs() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return false;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[JobsStateClient] Error aborting all jobs");
+            _logger?.LogErrorIfEnabled(ex, "[JobsStateClient] Error aborting all jobs");
             return false;
         }
     }
@@ -121,26 +121,26 @@ public class JobsStateClient : IJobsStateClient
     /// <returns>A task that represents the asynchronous operation. The task result contains true if the operation succeeded, otherwise false.</returns>
     public async Task<bool> AbortAllJobsAsync()
     {
-        _logger?.LogTrace("[JobsStateClient] AbortAllJobsAsync() called");
+        _logger?.LogTraceIfEnabled("[JobsStateClient] AbortAllJobsAsync() called");
         try
         {
             AbortAllJobsRequest request = new();
-            _logger?.LogDebug("[JobsStateClient] Sending AbortAllJobsRequest");
+            _logger?.LogDebugIfEnabled("[JobsStateClient] Sending AbortAllJobsRequest");
             GAAPICommon.GenericResult response = await _client.AbortAllJobsAsync(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[JobsStateClient] AbortAllJobsAsync() succeeded");
+                _logger?.LogInformationIfEnabled("[JobsStateClient] AbortAllJobsAsync() succeeded");
                 return true;
             }
             else
             {
-                _logger?.LogError("[JobsStateClient] Sending AbortAllJobsAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[JobsStateClient] Sending AbortAllJobsAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return false;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[JobsStateClient] Error aborting all jobs");
+            _logger?.LogErrorIfEnabled(ex, "[JobsStateClient] Error aborting all jobs");
             return false;
         }
     }
@@ -152,26 +152,26 @@ public class JobsStateClient : IJobsStateClient
     /// <returns>True if the operation succeeded, otherwise false.</returns>
     public bool AbortAllJobsForAgent(int agentId)
     {
-        _logger?.LogTrace("[JobsStateClient] AbortAllJobsForAgent() called with {AgentId}", agentId);
+        _logger?.LogTraceIfEnabled("[JobsStateClient] AbortAllJobsForAgent() called with {AgentId}", agentId);
         try
         {
             AbortAllJobsForAgentRequest request = new() { AgentId = agentId };
-            _logger?.LogDebug("[JobsStateClient] Sending AbortAllJobsForAgentRequest");
+            _logger?.LogDebugIfEnabled("[JobsStateClient] Sending AbortAllJobsForAgentRequest");
             GAAPICommon.GenericResult response = _client.AbortAllJobsForAgent(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[JobsStateClient] AbortAllJobsForAgent() succeeded");
+                _logger?.LogInformationIfEnabled("[JobsStateClient] AbortAllJobsForAgent() succeeded");
                 return true;
             }
             else
             {
-                _logger?.LogError("[JobsStateClient] Sending AbortAllJobsForAgent() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[JobsStateClient] Sending AbortAllJobsForAgent() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return false;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[JobsStateClient] Error aborting all jobs for agent");
+            _logger?.LogErrorIfEnabled(ex, "[JobsStateClient] Error aborting all jobs for agent");
             return false;
         }
     }
@@ -183,26 +183,26 @@ public class JobsStateClient : IJobsStateClient
     /// <returns>A task that represents the asynchronous operation. The task result contains true if the operation succeeded, otherwise false.</returns>
     public async Task<bool> AbortAllJobsForAgentAsync(int agentId)
     {
-        _logger?.LogTrace("[JobsStateClient] AbortAllJobsForAgentAsync() called with {AgentId}", agentId);
+        _logger?.LogTraceIfEnabled("[JobsStateClient] AbortAllJobsForAgentAsync() called with {AgentId}", agentId);
         try
         {
             AbortAllJobsForAgentRequest request = new() { AgentId = agentId };
-            _logger?.LogDebug("[JobsStateClient] Sending AbortAllJobsForAgentRequest");
+            _logger?.LogDebugIfEnabled("[JobsStateClient] Sending AbortAllJobsForAgentRequest");
             GAAPICommon.GenericResult response = await _client.AbortAllJobsForAgentAsync(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[JobsStateClient] AbortAllJobsForAgentAsync() succeeded");
+                _logger?.LogInformationIfEnabled("[JobsStateClient] AbortAllJobsForAgentAsync() succeeded");
                 return true;
             }
             else
             {
-                _logger?.LogError("[JobsStateClient] Sending AbortAllJobsForAgentAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[JobsStateClient] Sending AbortAllJobsForAgentAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return false;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[JobsStateClient] Error aborting all jobs for agent");
+            _logger?.LogErrorIfEnabled(ex, "[JobsStateClient] Error aborting all jobs for agent");
             return false;
         }
     }
@@ -215,26 +215,26 @@ public class JobsStateClient : IJobsStateClient
     /// <returns>True if the operation succeeded, otherwise false.</returns>
     public bool AbortJob(int jobId, string note)
     {
-        _logger?.LogTrace("[JobsStateClient] AbortJob() called with {JobId} and {Note}", jobId, note);
+        _logger?.LogTraceIfEnabled("[JobsStateClient] AbortJob() called with {JobId} and {Note}", jobId, note);
         try
         {
             AbortJobRequest request = new() { JobId = jobId, Note = note };
-            _logger?.LogDebug("[JobsStateClient] Sending AbortJobRequest");
+            _logger?.LogDebugIfEnabled("[JobsStateClient] Sending AbortJobRequest");
             GAAPICommon.GenericResult response = _client.AbortJob(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[JobsStateClient] AbortJob() succeeded");
+                _logger?.LogInformationIfEnabled("[JobsStateClient] AbortJob() succeeded");
                 return true;
             }
             else
             {
-                _logger?.LogError("[JobsStateClient] Sending AbortJob() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[JobsStateClient] Sending AbortJob() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return false;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[JobsStateClient] Error aborting job");
+            _logger?.LogErrorIfEnabled(ex, "[JobsStateClient] Error aborting job");
             return false;
         }
     }
@@ -247,26 +247,26 @@ public class JobsStateClient : IJobsStateClient
     /// <returns>A task that represents the asynchronous operation. The task result contains true if the operation succeeded, otherwise false.</returns>
     public async Task<bool> AbortJobAsync(int jobId, string note)
     {
-        _logger?.LogTrace("[JobsStateClient] AbortJobAsync() called with {JobId} and {Note}", jobId, note);
+        _logger?.LogTraceIfEnabled("[JobsStateClient] AbortJobAsync() called with {JobId} and {Note}", jobId, note);
         try
         {
             AbortJobRequest request = new() { JobId = jobId, Note = note };
-            _logger?.LogDebug("[JobsStateClient] Sending AbortJobRequest");
+            _logger?.LogDebugIfEnabled("[JobsStateClient] Sending AbortJobRequest");
             GAAPICommon.GenericResult response = await _client.AbortJobAsync(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[JobsStateClient] AbortJobAsync() succeeded");
+                _logger?.LogInformationIfEnabled("[JobsStateClient] AbortJobAsync() succeeded");
                 return true;
             }
             else
             {
-                _logger?.LogError("[JobsStateClient] Sending AbortJobAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[JobsStateClient] Sending AbortJobAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return false;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[JobsStateClient] Error aborting job");
+            _logger?.LogErrorIfEnabled(ex, "[JobsStateClient] Error aborting job");
             return false;
         }
     }
@@ -278,26 +278,26 @@ public class JobsStateClient : IJobsStateClient
     /// <returns>True if the operation succeeded, otherwise false.</returns>
     public bool AbortTask(int taskId)
     {
-        _logger?.LogTrace("[JobsStateClient] AbortTask() called with {TaskId}", taskId);
+        _logger?.LogTraceIfEnabled("[JobsStateClient] AbortTask() called with {TaskId}", taskId);
         try
         {
             AbortTaskRequest request = new() { TaskId = taskId };
-            _logger?.LogDebug("[JobsStateClient] Sending AbortTaskRequest");
+            _logger?.LogDebugIfEnabled("[JobsStateClient] Sending AbortTaskRequest");
             GAAPICommon.GenericResult response = _client.AbortTask(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[JobsStateClient] AbortTask() succeeded");
+                _logger?.LogInformationIfEnabled("[JobsStateClient] AbortTask() succeeded");
                 return true;
             }
             else
             {
-                _logger?.LogError("[JobsStateClient] Sending AbortTask() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[JobsStateClient] Sending AbortTask() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return false;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[JobsStateClient] Error aborting task");
+            _logger?.LogErrorIfEnabled(ex, "[JobsStateClient] Error aborting task");
             return false;
         }
     }
@@ -309,26 +309,26 @@ public class JobsStateClient : IJobsStateClient
     /// <returns>A task that represents the asynchronous operation. The task result contains true if the operation succeeded, otherwise false.</returns>
     public async Task<bool> AbortTaskAsync(int taskId)
     {
-        _logger?.LogTrace("[JobsStateClient] AbortTaskAsync() called with {TaskId}", taskId);
+        _logger?.LogTraceIfEnabled("[JobsStateClient] AbortTaskAsync() called with {TaskId}", taskId);
         try
         {
             AbortTaskRequest request = new() { TaskId = taskId };
-            _logger?.LogDebug("[JobsStateClient] Sending AbortTaskRequest");
+            _logger?.LogDebugIfEnabled("[JobsStateClient] Sending AbortTaskRequest");
             GAAPICommon.GenericResult response = await _client.AbortTaskAsync(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[JobsStateClient] AbortTaskAsync() succeeded");
+                _logger?.LogInformationIfEnabled("[JobsStateClient] AbortTaskAsync() succeeded");
                 return true;
             }
             else
             {
-                _logger?.LogError("[JobsStateClient] Sending AbortTaskAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[JobsStateClient] Sending AbortTaskAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return false;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[JobsStateClient] Error aborting task");
+            _logger?.LogErrorIfEnabled(ex, "[JobsStateClient] Error aborting task");
             return false;
         }
     }
@@ -340,26 +340,26 @@ public class JobsStateClient : IJobsStateClient
     /// <returns>The result containing the active job IDs.</returns>
     public IEnumerable<int>? GetActiveJobIdsForAgent(int agentId)
     {
-        _logger?.LogTrace("[JobsStateClient] GetActiveJobIdsForAgent() called with {AgentId}", agentId);
+        _logger?.LogTraceIfEnabled("[JobsStateClient] GetActiveJobIdsForAgent() called with {AgentId}", agentId);
         try
         {
             GetActiveJobIdsForAgentRequest request = new() { AgentId = agentId };
-            _logger?.LogDebug("[JobsStateClient] Sending GetActiveJobIdsForAgentRequest");
+            _logger?.LogDebugIfEnabled("[JobsStateClient] Sending GetActiveJobIdsForAgentRequest");
             GetActiveJobIdsForAgentResult response = _client.GetActiveJobIdsForAgent(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[JobsStateClient] GetActiveJobIdsForAgent() succeeded");
+                _logger?.LogInformationIfEnabled("[JobsStateClient] GetActiveJobIdsForAgent() succeeded");
                 return response.ActiveJobs;
             }
             else
             {
-                _logger?.LogError("[JobsStateClient] Sending GetActiveJobIdsForAgent() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[JobsStateClient] Sending GetActiveJobIdsForAgent() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[JobsStateClient] Error getting active job IDs for agent");
+            _logger?.LogErrorIfEnabled(ex, "[JobsStateClient] Error getting active job IDs for agent");
             return null;
         }
     }
@@ -371,26 +371,26 @@ public class JobsStateClient : IJobsStateClient
     /// <returns>A task that represents the asynchronous operation. The task result contains the active job IDs.</returns>
     public async Task<IEnumerable<int>?> GetActiveJobIdsForAgentAsync(int agentId)
     {
-        _logger?.LogTrace("[JobsStateClient] GetActiveJobIdsForAgentAsync() called with {AgentId}", agentId);
+        _logger?.LogTraceIfEnabled("[JobsStateClient] GetActiveJobIdsForAgentAsync() called with {AgentId}", agentId);
         try
         {
             GetActiveJobIdsForAgentRequest request = new() { AgentId = agentId };
-            _logger?.LogDebug("[JobsStateClient] Sending GetActiveJobIdsForAgentRequest");
+            _logger?.LogDebugIfEnabled("[JobsStateClient] Sending GetActiveJobIdsForAgentRequest");
             GetActiveJobIdsForAgentResult response = await _client.GetActiveJobIdsForAgentAsync(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[JobsStateClient] GetActiveJobIdsForAgentAsync() succeeded");
+                _logger?.LogInformationIfEnabled("[JobsStateClient] GetActiveJobIdsForAgentAsync() succeeded");
                 return response.ActiveJobs;
             }
             else
             {
-                _logger?.LogError("[JobsStateClient] Sending GetActiveJobIdsForAgentAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[JobsStateClient] Sending GetActiveJobIdsForAgentAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[JobsStateClient] Error getting active job IDs for agent");
+            _logger?.LogErrorIfEnabled(ex, "[JobsStateClient] Error getting active job IDs for agent");
             return null;
         }
     }
@@ -406,13 +406,13 @@ public class JobsStateClient : IJobsStateClient
 
         if (disposing)
         {
-            _logger?.LogTrace("[JobsStateClient] Disposing resources");
+            _logger?.LogTraceIfEnabled("[JobsStateClient] Disposing resources");
             Unsubscribe();
             _cts?.Dispose();
         }
 
         _isDisposed = true;
-        _logger?.LogInformation("[JobsStateClient] JobsStateClient disposed");
+        _logger?.LogInformationIfEnabled("[JobsStateClient] JobsStateClient disposed");
     }
 
     /// <summary>

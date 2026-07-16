@@ -29,7 +29,7 @@ public class AgentClient : IAgentClient
     {
         _client = client;
         _logger = logger;
-        _logger?.LogInformation("[AgentClient] AgentClient created with existing client instance");
+        _logger?.LogInformationIfEnabled("[AgentClient] AgentClient created with existing client instance");
         if (settings.Subscribe)
             Task.Run(Subscribe);
     }
@@ -40,26 +40,26 @@ public class AgentClient : IAgentClient
     /// <returns>The result containing all agents data.</returns>
     public IEnumerable<AgentDto>? GetAllAgents()
     {
-        _logger?.LogTrace("[AgentClient] GetAllAgents() called");
+        _logger?.LogTraceIfEnabled("[AgentClient] GetAllAgents() called");
         try
         {
             GetAllAgentDataRequest request = new();
-            _logger?.LogDebug("[AgentClient] Sending GetAllAgentDataRequest");
+            _logger?.LogDebugIfEnabled("[AgentClient] Sending GetAllAgentDataRequest");
             GetAllAgentDataResult response = _client.GetAllAgentData(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("GetAllAgents() succeeded");
+                _logger?.LogInformationIfEnabled("GetAllAgents() succeeded");
                 return response.Agents;
             }
             else
             {
-                _logger?.LogError("[AgentClient] Sending GetAllAgents() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[AgentClient] Sending GetAllAgents() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[AgentClient] Error getting all agents");
+            _logger?.LogErrorIfEnabled(ex, "[AgentClient] Error getting all agents");
             throw;
         }
     }
@@ -70,26 +70,26 @@ public class AgentClient : IAgentClient
     /// <returns>A task that represents the asynchronous operation. The task result contains all agents data.</returns>
     public async Task<IEnumerable<AgentDto>?> GetAllAgentsAsync()
     {
-        _logger?.LogTrace("[AgentClient] GetAllAgentsAsync() called");
+        _logger?.LogTraceIfEnabled("[AgentClient] GetAllAgentsAsync() called");
         try
         {
             GetAllAgentDataRequest request = new();
-            _logger?.LogDebug("[AgentClient] Sending GetAllAgentDataRequest");
+            _logger?.LogDebugIfEnabled("[AgentClient] Sending GetAllAgentDataRequest");
             GetAllAgentDataResult response = await _client.GetAllAgentDataAsync(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("GetAllAgentsAsync() succeeded");
+                _logger?.LogInformationIfEnabled("GetAllAgentsAsync() succeeded");
                 return response.Agents;
             }
             else
             {
-                _logger?.LogError("[AgentClient] Sending GetAllAgentsAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[AgentClient] Sending GetAllAgentsAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[AgentClient] Error getting all agents");
+            _logger?.LogErrorIfEnabled(ex, "[AgentClient] Error getting all agents");
             throw;
         }
     }
@@ -101,29 +101,29 @@ public class AgentClient : IAgentClient
     /// <returns>The result containing agents in the specified lifetime state.</returns>
     public IEnumerable<AgentDto>? GetAllAgentsInLifetimeState(AgentLifetimeState agentLifetimeState)
     {
-        _logger?.LogTrace("[AgentClient] GetAllAgentsInLifetimeState() called with {AgentLifetimeState}", agentLifetimeState);
+        _logger?.LogTraceIfEnabled("[AgentClient] GetAllAgentsInLifetimeState() called with {AgentLifetimeState}", agentLifetimeState);
         try
         {
             GetAllAgentsInLifetimeStateRequest request = new()
             {
                 AgentLifetimeState = agentLifetimeState
             };
-            _logger?.LogDebug("[AgentClient] Sending GetAllAgentsInLifetimeStateRequest");
+            _logger?.LogDebugIfEnabled("[AgentClient] Sending GetAllAgentsInLifetimeStateRequest");
             GetAllAgentsInLifetimeStateResult response = _client.GetAllAgentsInLifetimeState(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("GetAllAgentsInLifetimeState() succeeded");
+                _logger?.LogInformationIfEnabled("GetAllAgentsInLifetimeState() succeeded");
                 return response.Agents;
             }
             else
             {
-                _logger?.LogError("[AgentClient] Sending GetAllAgentsInLifetimeState() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[AgentClient] Sending GetAllAgentsInLifetimeState() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[AgentClient] Error getting agents in lifetime state");
+            _logger?.LogErrorIfEnabled(ex, "[AgentClient] Error getting agents in lifetime state");
             throw;
         }
     }
@@ -135,29 +135,29 @@ public class AgentClient : IAgentClient
     /// <returns>A task that represents the asynchronous operation. The task result contains agents in the specified lifetime state.</returns>
     public async Task<IEnumerable<AgentDto>?> GetAllAgentsInLifetimeStateAsync(AgentLifetimeState agentLifetimeState)
     {
-        _logger?.LogTrace("[AgentClient] GetAllAgentsInLifetimeStateAsync() called with {AgentLifetimeState}", agentLifetimeState);
+        _logger?.LogTraceIfEnabled("[AgentClient] GetAllAgentsInLifetimeStateAsync() called with {AgentLifetimeState}", agentLifetimeState);
         try
         {
             GetAllAgentsInLifetimeStateRequest request = new()
             {
                 AgentLifetimeState = agentLifetimeState
             };
-            _logger?.LogDebug("[AgentClient] Sending GetAllAgentsInLifetimeStateRequest");
+            _logger?.LogDebugIfEnabled("[AgentClient] Sending GetAllAgentsInLifetimeStateRequest");
             GetAllAgentsInLifetimeStateResult response = await _client.GetAllAgentsInLifetimeStateAsync(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("GetAllAgentsInLifetimeStateAsync() succeeded");
+                _logger?.LogInformationIfEnabled("GetAllAgentsInLifetimeStateAsync() succeeded");
                 return response.Agents;
             }
             else
             {
-                _logger?.LogError("[AgentClient] Sending GetAllAgentsInLifetimeStateAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[AgentClient] Sending GetAllAgentsInLifetimeStateAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[AgentClient] Error getting agents in lifetime state");
+            _logger?.LogErrorIfEnabled(ex, "[AgentClient] Error getting agents in lifetime state");
             return null;
         }
     }
@@ -170,7 +170,7 @@ public class AgentClient : IAgentClient
     /// <returns>The result of the operation.</returns>
     public bool SetAgentLifetimeState(int agentId, AgentLifetimeState desiredState)
     {
-        _logger?.LogTrace("[AgentClient] SetAgentLifetimeState() called with {AgentId} and {DesiredState}", agentId, desiredState);
+        _logger?.LogTraceIfEnabled("[AgentClient] SetAgentLifetimeState() called with {AgentId} and {DesiredState}", agentId, desiredState);
         try
         {
             SetAgentLifetimeStateRequest request = new()
@@ -178,22 +178,22 @@ public class AgentClient : IAgentClient
                 AgentId = agentId,
                 AgentLifetimeState = desiredState
             };
-            _logger?.LogDebug("[AgentClient] Sending SetAgentLifetimeStateRequest");
+            _logger?.LogDebugIfEnabled("[AgentClient] Sending SetAgentLifetimeStateRequest");
             GenericResult response = _client.SetAgentLifetimeState(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("SetAgentLifetimeState() succeeded");
+                _logger?.LogInformationIfEnabled("SetAgentLifetimeState() succeeded");
                 return true;
             }
             else
             {
-                _logger?.LogError("[AgentClient] Sending SetAgentLifetimeState() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[AgentClient] Sending SetAgentLifetimeState() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return false;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[AgentClient] Error setting agent lifetime state");
+            _logger?.LogErrorIfEnabled(ex, "[AgentClient] Error setting agent lifetime state");
             throw;
         }
     }
@@ -206,7 +206,7 @@ public class AgentClient : IAgentClient
     /// <returns>A task that represents the asynchronous operation. The task result contains the result of the operation.</returns>
     public async Task<bool> SetAgentLifetimeStateAsync(int agentId, AgentLifetimeState desiredState)
     {
-        _logger?.LogTrace("[AgentClient] SetAgentLifetimeStateAsync() called with {AgentId} and {DesiredState}", agentId, desiredState);
+        _logger?.LogTraceIfEnabled("[AgentClient] SetAgentLifetimeStateAsync() called with {AgentId} and {DesiredState}", agentId, desiredState);
         try
         {
             SetAgentLifetimeStateRequest request = new()
@@ -214,22 +214,22 @@ public class AgentClient : IAgentClient
                 AgentId = agentId,
                 AgentLifetimeState = desiredState
             };
-            _logger?.LogDebug("[AgentClient] Sending SetAgentLifetimeStateRequest");
+            _logger?.LogDebugIfEnabled("[AgentClient] Sending SetAgentLifetimeStateRequest");
             GenericResult response = await _client.SetAgentLifetimeStateAsync(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("SetAgentLifetimeStateAsync() succeeded");
+                _logger?.LogInformationIfEnabled("SetAgentLifetimeStateAsync() succeeded");
                 return true;
             }
             else
             {
-                _logger?.LogError("[AgentClient] Sending SetAgentLifetimeStateAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[AgentClient] Sending SetAgentLifetimeStateAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return false;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[AgentClient] Error setting agent lifetime state");
+            _logger?.LogErrorIfEnabled(ex, "[AgentClient] Error setting agent lifetime state");
             return false;
         }
     }
@@ -240,26 +240,26 @@ public class AgentClient : IAgentClient
     /// <returns>The agents data.</returns>
     public AgentDto? GetAgent(int agentId)
     {
-        _logger?.LogTrace("[AgentClient] GetAgent() called");
+        _logger?.LogTraceIfEnabled("[AgentClient] GetAgent() called");
         try
         {
             GetAgentDataRequest request = new();
-            _logger?.LogDebug("[AgentClient] Sending GetAgentDataRequest");
+            _logger?.LogDebugIfEnabled("[AgentClient] Sending GetAgentDataRequest");
             GetAgentDataResult response = _client.GetAgentData(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("GetAgentAsync() succeeded");
+                _logger?.LogInformationIfEnabled("GetAgentAsync() succeeded");
                 return response.Agent;
             }
             else
             {
-                _logger?.LogError("[AgentClient] Sending GetAllAgentsAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[AgentClient] Sending GetAllAgentsAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[AgentClient] Error getting agent {agentId}", agentId);
+            _logger?.LogErrorIfEnabled(ex, "[AgentClient] Error getting agent {AgentId}", agentId);
             throw;
         }
     }
@@ -270,26 +270,26 @@ public class AgentClient : IAgentClient
     /// <returns>A task that represents the asynchronous operation. The task result contains the agents data.</returns>
     public async Task<AgentDto?> GetAgentAsync(int agentId)
     {
-        _logger?.LogTrace("[AgentClient] GetAgentAsync() called");
+        _logger?.LogTraceIfEnabled("[AgentClient] GetAgentAsync() called");
         try
         {
             GetAgentDataRequest request = new();
-            _logger?.LogDebug("[AgentClient] Sending GetAgentDataRequest");
+            _logger?.LogDebugIfEnabled("[AgentClient] Sending GetAgentDataRequest");
             GetAgentDataResult response = await _client.GetAgentDataAsync(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("GetAgentAsync() succeeded");
+                _logger?.LogInformationIfEnabled("GetAgentAsync() succeeded");
                 return response.Agent;
             }
             else
             {
-                _logger?.LogError("[AgentClient] Sending GetAllAgentsAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[AgentClient] Sending GetAllAgentsAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[AgentClient] Error getting agent {agentId}", agentId);
+            _logger?.LogErrorIfEnabled(ex, "[AgentClient] Error getting agent {AgentId}", agentId);
             throw;
         }
     }
@@ -304,29 +304,29 @@ public class AgentClient : IAgentClient
 
     private async Task Subscribe()
     {
-        _logger?.LogTrace("[AgentClient] Subscribe() started");
+        _logger?.LogTraceIfEnabled("[AgentClient] Subscribe() started");
         _cts = new();
         while (!_cts.IsCancellationRequested)
         {
             try
             {
                 SubscribeRequest request = new();
-                _logger?.LogDebug("[AgentClient] Sending SubscribeRequest");
+                _logger?.LogDebugIfEnabled("[AgentClient] Sending SubscribeRequest");
                 using AsyncServerStreamingCall<AgentSubscribeResult> streamingCall = _client.Subscribe(request);
                 await foreach (AgentSubscribeResult? agentSubscribeResult in streamingCall.ResponseStream.ReadAllAsync(_cts.Token))
                 {
-                    _logger?.LogTrace("[AgentClient] Received AgentSubscribeResult: {agentSubscribeResult}", agentSubscribeResult);
+                    _logger?.LogTraceIfEnabled("[AgentClient] Received AgentSubscribeResult: {AgentSubscribeResult}", agentSubscribeResult);
                     AgentsUpdated?.Invoke([.. agentSubscribeResult.Agents]);
                 }
             }
             catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)
             {
-                _logger?.LogInformation("[SchedulingClient] Subscription cancelled");
+                _logger?.LogInformationIfEnabled("[SchedulingClient] Subscription cancelled");
                 break;
             }
             catch (Exception ex)
             {
-                _logger?.LogWarning(ex, "[SchedulingClient] Exception during subscription. Retrying...");
+                _logger?.LogWarningIfEnabled(ex, "[SchedulingClient] Exception during subscription. Retrying...");
                 await Task.Delay(1000, _cts.Token);
             }
         }
@@ -343,13 +343,13 @@ public class AgentClient : IAgentClient
 
         if (disposing)
         {
-            _logger?.LogTrace("[AgentClient] Disposing resources");
+            _logger?.LogTraceIfEnabled("[AgentClient] Disposing resources");
             Unsubscribe();
             _cts?.Dispose();
         }
 
         _isDisposed = true;
-        _logger?.LogInformation("[AgentClient] AgentClient disposed");
+        _logger?.LogInformationIfEnabled("[AgentClient] AgentClient disposed");
     }
 
     /// <summary>

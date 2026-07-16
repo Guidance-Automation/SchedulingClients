@@ -37,7 +37,7 @@ public class MapClient : IMapClient
     {
         _client = client;
         _logger = logger;
-        _logger?.LogInformation("[MapClient] MapClient created");
+        _logger?.LogInformationIfEnabled("[MapClient] MapClient created");
         if (settings.Subscribe)
             Task.Run(Subscribe);
     }
@@ -48,26 +48,26 @@ public class MapClient : IMapClient
     /// <returns>True if the operation succeeded, otherwise false.</returns>
     public bool ClearOccupyingMandate()
     {
-        _logger?.LogTrace("[MapClient] ClearOccupyingMandate() called");
+        _logger?.LogTraceIfEnabled("[MapClient] ClearOccupyingMandate() called");
         try
         {
             ClearOccupyingMandateRequest request = new();
-            _logger?.LogDebug("[MapClient] Sending ClearOccupyingMandateRequest");
+            _logger?.LogDebugIfEnabled("[MapClient] Sending ClearOccupyingMandateRequest");
             GenericResult response = _client.ClearOccupyingMandate(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[MapClient] ClearOccupyingMandate() succeeded");
+                _logger?.LogInformationIfEnabled("[MapClient] ClearOccupyingMandate() succeeded");
                 return true;
             }
             else
             {
-                _logger?.LogError("[MapClient] ClearOccupyingMandate() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[MapClient] ClearOccupyingMandate() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return false;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[MapClient] Error clearing occupying mandate");
+            _logger?.LogErrorIfEnabled(ex, "[MapClient] Error clearing occupying mandate");
             return false;
         }
     }
@@ -78,26 +78,26 @@ public class MapClient : IMapClient
     /// <returns>A task that represents the asynchronous operation. The task result contains true if the operation succeeded, otherwise false.</returns>
     public async Task<bool> ClearOccupyingMandateAsync()
     {
-        _logger?.LogTrace("[MapClient] ClearOccupyingMandateAsync() called");
+        _logger?.LogTraceIfEnabled("[MapClient] ClearOccupyingMandateAsync() called");
         try
         {
             ClearOccupyingMandateRequest request = new();
-            _logger?.LogDebug("[MapClient] Sending ClearOccupyingMandateRequest");
+            _logger?.LogDebugIfEnabled("[MapClient] Sending ClearOccupyingMandateRequest");
             GenericResult response = await _client.ClearOccupyingMandateAsync(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[MapClient] ClearOccupyingMandateAsync() succeeded");
+                _logger?.LogInformationIfEnabled("[MapClient] ClearOccupyingMandateAsync() succeeded");
                 return true;
             }
             else
             {
-                _logger?.LogError("[MapClient] ClearOccupyingMandateAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[MapClient] ClearOccupyingMandateAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return false;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[MapClient] Error clearing occupying mandate");
+            _logger?.LogErrorIfEnabled(ex, "[MapClient] Error clearing occupying mandate");
             return false;
         }
     }
@@ -108,26 +108,26 @@ public class MapClient : IMapClient
     /// <returns>The result containing all moves, or null if an error occurred.</returns>
     public IEnumerable<MoveDto>? GetAllMoves()
     {
-        _logger?.LogTrace("[MapClient] GetAllMoves() called");
+        _logger?.LogTraceIfEnabled("[MapClient] GetAllMoves() called");
         try
         {
             GetAllMoveDataRequest request = new();
-            _logger?.LogDebug("[MapClient] Sending GetAllMoveDataRequest");
+            _logger?.LogDebugIfEnabled("[MapClient] Sending GetAllMoveDataRequest");
             GetAllMoveDataResult response = _client.GetAllMoveData(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[MapClient] GetAllMoves() succeeded");
+                _logger?.LogInformationIfEnabled("[MapClient] GetAllMoves() succeeded");
                 return response.Moves;
             }
             else
             {
-                _logger?.LogError("[MapClient] GetAllMoves() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[MapClient] GetAllMoves() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[MapClient] Error getting all moves");
+            _logger?.LogErrorIfEnabled(ex, "[MapClient] Error getting all moves");
             return null;
         }
     }
@@ -138,26 +138,26 @@ public class MapClient : IMapClient
     /// <returns>A task that represents the asynchronous operation. The task result contains all moves, or null if an error occurred.</returns>
     public async Task<IEnumerable<MoveDto>?> GetAllMovesAsync()
     {
-        _logger?.LogTrace("[MapClient] GetAllMovesAsync() called");
+        _logger?.LogTraceIfEnabled("[MapClient] GetAllMovesAsync() called");
         try
         {
             GetAllMoveDataRequest request = new();
-            _logger?.LogDebug("[MapClient] Sending GetAllMoveDataRequest");
+            _logger?.LogDebugIfEnabled("[MapClient] Sending GetAllMoveDataRequest");
             GetAllMoveDataResult response = await _client.GetAllMoveDataAsync(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[MapClient] GetAllMovesAsync() succeeded");
+                _logger?.LogInformationIfEnabled("[MapClient] GetAllMovesAsync() succeeded");
                 return response.Moves;
             }
             else
             {
-                _logger?.LogError("[MapClient] GetAllMovesAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[MapClient] GetAllMovesAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[MapClient] Error getting all moves");
+            _logger?.LogErrorIfEnabled(ex, "[MapClient] Error getting all moves");
             return null;
         }
     }
@@ -168,26 +168,26 @@ public class MapClient : IMapClient
     /// <returns>The result containing all nodes, or null if an error occurred.</returns>
     public IEnumerable<NodeDto>? GetAllNodes()
     {
-        _logger?.LogTrace("[MapClient] GetAllNodes() called");
+        _logger?.LogTraceIfEnabled("[MapClient] GetAllNodes() called");
         try
         {
             GetAllNodeDataRequest request = new();
-            _logger?.LogDebug("[MapClient] Sending GetAllNodeDataRequest");
+            _logger?.LogDebugIfEnabled("[MapClient] Sending GetAllNodeDataRequest");
             GetAllNodeDataResult response = _client.GetAllNodeData(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[MapClient] GetAllNodes() succeeded");
+                _logger?.LogInformationIfEnabled("[MapClient] GetAllNodes() succeeded");
                 return response.Nodes;
             }
             else
             {
-                _logger?.LogError("[MapClient] GetAllNodes() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[MapClient] GetAllNodes() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[MapClient] Error getting all nodes");
+            _logger?.LogErrorIfEnabled(ex, "[MapClient] Error getting all nodes");
             return null;
         }
     }
@@ -198,26 +198,26 @@ public class MapClient : IMapClient
     /// <returns>A task that represents the asynchronous operation. The task result contains all nodes, or null if an error occurred.</returns>
     public async Task<IEnumerable<NodeDto>?> GetAllNodesAsync()
     {
-        _logger?.LogTrace("[MapClient] GetAllNodesAsync() called");
+        _logger?.LogTraceIfEnabled("[MapClient] GetAllNodesAsync() called");
         try
         {
             GetAllNodeDataRequest request = new();
-            _logger?.LogDebug("[MapClient] Sending GetAllNodeDataRequest");
+            _logger?.LogDebugIfEnabled("[MapClient] Sending GetAllNodeDataRequest");
             GetAllNodeDataResult response = await _client.GetAllNodeDataAsync(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[MapClient] GetAllNodesAsync() succeeded");
+                _logger?.LogInformationIfEnabled("[MapClient] GetAllNodesAsync() succeeded");
                 return response.Nodes;
             }
             else
             {
-                _logger?.LogError("[MapClient] GetAllNodesAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[MapClient] GetAllNodesAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[MapClient] Error getting all nodes");
+            _logger?.LogErrorIfEnabled(ex, "[MapClient] Error getting all nodes");
             return null;
         }
     }
@@ -228,26 +228,26 @@ public class MapClient : IMapClient
     /// <returns>The result containing all parameters, or null if an error occurred.</returns>
     public IEnumerable<ParameterDto>? GetAllParameters()
     {
-        _logger?.LogTrace("[MapClient] GetAllParameters() called");
+        _logger?.LogTraceIfEnabled("[MapClient] GetAllParameters() called");
         try
         {
             GetAllParameterDataRequest request = new();
-            _logger?.LogDebug("[MapClient] Sending GetAllParameterDataRequest");
+            _logger?.LogDebugIfEnabled("[MapClient] Sending GetAllParameterDataRequest");
             GetAllParameterDataResult response = _client.GetAllParameterData(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[MapClient] GetAllParameters() succeeded");
+                _logger?.LogInformationIfEnabled("[MapClient] GetAllParameters() succeeded");
                 return response.Parameters;
             }
             else
             {
-                _logger?.LogError("[MapClient] GetAllParameters() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[MapClient] GetAllParameters() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[MapClient] Error getting all parameters");
+            _logger?.LogErrorIfEnabled(ex, "[MapClient] Error getting all parameters");
             return null;
         }
     }
@@ -258,26 +258,26 @@ public class MapClient : IMapClient
     /// <returns>A task that represents the asynchronous operation. The task result contains all parameters, or null if an error occurred.</returns>
     public async Task<IEnumerable<ParameterDto>?> GetAllParametersAsync()
     {
-        _logger?.LogTrace("[MapClient] GetAllParametersAsync() called");
+        _logger?.LogTraceIfEnabled("[MapClient] GetAllParametersAsync() called");
         try
         {
             GetAllParameterDataRequest request = new();
-            _logger?.LogDebug("[MapClient] Sending GetAllParameterDataRequest");
+            _logger?.LogDebugIfEnabled("[MapClient] Sending GetAllParameterDataRequest");
             GetAllParameterDataResult response = await _client.GetAllParameterDataAsync(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[MapClient] GetAllParametersAsync() succeeded");
+                _logger?.LogInformationIfEnabled("[MapClient] GetAllParametersAsync() succeeded");
                 return response.Parameters;
             }
             else
             {
-                _logger?.LogError("[MapClient] GetAllParametersAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[MapClient] GetAllParametersAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[MapClient] Error getting all parameters");
+            _logger?.LogErrorIfEnabled(ex, "[MapClient] Error getting all parameters");
             return null;
         }
     }
@@ -288,26 +288,26 @@ public class MapClient : IMapClient
     /// <returns>The result containing the occupying mandate progress, or null if an error occurred.</returns>
     public OccupyingMandateProgressDto? GetOccupyingMandateProgress()
     {
-        _logger?.LogTrace("[MapClient] GetOccupyingMandateProgress() called");
+        _logger?.LogTraceIfEnabled("[MapClient] GetOccupyingMandateProgress() called");
         try
         {
             GetOccupyingMandateRequest request = new();
-            _logger?.LogDebug("[MapClient] Sending GetOccupyingMandateRequest");
+            _logger?.LogDebugIfEnabled("[MapClient] Sending GetOccupyingMandateRequest");
             GetOccupyingMandateProgressDataResult response = _client.GetOccupyingMandateProgressData(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[MapClient] GetOccupyingMandateProgress() succeeded");
+                _logger?.LogInformationIfEnabled("[MapClient] GetOccupyingMandateProgress() succeeded");
                 return response.OccupyingMandateProgress;
             }
             else
             {
-                _logger?.LogError("[MapClient] GetOccupyingMandateProgress() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[MapClient] GetOccupyingMandateProgress() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[MapClient] Error getting occupying mandate progress");
+            _logger?.LogErrorIfEnabled(ex, "[MapClient] Error getting occupying mandate progress");
             return null;
         }
     }
@@ -318,26 +318,26 @@ public class MapClient : IMapClient
     /// <returns>A task that represents the asynchronous operation. The task result contains the occupying mandate progress, or null if an error occurred.</returns>
     public async Task<OccupyingMandateProgressDto?> GetOccupyingMandateProgressAsync()
     {
-        _logger?.LogTrace("[MapClient] GetOccupyingMandateProgressAsync() called");
+        _logger?.LogTraceIfEnabled("[MapClient] GetOccupyingMandateProgressAsync() called");
         try
         {
             GetOccupyingMandateRequest request = new();
-            _logger?.LogDebug("[MapClient] Sending GetOccupyingMandateRequest");
+            _logger?.LogDebugIfEnabled("[MapClient] Sending GetOccupyingMandateRequest");
             GetOccupyingMandateProgressDataResult response = await _client.GetOccupyingMandateProgressDataAsync(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[MapClient] GetOccupyingMandateProgressAsync() succeeded");
+                _logger?.LogInformationIfEnabled("[MapClient] GetOccupyingMandateProgressAsync() succeeded");
                 return response.OccupyingMandateProgress;
             }
             else
             {
-                _logger?.LogError("[MapClient] GetOccupyingMandateProgressAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[MapClient] GetOccupyingMandateProgressAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[MapClient] Error getting occupying mandate progress");
+            _logger?.LogErrorIfEnabled(ex, "[MapClient] Error getting occupying mandate progress");
             return null;
         }
     }
@@ -349,26 +349,26 @@ public class MapClient : IMapClient
     /// <returns>The result containing the trajectory, or null if an error occurred.</returns>
     public IEnumerable<WaypointDto>? GetTrajectory(int moveId)
     {
-        _logger?.LogTrace("[MapClient] GetTrajectory() called with {MoveId}", moveId);
+        _logger?.LogTraceIfEnabled("[MapClient] GetTrajectory() called with {MoveId}", moveId);
         try
         {
             GetTrajectoryRequest request = new() { MoveId = moveId };
-            _logger?.LogDebug("[MapClient] Sending GetTrajectoryRequest");
+            _logger?.LogDebugIfEnabled("[MapClient] Sending GetTrajectoryRequest");
             GetTrajectoryResult response = _client.GetTrajectory(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[MapClient] GetTrajectory() succeeded");
+                _logger?.LogInformationIfEnabled("[MapClient] GetTrajectory() succeeded");
                 return response.Waypoints;
             }
             else
             {
-                _logger?.LogError("[MapClient] GetTrajectory() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[MapClient] GetTrajectory() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[MapClient] Error getting trajectory");
+            _logger?.LogErrorIfEnabled(ex, "[MapClient] Error getting trajectory");
             return null;
         }
     }
@@ -380,26 +380,26 @@ public class MapClient : IMapClient
     /// <returns>A task that represents the asynchronous operation. The task result contains the trajectory, or null if an error occurred.</returns>
     public async Task<IEnumerable<WaypointDto>?> GetTrajectoryAsync(int moveId)
     {
-        _logger?.LogTrace("[MapClient] GetTrajectoryAsync() called with {MoveId}", moveId);
+        _logger?.LogTraceIfEnabled("[MapClient] GetTrajectoryAsync() called with {MoveId}", moveId);
         try
         {
             GetTrajectoryRequest request = new() { MoveId = moveId };
-            _logger?.LogDebug("[MapClient] Sending GetTrajectoryRequest");
+            _logger?.LogDebugIfEnabled("[MapClient] Sending GetTrajectoryRequest");
             GetTrajectoryResult response = await _client.GetTrajectoryAsync(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[MapClient] GetTrajectoryAsync() succeeded");
+                _logger?.LogInformationIfEnabled("[MapClient] GetTrajectoryAsync() succeeded");
                 return response.Waypoints;
             }
             else
             {
-                _logger?.LogError("[MapClient] GetTrajectoryAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[MapClient] GetTrajectoryAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[MapClient] Error getting trajectory");
+            _logger?.LogErrorIfEnabled(ex, "[MapClient] Error getting trajectory");
             return null;
         }
     }
@@ -412,7 +412,7 @@ public class MapClient : IMapClient
     /// <returns>True if the operation succeeded, otherwise false.</returns>
     public bool SetOccupyingMandate(HashSet<int> mapItemIds, TimeSpan timeout)
     {
-        _logger?.LogTrace("[MapClient] SetOccupyingMandate() called with {MapItemIds} and {Timeout}", mapItemIds, timeout);
+        _logger?.LogTraceIfEnabled("[MapClient] SetOccupyingMandate() called with {MapItemIds} and {Timeout}", mapItemIds, timeout);
         try
         {
             SetOccupyingMandateRequest request = new()
@@ -420,22 +420,22 @@ public class MapClient : IMapClient
                 MapItemIds = { mapItemIds },
                 Timeout = Google.Protobuf.WellKnownTypes.Duration.FromTimeSpan(timeout)
             };
-            _logger?.LogDebug("[MapClient] Sending SetOccupyingMandateRequest");
+            _logger?.LogDebugIfEnabled("[MapClient] Sending SetOccupyingMandateRequest");
             GenericResult response = _client.SetOccupyingMandate(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[MapClient] SetOccupyingMandate() succeeded");
+                _logger?.LogInformationIfEnabled("[MapClient] SetOccupyingMandate() succeeded");
                 return true;
             }
             else
             {
-                _logger?.LogError("[MapClient] SetOccupyingMandate() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[MapClient] SetOccupyingMandate() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return false;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[MapClient] Error setting occupying mandate");
+            _logger?.LogErrorIfEnabled(ex, "[MapClient] Error setting occupying mandate");
             return false;
         }
     }
@@ -448,7 +448,7 @@ public class MapClient : IMapClient
     /// <returns>A task that represents the asynchronous operation. The task result contains true if the operation succeeded, otherwise false.</returns>
     public async Task<bool> SetOccupyingMandateAsync(HashSet<int> mapItemIds, TimeSpan timeout)
     {
-        _logger?.LogTrace("[MapClient] SetOccupyingMandateAsync() called with {MapItemIds} and {Timeout}", mapItemIds, timeout);
+        _logger?.LogTraceIfEnabled("[MapClient] SetOccupyingMandateAsync() called with {MapItemIds} and {Timeout}", mapItemIds, timeout);
         try
         {
             SetOccupyingMandateRequest request = new()
@@ -456,22 +456,22 @@ public class MapClient : IMapClient
                 MapItemIds = { mapItemIds },
                 Timeout = Google.Protobuf.WellKnownTypes.Duration.FromTimeSpan(timeout)
             };
-            _logger?.LogDebug("[MapClient] Sending SetOccupyingMandateRequest");
+            _logger?.LogDebugIfEnabled("[MapClient] Sending SetOccupyingMandateRequest");
             GenericResult response = await _client.SetOccupyingMandateAsync(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[MapClient] SetOccupyingMandateAsync() succeeded");
+                _logger?.LogInformationIfEnabled("[MapClient] SetOccupyingMandateAsync() succeeded");
                 return true;
             }
             else
             {
-                _logger?.LogError("[MapClient] SetOccupyingMandateAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[MapClient] SetOccupyingMandateAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return false;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[MapClient] Error setting occupying mandate");
+            _logger?.LogErrorIfEnabled(ex, "[MapClient] Error setting occupying mandate");
             return false;
         }
     }
@@ -489,34 +489,34 @@ public class MapClient : IMapClient
     /// </summary>
     private async Task Subscribe()
     {
-        _logger?.LogTrace("[MapClient] Subscribe() started");
+        _logger?.LogTraceIfEnabled("[MapClient] Subscribe() started");
         _cts = new();
         while (!_cts.IsCancellationRequested)
         {
             try
             {
                 MapSubscribeRequest request = new();
-                _logger?.LogDebug("[MapClient] Sending MapSubscribeRequest");
+                _logger?.LogDebugIfEnabled("[MapClient] Sending MapSubscribeRequest");
                 using AsyncServerStreamingCall<OccupyingMandateProgressDto> streamingCall = _client.Subscribe(request);
 
                 await foreach (OccupyingMandateProgressDto? occupyingMandateProgressDto in streamingCall.ResponseStream.ReadAllAsync(_cts.Token))
                 {
-                    _logger?.LogTrace("[MapClient] Received OccupyingMandateProgressDto: {OccupyingMandateProgressDto}", occupyingMandateProgressDto);
+                    _logger?.LogTraceIfEnabled("[MapClient] Received OccupyingMandateProgressDto: {OccupyingMandateProgressDto}", occupyingMandateProgressDto);
                     OccupyingMandateProgressUpdated?.Invoke(occupyingMandateProgressDto);
                 }
             }
             catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)
             {
-                _logger?.LogInformation("[MapClient] Subscription cancelled");
+                _logger?.LogInformationIfEnabled("[MapClient] Subscription cancelled");
                 break;
             }
             catch (Exception ex)
             {
-                _logger?.LogWarning(ex, "[MapClient] Exception during subscription. Retrying...");
+                _logger?.LogWarningIfEnabled(ex, "[MapClient] Exception during subscription. Retrying...");
                 await Task.Delay(1000);
             }
         }
-        _logger?.LogTrace("[MapClient] Subscribe() ended");
+        _logger?.LogTraceIfEnabled("[MapClient] Subscribe() ended");
     }
 
     /// <summary>
@@ -530,13 +530,13 @@ public class MapClient : IMapClient
 
         if (disposing)
         {
-            _logger?.LogTrace("[MapClient] Disposing resources");
+            _logger?.LogTraceIfEnabled("[MapClient] Disposing resources");
             Unsubscribe();
             _cts.Dispose();
         }
 
         _isDisposed = true;
-        _logger?.LogInformation("[MapClient] MapClient disposed");
+        _logger?.LogInformationIfEnabled("[MapClient] MapClient disposed");
     }
 
     /// <summary>

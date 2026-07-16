@@ -18,7 +18,7 @@ public class TaskStateClient : ITaskStateClient
     {
         _client = client;
         _logger = logger;
-        _logger?.LogInformation("[TaskStateClient] TaskStateClient created");
+        _logger?.LogInformationIfEnabled("[TaskStateClient] TaskStateClient created");
         if (settings.Subscribe)
             Task.Run(Subscribe);
     }
@@ -36,30 +36,30 @@ public class TaskStateClient : ITaskStateClient
     /// </summary>
     private async Task Subscribe()
     {
-        _logger?.LogTrace("[TaskStateClient] Subscribe() started");
+        _logger?.LogTraceIfEnabled("[TaskStateClient] Subscribe() started");
         _cts = new();
         while (!_cts.IsCancellationRequested)
         {
             try
             {
                 TaskStateSubscribeRequest request = new();
-                _logger?.LogDebug("[TaskStateClient] Sending TaskStateSubscribeRequest");
+                _logger?.LogDebugIfEnabled("[TaskStateClient] Sending TaskStateSubscribeRequest");
                 using AsyncServerStreamingCall<TaskProgressDto> streamingCall = _client.Subscribe(request);
 
                 await foreach (TaskProgressDto? taskProgressDto in streamingCall.ResponseStream.ReadAllAsync(_cts.Token))
                 {
-                    _logger?.LogTrace("[TaskStateClient] Received TaskProgressDto: {TaskProgressDto}", taskProgressDto);
+                    _logger?.LogTraceIfEnabled("[TaskStateClient] Received TaskProgressDto: {TaskProgressDto}", taskProgressDto);
                     TaskProgressUpdated?.Invoke(taskProgressDto);
                 }
             }
             catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)
             {
-                _logger?.LogInformation("[TaskStateClient] Subscription cancelled");
+                _logger?.LogInformationIfEnabled("[TaskStateClient] Subscription cancelled");
                 break;
             }
             catch (Exception ex)
             {
-                _logger?.LogWarning(ex, "[TaskStateClient] Exception during subscription. Retrying...");
+                _logger?.LogWarningIfEnabled(ex, "[TaskStateClient] Exception during subscription. Retrying...");
                 await Task.Delay(1000);
             }
         }
@@ -76,13 +76,13 @@ public class TaskStateClient : ITaskStateClient
 
         if (disposing)
         {
-            _logger?.LogTrace("[TaskStateClient] Disposing resources");
+            _logger?.LogTraceIfEnabled("[TaskStateClient] Disposing resources");
             Unsubscribe();
             _cts?.Dispose();
         }
 
         _isDisposed = true;
-        _logger?.LogInformation("[TaskStateClient] JobStateClient disposed");
+        _logger?.LogInformationIfEnabled("[TaskStateClient] JobStateClient disposed");
     }
 
     /// <summary>

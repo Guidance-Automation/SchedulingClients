@@ -32,7 +32,7 @@ public class ServicingClient : IServicingClient
     {
         _client = client;
         _logger = logger;
-        _logger?.LogInformation("[ServicingClient] ServicingClient created");
+        _logger?.LogInformationIfEnabled("[ServicingClient] ServicingClient created");
         if (settings.Subscribe)
             Task.Run(Subscribe);
     }
@@ -43,26 +43,26 @@ public class ServicingClient : IServicingClient
     /// <returns>The outstanding service requests, or null if an error occurred.</returns>
     public IEnumerable<ServiceStateDto>? GetOutstandingServiceRequests()
     {
-        _logger?.LogTrace("[ServicingClient] GetOutstandingServiceRequests() called");
+        _logger?.LogTraceIfEnabled("[ServicingClient] GetOutstandingServiceRequests() called");
         try
         {
             GetOutstandingServiceRequestsRequest request = new();
-            _logger?.LogDebug("[ServicingClient] Sending GetOutstandingServiceRequestsRequest");
+            _logger?.LogDebugIfEnabled("[ServicingClient] Sending GetOutstandingServiceRequestsRequest");
             GetOutstandingServiceRequestsResult response = _client.GetOutstandingServiceRequests(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[ServicingClient] GetOutstandingServiceRequests() succeeded");
+                _logger?.LogInformationIfEnabled("[ServicingClient] GetOutstandingServiceRequests() succeeded");
                 return response.ServiceStates;
             }
             else
             {
-                _logger?.LogError("[ServicingClient] GetOutstandingServiceRequests() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[ServicingClient] GetOutstandingServiceRequests() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[ServicingClient] Error getting outstanding service requests");
+            _logger?.LogErrorIfEnabled(ex, "[ServicingClient] Error getting outstanding service requests");
             return null;
         }
     }
@@ -73,26 +73,26 @@ public class ServicingClient : IServicingClient
     /// <returns>A task that represents the asynchronous operation. The task result contains the outstanding service requests, or null if an error occurred.</returns>
     public async Task<IEnumerable<ServiceStateDto>?> GetOutstandingServiceRequestsAsync()
     {
-        _logger?.LogTrace("[ServicingClient] GetOutstandingServiceRequestsAsync() called");
+        _logger?.LogTraceIfEnabled("[ServicingClient] GetOutstandingServiceRequestsAsync() called");
         try
         {
             GetOutstandingServiceRequestsRequest request = new();
-            _logger?.LogDebug("[ServicingClient] Sending GetOutstandingServiceRequestsRequest");
+            _logger?.LogDebugIfEnabled("[ServicingClient] Sending GetOutstandingServiceRequestsRequest");
             GetOutstandingServiceRequestsResult response = await _client.GetOutstandingServiceRequestsAsync(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[ServicingClient] GetOutstandingServiceRequestsAsync() succeeded");
+                _logger?.LogInformationIfEnabled("[ServicingClient] GetOutstandingServiceRequestsAsync() succeeded");
                 return response.ServiceStates;
             }
             else
             {
-                _logger?.LogError("[ServicingClient] GetOutstandingServiceRequestsAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[ServicingClient] GetOutstandingServiceRequestsAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[ServicingClient] Error getting outstanding service requests");
+            _logger?.LogErrorIfEnabled(ex, "[ServicingClient] Error getting outstanding service requests");
             return null;
         }
     }
@@ -104,26 +104,26 @@ public class ServicingClient : IServicingClient
     /// <returns>True if the operation succeeded, otherwise false.</returns>
     public bool SetServiceComplete(int taskId)
     {
-        _logger?.LogTrace("[ServicingClient] SetServiceComplete() called with {TaskId}", taskId);
+        _logger?.LogTraceIfEnabled("[ServicingClient] SetServiceComplete() called with {TaskId}", taskId);
         try
         {
             SetServiceCompleteRequest request = new() { TaskId = taskId };
-            _logger?.LogDebug("[ServicingClient] Sending SetServiceCompleteRequest");
+            _logger?.LogDebugIfEnabled("[ServicingClient] Sending SetServiceCompleteRequest");
             GenericResult response = _client.SetServiceComplete(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[ServicingClient] SetServiceComplete() succeeded");
+                _logger?.LogInformationIfEnabled("[ServicingClient] SetServiceComplete() succeeded");
                 return true;
             }
             else
             {
-                _logger?.LogError("[ServicingClient] SetServiceComplete() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[ServicingClient] SetServiceComplete() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return false;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[ServicingClient] Error setting service complete");
+            _logger?.LogErrorIfEnabled(ex, "[ServicingClient] Error setting service complete");
             return false;
         }
     }
@@ -135,26 +135,26 @@ public class ServicingClient : IServicingClient
     /// <returns>A task that represents the asynchronous operation. The task result contains true if the operation succeeded, otherwise false.</returns>
     public async Task<bool> SetServiceCompleteAsync(int taskId)
     {
-        _logger?.LogTrace("[ServicingClient] SetServiceCompleteAsync() called with {TaskId}", taskId);
+        _logger?.LogTraceIfEnabled("[ServicingClient] SetServiceCompleteAsync() called with {TaskId}", taskId);
         try
         {
             SetServiceCompleteRequest request = new() { TaskId = taskId };
-            _logger?.LogDebug("[ServicingClient] Sending SetServiceCompleteRequest");
+            _logger?.LogDebugIfEnabled("[ServicingClient] Sending SetServiceCompleteRequest");
             GenericResult response = await _client.SetServiceCompleteAsync(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[ServicingClient] SetServiceCompleteAsync() succeeded");
+                _logger?.LogInformationIfEnabled("[ServicingClient] SetServiceCompleteAsync() succeeded");
                 return true;
             }
             else
             {
-                _logger?.LogError("[ServicingClient] SetServiceCompleteAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[ServicingClient] SetServiceCompleteAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return false;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[ServicingClient] Error setting service complete");
+            _logger?.LogErrorIfEnabled(ex, "[ServicingClient] Error setting service complete");
             return false;
         }
     }
@@ -164,7 +164,7 @@ public class ServicingClient : IServicingClient
     /// </summary>
     public void Unsubscribe()
     {
-        _logger?.LogInformation("[ServicingClient] Unsubscribing from service updates");
+        _logger?.LogInformationIfEnabled("[ServicingClient] Unsubscribing from service updates");
         _cts?.Cancel();
     }
 
@@ -173,34 +173,34 @@ public class ServicingClient : IServicingClient
     /// </summary>
     private async Task Subscribe()
     {
-        _logger?.LogTrace("[ServicingClient] Subscribe() started");
+        _logger?.LogTraceIfEnabled("[ServicingClient] Subscribe() started");
         _cts = new();
         while (!_cts.IsCancellationRequested)
         {
             try
             {
                 ServicingSubscribeRequest request = new();
-                _logger?.LogDebug("[ServicingClient] Sending ServicingSubscribeRequest");
+                _logger?.LogDebugIfEnabled("[ServicingClient] Sending ServicingSubscribeRequest");
                 using AsyncServerStreamingCall<ServiceStateDto> streamingCall = _client.Subscribe(request);
 
                 await foreach (ServiceStateDto? serviceStateDto in streamingCall.ResponseStream.ReadAllAsync(_cts.Token))
                 {
-                    _logger?.LogTrace("[ServicingClient] Received ServiceStateDto: {ServiceStateDto}", serviceStateDto);
+                    _logger?.LogTraceIfEnabled("[ServicingClient] Received ServiceStateDto: {ServiceStateDto}", serviceStateDto);
                     ServiceRequest?.Invoke(serviceStateDto);
                 }
             }
             catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)
             {
-                _logger?.LogInformation("[ServicingClient] Subscription cancelled");
+                _logger?.LogInformationIfEnabled("[ServicingClient] Subscription cancelled");
                 break;
             }
             catch (Exception ex)
             {
-                _logger?.LogWarning(ex, "[ServicingClient] Exception during subscription. Retrying...");
+                _logger?.LogWarningIfEnabled(ex, "[ServicingClient] Exception during subscription. Retrying...");
                 await Task.Delay(1000);
             }
         }
-        _logger?.LogTrace("[ServicingClient] Subscribe() ended");
+        _logger?.LogTraceIfEnabled("[ServicingClient] Subscribe() ended");
     }
 
     /// <summary>
@@ -214,13 +214,13 @@ public class ServicingClient : IServicingClient
 
         if (disposing)
         {
-            _logger?.LogTrace("[ServicingClient] Disposing resources");
+            _logger?.LogTraceIfEnabled("[ServicingClient] Disposing resources");
             Unsubscribe();
             _cts?.Dispose();
         }
 
         _isDisposed = true;
-        _logger?.LogInformation("[ServicingClient] ServicingClient disposed");
+        _logger?.LogInformationIfEnabled("[ServicingClient] ServicingClient disposed");
     }
 
     /// <summary>

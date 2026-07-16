@@ -20,7 +20,7 @@ public class SchedulingClient : ISchedulingClient
     {
         _client = client;
         _logger = logger;
-        _logger?.LogInformation("[SchedulingClient] SchedulingClient created");
+        _logger?.LogInformationIfEnabled("[SchedulingClient] SchedulingClient created");
         if (settings.Subscribe)
             Task.Run(Subscribe);
     }
@@ -35,30 +35,30 @@ public class SchedulingClient : ISchedulingClient
 
     private async Task Subscribe()
     {
-        _logger?.LogTrace("[SchedulingClient] Subscribe() started");
+        _logger?.LogTraceIfEnabled("[SchedulingClient] Subscribe() started");
         _cts = new();
         while (!_cts.IsCancellationRequested)
         {
             try
             {
                 SchedulingSubscribeRequest request = new();
-                _logger?.LogDebug("[SchedulingClient] Sending SchedulingSubscribeRequest");
+                _logger?.LogDebugIfEnabled("[SchedulingClient] Sending SchedulingSubscribeRequest");
                 using AsyncServerStreamingCall<SchedulerStateDto> streamingCall = _client.Subscribe(request);
                 await foreach (SchedulerStateDto? schedulerStateDto in streamingCall.ResponseStream.ReadAllAsync(_cts.Token))
                 {
-                    _logger?.LogTrace("[SchedulingClient] Received SchedulerStateDto: {SchedulerStateDto}", schedulerStateDto);
+                    _logger?.LogTraceIfEnabled("[SchedulingClient] Received SchedulerStateDto: {SchedulerStateDto}", schedulerStateDto);
                     SchedulerStateUpdated?.Invoke(schedulerStateDto);
                     SchedulerState = schedulerStateDto;
                 }
             }
             catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)
             {
-                _logger?.LogInformation("[SchedulingClient] Subscription cancelled");
+                _logger?.LogInformationIfEnabled("[SchedulingClient] Subscription cancelled");
                 break;
             }
             catch (Exception ex)
             {
-                _logger?.LogWarning(ex, "[SchedulingClient] Exception during subscription. Retrying...");
+                _logger?.LogWarningIfEnabled(ex, "[SchedulingClient] Exception during subscription. Retrying...");
                 await Task.Delay(1000, _cts.Token);
             }
         }
@@ -75,13 +75,13 @@ public class SchedulingClient : ISchedulingClient
 
         if (disposing)
         {
-            _logger?.LogTrace("[TaskStateClient] Disposing resources");
+            _logger?.LogTraceIfEnabled("[TaskStateClient] Disposing resources");
             Unsubscribe();
             _cts?.Dispose();
         }
 
         _isDisposed = true;
-        _logger?.LogInformation("[TaskStateClient] JobStateClient disposed");
+        _logger?.LogInformationIfEnabled("[TaskStateClient] JobStateClient disposed");
     }
 
     /// <summary>
