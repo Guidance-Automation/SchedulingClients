@@ -31,7 +31,7 @@ public class JobStateClient : IJobStateClient
     {
         _client = client;
         _logger = logger;
-        _logger?.LogInformation("[JobStateClient] JobStateClient created");
+        _logger?.LogInformationIfEnabled("[JobStateClient] JobStateClient created");
         if (settings.Subscribe)
             Task.Run(Subscribe);
     }
@@ -43,26 +43,26 @@ public class JobStateClient : IJobStateClient
     /// <returns>The result containing the job summary.</returns>
     public JobSummaryDto? GetCurrentJobSummaryForAgentId(int agentId)
     {
-        _logger?.LogTrace("[JobStateClient] GetCurrentJobSummaryForAgentId() called with {AgentId}", agentId);
+        _logger?.LogTraceIfEnabled("[JobStateClient] GetCurrentJobSummaryForAgentId() called with {AgentId}", agentId);
         try
         {
             GetCurrentJobSummaryForAgentIdRequest request = new() { AgentId = agentId };
-            _logger?.LogDebug("[JobStateClient] Sending GetCurrentJobSummaryForAgentIdRequest");
+            _logger?.LogDebugIfEnabled("[JobStateClient] Sending GetCurrentJobSummaryForAgentIdRequest");
             GetCurrentJobSummaryForAgentIdResult response = _client.GetCurrentJobSummaryForAgentId(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[JobStateClient] GetCurrentJobSummaryForAgentId() succeeded");
+                _logger?.LogInformationIfEnabled("[JobStateClient] GetCurrentJobSummaryForAgentId() succeeded");
                 return response.JobSummary;
             }
             else
             {
-                _logger?.LogError("[JobStateClient] Sending GetCurrentJobSummaryForAgentId() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[JobStateClient] Sending GetCurrentJobSummaryForAgentId() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[JobStateClient] Error getting current job summary for agent");
+            _logger?.LogErrorIfEnabled(ex, "[JobStateClient] Error getting current job summary for agent");
             return null;
         }
     }
@@ -74,26 +74,26 @@ public class JobStateClient : IJobStateClient
     /// <returns>A task that represents the asynchronous operation. The task result contains the job summary.</returns>
     public async Task<JobSummaryDto?> GetCurrentJobSummaryForAgentIdAsync(int agentId)
     {
-        _logger?.LogTrace("[JobStateClient] GetCurrentJobSummaryForAgentIdAsync() called with {AgentId}", agentId);
+        _logger?.LogTraceIfEnabled("[JobStateClient] GetCurrentJobSummaryForAgentIdAsync() called with {AgentId}", agentId);
         try
         {
             GetCurrentJobSummaryForAgentIdRequest request = new() { AgentId = agentId };
-            _logger?.LogDebug("[JobStateClient] Sending GetCurrentJobSummaryForAgentIdRequest");
+            _logger?.LogDebugIfEnabled("[JobStateClient] Sending GetCurrentJobSummaryForAgentIdRequest");
             GetCurrentJobSummaryForAgentIdResult response = await _client.GetCurrentJobSummaryForAgentIdAsync(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[JobStateClient] GetCurrentJobSummaryForAgentIdAsync() succeeded");
+                _logger?.LogInformationIfEnabled("[JobStateClient] GetCurrentJobSummaryForAgentIdAsync() succeeded");
                 return response.JobSummary;
             }
             else
             {
-                _logger?.LogError("[JobStateClient] Sending GetCurrentJobSummaryForAgentIdAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[JobStateClient] Sending GetCurrentJobSummaryForAgentIdAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[JobStateClient] Error getting current job summary for agent");
+            _logger?.LogErrorIfEnabled(ex, "[JobStateClient] Error getting current job summary for agent");
             return null;
         }
     }
@@ -105,26 +105,26 @@ public class JobStateClient : IJobStateClient
     /// <returns>The result containing the job summary.</returns>
     public JobSummaryDto? GetJobSummary(int jobId)
     {
-        _logger?.LogTrace("[JobStateClient] GetJobSummary() called with {JobId}", jobId);
+        _logger?.LogTraceIfEnabled("[JobStateClient] GetJobSummary() called with {JobId}", jobId);
         try
         {
             GetJobSummaryRequest request = new() { JobId = jobId };
-            _logger?.LogDebug("[JobStateClient] Sending GetJobSummaryRequest");
+            _logger?.LogDebugIfEnabled("[JobStateClient] Sending GetJobSummaryRequest");
             GetJobSummaryResult response = _client.GetJobSummary(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[JobStateClient] GetJobSummary() succeeded");
+                _logger?.LogInformationIfEnabled("[JobStateClient] GetJobSummary() succeeded");
                 return response.JobSummary;
             }
             else
             {
-                _logger?.LogError("[JobStateClient] Sending GetJobSummary() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[JobStateClient] Sending GetJobSummary() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[JobStateClient] Error getting job summary");
+            _logger?.LogErrorIfEnabled(ex, "[JobStateClient] Error getting job summary");
             return null;
         }
     }
@@ -136,26 +136,26 @@ public class JobStateClient : IJobStateClient
     /// <returns>A task that represents the asynchronous operation. The task result contains the job summary.</returns>
     public async Task<JobSummaryDto?> GetJobSummaryAsync(int jobId)
     {
-        _logger?.LogTrace("[JobStateClient] GetJobSummaryAsync() called with {JobId}", jobId);
+        _logger?.LogTraceIfEnabled("[JobStateClient] GetJobSummaryAsync() called with {JobId}", jobId);
         try
         {
             GetJobSummaryRequest request = new() { JobId = jobId };
-            _logger?.LogDebug("[JobStateClient] Sending GetJobSummaryRequest");
+            _logger?.LogDebugIfEnabled("[JobStateClient] Sending GetJobSummaryRequest");
             GetJobSummaryResult response = await _client.GetJobSummaryAsync(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[JobStateClient] GetJobSummaryAsync() succeeded");
+                _logger?.LogInformationIfEnabled("[JobStateClient] GetJobSummaryAsync() succeeded");
                 return response.JobSummary;
             }
             else
             {
-                _logger?.LogError("[JobStateClient] Sending GetJobSummaryAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[JobStateClient] Sending GetJobSummaryAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[JobStateClient] Error getting job summary");
+            _logger?.LogErrorIfEnabled(ex, "[JobStateClient] Error getting job summary");
             return null;
         }
     }
@@ -167,26 +167,26 @@ public class JobStateClient : IJobStateClient
     /// <returns>The result containing the parent job summary.</returns>
     public JobSummaryDto? GetParentJobSummaryFromTaskId(int taskId)
     {
-        _logger?.LogTrace("[JobStateClient] GetParentJobSummaryFromTaskId() called with {TaskId}", taskId);
+        _logger?.LogTraceIfEnabled("[JobStateClient] GetParentJobSummaryFromTaskId() called with {TaskId}", taskId);
         try
         {
             GetParentJobSummaryFromTaskIdRequest request = new() { TaskId = taskId };
-            _logger?.LogDebug("[JobStateClient] Sending GetParentJobSummaryFromTaskIdRequest");
+            _logger?.LogDebugIfEnabled("[JobStateClient] Sending GetParentJobSummaryFromTaskIdRequest");
             GetParentJobSummaryFromTaskIdResult response = _client.GetParentJobSummaryFromTaskId(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[JobStateClient] GetParentJobSummaryFromTaskId() succeeded");
+                _logger?.LogInformationIfEnabled("[JobStateClient] GetParentJobSummaryFromTaskId() succeeded");
                 return response.JobSummary;
             }
             else
             {
-                _logger?.LogError("[JobStateClient] Sending GetParentJobSummaryFromTaskId() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[JobStateClient] Sending GetParentJobSummaryFromTaskId() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[JobStateClient] Error getting parent job summary from task ID");
+            _logger?.LogErrorIfEnabled(ex, "[JobStateClient] Error getting parent job summary from task ID");
             return null;
         }
     }
@@ -198,26 +198,26 @@ public class JobStateClient : IJobStateClient
     /// <returns>A task that represents the asynchronous operation. The task result contains the parent job summary.</returns>
     public async Task<JobSummaryDto?> GetParentJobSummaryFromTaskIdAsync(int taskId)
     {
-        _logger?.LogTrace("[JobStateClient] GetParentJobSummaryFromTaskIdAsync() called with {TaskId}", taskId);
+        _logger?.LogTraceIfEnabled("[JobStateClient] GetParentJobSummaryFromTaskIdAsync() called with {TaskId}", taskId);
         try
         {
             GetParentJobSummaryFromTaskIdRequest request = new() { TaskId = taskId };
-            _logger?.LogDebug("[JobStateClient] Sending GetParentJobSummaryFromTaskIdRequest");
+            _logger?.LogDebugIfEnabled("[JobStateClient] Sending GetParentJobSummaryFromTaskIdRequest");
             GetParentJobSummaryFromTaskIdResult response = await _client.GetParentJobSummaryFromTaskIdAsync(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
             {
-                _logger?.LogInformation("[JobStateClient] GetParentJobSummaryFromTaskIdAsync() succeeded");
+                _logger?.LogInformationIfEnabled("[JobStateClient] GetParentJobSummaryFromTaskIdAsync() succeeded");
                 return response.JobSummary;
             }
             else
             {
-                _logger?.LogError("[JobStateClient] Sending GetParentJobSummaryFromTaskIdAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
+                _logger?.LogErrorIfEnabled("[JobStateClient] Sending GetParentJobSummaryFromTaskIdAsync() failed with {ServiceCode} and message {ExceptionMessage}", response.ServiceCode, response.ExceptionMessage);
                 return null;
             }
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "[JobStateClient] Error getting parent job summary from task ID");
+            _logger?.LogErrorIfEnabled(ex, "[JobStateClient] Error getting parent job summary from task ID");
             return null;
         }
     }
@@ -235,34 +235,34 @@ public class JobStateClient : IJobStateClient
     /// </summary>
     private async Task Subscribe()
     {
-        _logger?.LogTrace("[JobStateClient] Subscribe() started");
+        _logger?.LogTraceIfEnabled("[JobStateClient] Subscribe() started");
         _cts = new();
         while (!_cts.IsCancellationRequested)
         {
             try
             {
                 JobStateSubscribeRequest request = new();
-                _logger?.LogDebug("[JobStateClient] Sending JobStateSubscribeRequest");
+                _logger?.LogDebugIfEnabled("[JobStateClient] Sending JobStateSubscribeRequest");
                 using AsyncServerStreamingCall<JobProgressDto> streamingCall = _client.Subscribe(request);
 
                 await foreach (JobProgressDto? jobProgressDto in streamingCall.ResponseStream.ReadAllAsync(_cts.Token))
                 {
-                    _logger?.LogTrace("[JobStateClient] Received JobProgressDto: {JobProgressDto}", jobProgressDto);
+                    _logger?.LogTraceIfEnabled("[JobStateClient] Received JobProgressDto: {JobProgressDto}", jobProgressDto);
                     JobProgressUpdated?.Invoke(jobProgressDto);
                 }
             }
             catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)
             {
-                _logger?.LogInformation("[JobStateClient] Subscription cancelled");
+                _logger?.LogInformationIfEnabled("[JobStateClient] Subscription cancelled");
                 break;
             }
             catch (Exception ex)
             {
-                _logger?.LogWarning(ex, "[JobStateClient] Exception during subscription. Retrying...");
+                _logger?.LogWarningIfEnabled(ex, "[JobStateClient] Exception during subscription. Retrying...");
                 await Task.Delay(1000);
             }
         }
-        _logger?.LogTrace("[JobStateClient] Subscribe() ended");
+        _logger?.LogTraceIfEnabled("[JobStateClient] Subscribe() ended");
     }
 
     /// <summary>
@@ -276,13 +276,13 @@ public class JobStateClient : IJobStateClient
 
         if (disposing)
         {
-            _logger?.LogTrace("[JobStateClient] Disposing resources");
+            _logger?.LogTraceIfEnabled("[JobStateClient] Disposing resources");
             Unsubscribe();
             _cts?.Dispose();
         }
 
         _isDisposed = true;
-        _logger?.LogInformation("[JobStateClient] JobStateClient disposed");
+        _logger?.LogInformationIfEnabled("[JobStateClient] JobStateClient disposed");
     }
 
     /// <summary>

@@ -1,21 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<PackageVersion>17.2.1</PackageVersion>
-		<Platforms>x64</Platforms>
+		<PackageVersion>17.3.0</PackageVersion>
+		<Platforms>AnyCPU</Platforms>
 		<Authors>Martin Davies, Callum Clarke, Ollie Sharratt</Authors>
-		<Copyright>Guidance Automation 2025</Copyright>
+		<Copyright>Guidance Automation 2026</Copyright>
 		<Description>Scheduling client components for Guidance Automation schedulers.</Description>
-		<RepositoryUrl>https://github.com/GuidanceAutomation/FleetClients</RepositoryUrl>
+		<RepositoryUrl>https://github.com/GuidanceAutomation/SchedulingClients</RepositoryUrl>
 		<PackageId>SchedulingClients</PackageId>
 		<Company>Guidance Automation LTD</Company>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="GAAPICommon" Version="2.6.*" />
+		<PackageReference Include="GAAPICommon" Version="2.7.*-*" />
 		<PackageReference Include="Grpc.Net.Client" Version="2.*" />
 		<PackageReference Include="Grpc.Net.ClientFactory" Version="2.*" />
 		<PackageReference Include="protobuf-net.Grpc" Version="1.*" />

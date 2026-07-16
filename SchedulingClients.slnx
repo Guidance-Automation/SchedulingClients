@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="LICENCE" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="tests/SchedulingClients.JobState.DevConsoleApp/Guidance.SchedulingClients.JobState.DevConsoleApp.csproj">
+    </Project>
+    <Project Path="tests/SchedulingClients.TaskState.DevConsoleApp/Guidance.SchedulingClients.TaskState.DevConsoleApp.csproj">
+    </Project>
+  </Folder>
+  <Project Path="src/Guidance.SchedulingClients.csproj">
+  </Project>
+</Solution>
