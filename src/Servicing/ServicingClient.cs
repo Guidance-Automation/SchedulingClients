@@ -186,7 +186,11 @@ public class ServicingClient : IServicingClient
                 await foreach (ServiceStateDto? serviceStateDto in streamingCall.ResponseStream.ReadAllAsync(_cts.Token))
                 {
                     _logger?.LogTraceIfEnabled("[ServicingClient] Received ServiceStateDto: {ServiceStateDto}", serviceStateDto);
-                    ServiceRequest?.Invoke(serviceStateDto);
+                    SubscriptionCallbackDispatcher.Invoke(
+                        ServiceRequest,
+                        serviceStateDto,
+                        _logger,
+                        nameof(ServicingClient));
                 }
             }
             catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)

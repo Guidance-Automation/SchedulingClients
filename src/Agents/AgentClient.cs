@@ -243,7 +243,7 @@ public class AgentClient : IAgentClient
         _logger?.LogTraceIfEnabled("[AgentClient] GetAgent() called");
         try
         {
-            GetAgentDataRequest request = new();
+            GetAgentDataRequest request = new() { AgentId = agentId };
             _logger?.LogDebugIfEnabled("[AgentClient] Sending GetAgentDataRequest");
             GetAgentDataResult response = _client.GetAgentData(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
@@ -273,7 +273,7 @@ public class AgentClient : IAgentClient
         _logger?.LogTraceIfEnabled("[AgentClient] GetAgentAsync() called");
         try
         {
-            GetAgentDataRequest request = new();
+            GetAgentDataRequest request = new() { AgentId = agentId };
             _logger?.LogDebugIfEnabled("[AgentClient] Sending GetAgentDataRequest");
             GetAgentDataResult response = await _client.GetAgentDataAsync(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
@@ -292,6 +292,139 @@ public class AgentClient : IAgentClient
             _logger?.LogErrorIfEnabled(ex, "[AgentClient] Error getting agent {AgentId}", agentId);
             throw;
         }
+    }
+
+    public IEnumerable<AgentTimeBucketDto>? GetAgentTimeBuckets(
+        int agentId,
+        DateTimeOffset fromUtc,
+        DateTimeOffset toUtc)
+    {
+        try
+        {
+            GetAgentTimeBucketsResult response = _client.GetAgentTimeBuckets(
+                CreateAgentTimeBucketsRequest(agentId, fromUtc, toUtc));
+            return response.ServiceCode == (int)ServiceCode.NoError ? response.Buckets : null;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[AgentClient] Error getting agent time buckets");
+            return null;
+        }
+    }
+
+    public async Task<IEnumerable<AgentTimeBucketDto>?> GetAgentTimeBucketsAsync(
+        int agentId,
+        DateTimeOffset fromUtc,
+        DateTimeOffset toUtc)
+    {
+        try
+        {
+            GetAgentTimeBucketsResult response = await _client.GetAgentTimeBucketsAsync(
+                CreateAgentTimeBucketsRequest(agentId, fromUtc, toUtc));
+            return response.ServiceCode == (int)ServiceCode.NoError ? response.Buckets : null;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[AgentClient] Error getting agent time buckets");
+            return null;
+        }
+    }
+
+    public AgentDto? UpdateAgentProfile(
+        int agentId,
+        string alias,
+        string? foreground = null,
+        string? background = null)
+    {
+        try
+        {
+            GetAgentDataResult response = _client.UpdateAgentProfile(
+                CreateUpdateAgentProfileRequest(agentId, alias, foreground, background));
+            return response.ServiceCode == (int)ServiceCode.NoError ? response.Agent : null;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[AgentClient] Error updating agent profile");
+            return null;
+        }
+    }
+
+    public async Task<AgentDto?> UpdateAgentProfileAsync(
+        int agentId,
+        string alias,
+        string? foreground = null,
+        string? background = null)
+    {
+        try
+        {
+            GetAgentDataResult response = await _client.UpdateAgentProfileAsync(
+                CreateUpdateAgentProfileRequest(agentId, alias, foreground, background));
+            return response.ServiceCode == (int)ServiceCode.NoError ? response.Agent : null;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[AgentClient] Error updating agent profile");
+            return null;
+        }
+    }
+
+    public string? GetBlockingRootCause(string agentIpAddress)
+    {
+        try
+        {
+            GetBlockingRootCauseResult response = _client.GetBlockingRootCause(
+                new GetBlockingRootCauseRequest { AgentIpAddress = agentIpAddress });
+            return response.ServiceCode == (int)ServiceCode.NoError ? response.Value : null;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[AgentClient] Error getting blocking root cause");
+            return null;
+        }
+    }
+
+    public async Task<string?> GetBlockingRootCauseAsync(string agentIpAddress)
+    {
+        try
+        {
+            GetBlockingRootCauseResult response = await _client.GetBlockingRootCauseAsync(
+                new GetBlockingRootCauseRequest { AgentIpAddress = agentIpAddress });
+            return response.ServiceCode == (int)ServiceCode.NoError ? response.Value : null;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[AgentClient] Error getting blocking root cause");
+            return null;
+        }
+    }
+
+    private static GetAgentTimeBucketsRequest CreateAgentTimeBucketsRequest(
+        int agentId,
+        DateTimeOffset fromUtc,
+        DateTimeOffset toUtc)
+        => new()
+        {
+            AgentId = agentId,
+            FromUtc = Google.Protobuf.WellKnownTypes.Timestamp.FromDateTimeOffset(fromUtc.ToUniversalTime()),
+            ToUtc = Google.Protobuf.WellKnownTypes.Timestamp.FromDateTimeOffset(toUtc.ToUniversalTime())
+        };
+
+    private static UpdateAgentProfileRequest CreateUpdateAgentProfileRequest(
+        int agentId,
+        string alias,
+        string? foreground,
+        string? background)
+    {
+        UpdateAgentProfileRequest request = new()
+        {
+            AgentId = agentId,
+            Alias = alias
+        };
+        if (foreground != null)
+            request.Foreground = foreground;
+        if (background != null)
+            request.Background = background;
+        return request;
     }
 
     /// <summary>
@@ -316,7 +449,11 @@ public class AgentClient : IAgentClient
                 await foreach (AgentSubscribeResult? agentSubscribeResult in streamingCall.ResponseStream.ReadAllAsync(_cts.Token))
                 {
                     _logger?.LogTraceIfEnabled("[AgentClient] Received AgentSubscribeResult: {AgentSubscribeResult}", agentSubscribeResult);
-                    AgentsUpdated?.Invoke([.. agentSubscribeResult.Agents]);
+                    await SubscriptionCallbackDispatcher.InvokeAsync(
+                        AgentsUpdated,
+                        agentSubscribeResult.Agents.ToList(),
+                        _logger,
+                        nameof(AgentClient));
                 }
             }
             catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)

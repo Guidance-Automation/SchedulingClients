@@ -3,6 +3,8 @@ using GAAPICommon.Messages;
 
 namespace Guidance.SchedulingClients.Agents;
 
+using GAAPICommon.Services.Agents;
+
 public interface IAgentClient : IDisposable
 {
     /// <summary>
@@ -63,4 +65,36 @@ public interface IAgentClient : IDisposable
     /// <param name="desiredState">Target state</param>
     /// <returns>Successful service call result on success</returns>
     public Task<bool> SetAgentLifetimeStateAsync(int agentId, AgentLifetimeState desiredState);
+
+    /// <summary>Gets time spent by an agent in each reporting bucket.</summary>
+    public IEnumerable<AgentTimeBucketDto>? GetAgentTimeBuckets(
+        int agentId,
+        DateTimeOffset fromUtc,
+        DateTimeOffset toUtc);
+
+    /// <summary>Gets time spent by an agent in each reporting bucket asynchronously.</summary>
+    public Task<IEnumerable<AgentTimeBucketDto>?> GetAgentTimeBucketsAsync(
+        int agentId,
+        DateTimeOffset fromUtc,
+        DateTimeOffset toUtc);
+
+    /// <summary>Updates the editable profile fields for an agent.</summary>
+    public AgentDto? UpdateAgentProfile(
+        int agentId,
+        string alias,
+        string? foreground = null,
+        string? background = null);
+
+    /// <summary>Updates the editable profile fields for an agent asynchronously.</summary>
+    public Task<AgentDto?> UpdateAgentProfileAsync(
+        int agentId,
+        string alias,
+        string? foreground = null,
+        string? background = null);
+
+    /// <summary>Gets the blocking chain and root cause for an agent.</summary>
+    public string? GetBlockingRootCause(string agentIpAddress);
+
+    /// <summary>Gets the blocking chain and root cause for an agent asynchronously.</summary>
+    public Task<string?> GetBlockingRootCauseAsync(string agentIpAddress);
 }

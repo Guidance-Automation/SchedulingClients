@@ -146,6 +146,18 @@ public interface IJobBuilderClient : IDisposable
     /// <returns>Id of newly created GoTo node task.</returns>
     public Task<int> CreateGoToNodeTaskAsync(int parentListTaskId, int nodeId);
 
+    /// <summary>Creates and commits a complete go-to-node job.</summary>
+    public int CreateGoToNodeJob(
+        int nodeId,
+        int agentId,
+        JobPriority jobPriority = JobPriority.Normal);
+
+    /// <summary>Creates and commits a complete go-to-node job asynchronously.</summary>
+    public Task<int> CreateGoToNodeJobAsync(
+        int nodeId,
+        int agentId,
+        JobPriority jobPriority = JobPriority.Normal);
+
     /// <summary>
     /// Creates a new Awaiting task (travel to this node and this task is only completed when a subsequent task is available).
     /// </summary>

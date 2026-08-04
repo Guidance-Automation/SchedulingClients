@@ -7,11 +7,14 @@ using Microsoft.Extensions.Logging;
 
 namespace Guidance.SchedulingClients.Maps;
 
+using Google.Protobuf;
+
 /// <summary>
 /// Client for interacting with the Map service.
 /// </summary>
 public class MapClient : IMapClient
 {
+    private const int FileChunkSize = 64 * 1024;
     private bool _isDisposed;
     private CancellationTokenSource _cts = new();
     private readonly MapServiceProto.MapServiceProtoClient _client;
@@ -283,6 +286,75 @@ public class MapClient : IMapClient
     }
 
     /// <summary>
+    /// Gets the current occupiers committed to roadmap nodes and moves.
+    /// </summary>
+    /// <returns>The roadmap occupiers, or null if an error occurred.</returns>
+    public IEnumerable<RoadmapOccupierDto>? GetRoadmapOccupiers()
+    {
+        _logger?.LogTraceIfEnabled("[MapClient] GetRoadmapOccupiers() called");
+        try
+        {
+            GetRoadmapOccupiersRequest request = new();
+            _logger?.LogDebugIfEnabled("[MapClient] Sending GetRoadmapOccupiersRequest");
+            GetRoadmapOccupiersResult response = _client.GetRoadmapOccupiers(request);
+            if (response.ServiceCode == (int)ServiceCode.NoError)
+            {
+                _logger?.LogInformationIfEnabled("[MapClient] GetRoadmapOccupiers() succeeded");
+                return response.Occupiers;
+            }
+
+            _logger?.LogErrorIfEnabled(
+                "[MapClient] GetRoadmapOccupiers() failed with {ServiceCode} and message {ExceptionMessage}",
+                response.ServiceCode,
+                response.ExceptionMessage);
+            return null;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[MapClient] Error getting roadmap occupiers");
+            return null;
+        }
+    }
+
+    /// <summary>
+    /// Gets the current occupiers committed to roadmap nodes and moves asynchronously.
+    /// </summary>
+    /// <returns>The roadmap occupiers, or null if an error occurred.</returns>
+    public async Task<IEnumerable<RoadmapOccupierDto>?> GetRoadmapOccupiersAsync(
+        CancellationToken cancellationToken = default)
+    {
+        _logger?.LogTraceIfEnabled("[MapClient] GetRoadmapOccupiersAsync() called");
+        try
+        {
+            GetRoadmapOccupiersRequest request = new();
+            _logger?.LogDebugIfEnabled("[MapClient] Sending GetRoadmapOccupiersRequest");
+            GetRoadmapOccupiersResult response = await _client.GetRoadmapOccupiersAsync(
+                request,
+                cancellationToken: cancellationToken);
+            if (response.ServiceCode == (int)ServiceCode.NoError)
+            {
+                _logger?.LogInformationIfEnabled("[MapClient] GetRoadmapOccupiersAsync() succeeded");
+                return response.Occupiers;
+            }
+
+            _logger?.LogErrorIfEnabled(
+                "[MapClient] GetRoadmapOccupiersAsync() failed with {ServiceCode} and message {ExceptionMessage}",
+                response.ServiceCode,
+                response.ExceptionMessage);
+            return null;
+        }
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+        {
+            throw;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[MapClient] Error getting roadmap occupiers");
+            return null;
+        }
+    }
+
+    /// <summary>
     /// Gets the occupying mandate progress.
     /// </summary>
     /// <returns>The result containing the occupying mandate progress, or null if an error occurred.</returns>
@@ -404,6 +476,338 @@ public class MapClient : IMapClient
         }
     }
 
+    public GetPointCloudResult? GetPointCloud(int maxPoints = 0)
+        => Call(
+            () => _client.GetPointCloud(new GetPointCloudRequest { MaxPoints = maxPoints }),
+            response => response.ServiceCode,
+            nameof(GetPointCloud));
+
+    public Task<GetPointCloudResult?> GetPointCloudAsync(int maxPoints = 0)
+        => CallAsync(
+            () => _client.GetPointCloudAsync(new GetPointCloudRequest { MaxPoints = maxPoints }),
+            response => response.ServiceCode,
+            nameof(GetPointCloudAsync));
+
+    public IEnumerable<RoadmapOccupierDto>? GetMapItemOccupiers(int mapItemId)
+        => Call(
+            () => _client.GetMapItemOccupiers(new GetMapItemOccupiersRequest { MapItemId = mapItemId }),
+            response => response.ServiceCode,
+            nameof(GetMapItemOccupiers))?.Occupiers;
+
+    public async Task<IEnumerable<RoadmapOccupierDto>?> GetMapItemOccupiersAsync(int mapItemId)
+        => (await CallAsync(
+            () => _client.GetMapItemOccupiersAsync(
+                new GetMapItemOccupiersRequest { MapItemId = mapItemId }),
+            response => response.ServiceCode,
+            nameof(GetMapItemOccupiersAsync)))?.Occupiers;
+
+    public TrajectorySettingsResult? GetTrajectorySettings()
+        => Call(
+            () => _client.GetTrajectorySettings(new GetTrajectorySettingsRequest()),
+            response => response.ServiceCode,
+            nameof(GetTrajectorySettings));
+
+    public Task<TrajectorySettingsResult?> GetTrajectorySettingsAsync()
+        => CallAsync(
+            () => _client.GetTrajectorySettingsAsync(new GetTrajectorySettingsRequest()),
+            response => response.ServiceCode,
+            nameof(GetTrajectorySettingsAsync));
+
+    public TrajectorySettingsResult? SetTrajectorySettings(double clothoidWaypointSpacingMeters)
+        => Call(
+            () => _client.SetTrajectorySettings(new SetTrajectorySettingsRequest
+            {
+                ClothoidWaypointSpacingMeters = clothoidWaypointSpacingMeters
+            }),
+            response => response.ServiceCode,
+            nameof(SetTrajectorySettings));
+
+    public Task<TrajectorySettingsResult?> SetTrajectorySettingsAsync(double clothoidWaypointSpacingMeters)
+        => CallAsync(
+            () => _client.SetTrajectorySettingsAsync(new SetTrajectorySettingsRequest
+            {
+                ClothoidWaypointSpacingMeters = clothoidWaypointSpacingMeters
+            }),
+            response => response.ServiceCode,
+            nameof(SetTrajectorySettingsAsync));
+
+    public MapCardDto? GetActiveRoadmap()
+        => Call(
+            () => _client.GetActiveRoadmap(new GetRoadmapRequest()),
+            response => response.ServiceCode,
+            nameof(GetActiveRoadmap))?.Roadmap;
+
+    public async Task<MapCardDto?> GetActiveRoadmapAsync()
+        => (await CallAsync(
+            () => _client.GetActiveRoadmapAsync(new GetRoadmapRequest()),
+            response => response.ServiceCode,
+            nameof(GetActiveRoadmapAsync)))?.Roadmap;
+
+    public MapCardDto? GetNextRoadmap()
+        => Call(
+            () => _client.GetNextRoadmap(new GetRoadmapRequest()),
+            response => response.ServiceCode,
+            nameof(GetNextRoadmap))?.Roadmap;
+
+    public async Task<MapCardDto?> GetNextRoadmapAsync()
+        => (await CallAsync(
+            () => _client.GetNextRoadmapAsync(new GetRoadmapRequest()),
+            response => response.ServiceCode,
+            nameof(GetNextRoadmapAsync)))?.Roadmap;
+
+    public IEnumerable<MapCardDto>? GetRoadmaps()
+        => Call(
+            () => _client.GetRoadmaps(new GetRoadmapRequest()),
+            response => response.ServiceCode,
+            nameof(GetRoadmaps))?.Roadmaps;
+
+    public async Task<IEnumerable<MapCardDto>?> GetRoadmapsAsync()
+        => (await CallAsync(
+            () => _client.GetRoadmapsAsync(new GetRoadmapRequest()),
+            response => response.ServiceCode,
+            nameof(GetRoadmapsAsync)))?.Roadmaps;
+
+    public IEnumerable<RoadmapCatalogItemDto>? GetRoadmapCatalog()
+        => Call(
+            () => _client.GetRoadmapCatalog(new GetRoadmapRequest()),
+            response => response.ServiceCode,
+            nameof(GetRoadmapCatalog))?.Catalog;
+
+    public async Task<IEnumerable<RoadmapCatalogItemDto>?> GetRoadmapCatalogAsync()
+        => (await CallAsync(
+            () => _client.GetRoadmapCatalogAsync(new GetRoadmapRequest()),
+            response => response.ServiceCode,
+            nameof(GetRoadmapCatalogAsync)))?.Catalog;
+
+    public GetRoadmapOverviewResult? GetRoadmapOverview()
+        => Call(
+            () => _client.GetRoadmapOverview(new GetRoadmapRequest()),
+            response => response.ServiceCode,
+            nameof(GetRoadmapOverview));
+
+    public Task<GetRoadmapOverviewResult?> GetRoadmapOverviewAsync()
+        => CallAsync(
+            () => _client.GetRoadmapOverviewAsync(new GetRoadmapRequest()),
+            response => response.ServiceCode,
+            nameof(GetRoadmapOverviewAsync));
+
+    public bool ActivateRoadmap(int id)
+        => Call(
+            () => _client.ActivateRoadmap(new RoadmapIdRequest { Id = id }),
+            response => response.ServiceCode,
+            nameof(ActivateRoadmap)) != null;
+
+    public async Task<bool> ActivateRoadmapAsync(int id)
+        => await CallAsync(
+            () => _client.ActivateRoadmapAsync(new RoadmapIdRequest { Id = id }),
+            response => response.ServiceCode,
+            nameof(ActivateRoadmapAsync)) != null;
+
+    public bool DeleteRoadmap(int id)
+        => Call(
+            () => _client.DeleteRoadmap(new RoadmapIdRequest { Id = id }),
+            response => response.ServiceCode,
+            nameof(DeleteRoadmap)) != null;
+
+    public async Task<bool> DeleteRoadmapAsync(int id)
+        => await CallAsync(
+            () => _client.DeleteRoadmapAsync(new RoadmapIdRequest { Id = id }),
+            response => response.ServiceCode,
+            nameof(DeleteRoadmapAsync)) != null;
+
+    public async Task<RoadmapUploadResultDto?> UploadRoadmapAsync(
+        Stream contents,
+        string fileName,
+        string changeMessage,
+        CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(contents);
+        ArgumentException.ThrowIfNullOrWhiteSpace(fileName);
+        ArgumentException.ThrowIfNullOrWhiteSpace(changeMessage);
+
+        try
+        {
+            using AsyncClientStreamingCall<RoadmapUploadChunk, RoadmapUploadResultDto> call =
+                _client.UploadRoadmap(cancellationToken: cancellationToken);
+            await WriteChunksAsync(
+                contents,
+                data => call.RequestStream.WriteAsync(new RoadmapUploadChunk
+                {
+                    Data = data,
+                    FileName = Path.GetFileName(fileName),
+                    ChangeMessage = changeMessage
+                }),
+                cancellationToken);
+            await call.RequestStream.CompleteAsync();
+            return await call.ResponseAsync;
+        }
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+        {
+            throw;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[MapClient] Error uploading roadmap");
+            return null;
+        }
+    }
+
+    public async Task<byte[]?> ExportTransitrakAsync(
+        Stream contents,
+        string fileName,
+        string exportName,
+        CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(contents);
+        ArgumentException.ThrowIfNullOrWhiteSpace(fileName);
+        ArgumentException.ThrowIfNullOrWhiteSpace(exportName);
+
+        try
+        {
+            using AsyncDuplexStreamingCall<TransitrakExportChunk, FileChunk> call =
+                _client.ExportTransitrak(cancellationToken: cancellationToken);
+            await WriteChunksAsync(
+                contents,
+                data => call.RequestStream.WriteAsync(new TransitrakExportChunk
+                {
+                    Data = data,
+                    FileName = Path.GetFileName(fileName),
+                    ExportName = exportName
+                }),
+                cancellationToken);
+            await call.RequestStream.CompleteAsync();
+            return await ReadChunksAsync(call.ResponseStream, cancellationToken);
+        }
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+        {
+            throw;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[MapClient] Error exporting roadmap to traNsitrak");
+            return null;
+        }
+    }
+
+    public async Task<byte[]?> DownloadRoadmapAsync(
+        int id,
+        CancellationToken cancellationToken = default)
+    {
+        try
+        {
+            using AsyncServerStreamingCall<FileChunk> call = _client.DownloadRoadmap(
+                new RoadmapIdRequest { Id = id },
+                cancellationToken: cancellationToken);
+            return await ReadChunksAsync(call.ResponseStream, cancellationToken);
+        }
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+        {
+            throw;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[MapClient] Error downloading roadmap");
+            return null;
+        }
+    }
+
+    public async Task<byte[]?> DownloadActiveRoadmapAsync(
+        CancellationToken cancellationToken = default)
+    {
+        try
+        {
+            using AsyncServerStreamingCall<FileChunk> call = _client.DownloadActiveRoadmap(
+                new GetRoadmapRequest(),
+                cancellationToken: cancellationToken);
+            return await ReadChunksAsync(call.ResponseStream, cancellationToken);
+        }
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+        {
+            throw;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[MapClient] Error downloading active roadmap");
+            return null;
+        }
+    }
+
+    private TResponse? Call<TResponse>(
+        Func<TResponse> call,
+        Func<TResponse, int> serviceCode,
+        string operation)
+        where TResponse : class
+    {
+        try
+        {
+            TResponse response = call();
+            int code = serviceCode(response);
+            if (code == (int)ServiceCode.NoError)
+                return response;
+
+            _logger?.LogErrorIfEnabled(
+                "[MapClient] {Operation} failed with {ServiceCode}",
+                operation,
+                code);
+            return null;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[MapClient] {Operation} failed", operation);
+            return null;
+        }
+    }
+
+    private async Task<TResponse?> CallAsync<TResponse>(
+        Func<AsyncUnaryCall<TResponse>> call,
+        Func<TResponse, int> serviceCode,
+        string operation)
+        where TResponse : class
+    {
+        try
+        {
+            TResponse response = await call();
+            int code = serviceCode(response);
+            if (code == (int)ServiceCode.NoError)
+                return response;
+
+            _logger?.LogErrorIfEnabled(
+                "[MapClient] {Operation} failed with {ServiceCode}",
+                operation,
+                code);
+            return null;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[MapClient] {Operation} failed", operation);
+            return null;
+        }
+    }
+
+    private static async Task WriteChunksAsync(
+        Stream contents,
+        Func<ByteString, Task> write,
+        CancellationToken cancellationToken)
+    {
+        byte[] buffer = new byte[FileChunkSize];
+        int bytesRead;
+        while ((bytesRead = await contents.ReadAsync(buffer, cancellationToken)) > 0)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+            await write(ByteString.CopyFrom(buffer, 0, bytesRead));
+        }
+    }
+
+    private static async Task<byte[]> ReadChunksAsync(
+        IAsyncStreamReader<FileChunk> responseStream,
+        CancellationToken cancellationToken)
+    {
+        await using MemoryStream output = new();
+        while (await responseStream.MoveNext(cancellationToken))
+            responseStream.Current.Data.WriteTo(output);
+        return output.ToArray();
+    }
+
     /// <summary>
     /// Sets the occupying mandate.
     /// </summary>
@@ -502,7 +906,11 @@ public class MapClient : IMapClient
                 await foreach (OccupyingMandateProgressDto? occupyingMandateProgressDto in streamingCall.ResponseStream.ReadAllAsync(_cts.Token))
                 {
                     _logger?.LogTraceIfEnabled("[MapClient] Received OccupyingMandateProgressDto: {OccupyingMandateProgressDto}", occupyingMandateProgressDto);
-                    OccupyingMandateProgressUpdated?.Invoke(occupyingMandateProgressDto);
+                    SubscriptionCallbackDispatcher.Invoke(
+                        OccupyingMandateProgressUpdated,
+                        occupyingMandateProgressDto,
+                        _logger,
+                        nameof(MapClient));
                 }
             }
             catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)

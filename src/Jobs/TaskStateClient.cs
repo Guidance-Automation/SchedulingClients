@@ -49,7 +49,11 @@ public class TaskStateClient : ITaskStateClient
                 await foreach (TaskProgressDto? taskProgressDto in streamingCall.ResponseStream.ReadAllAsync(_cts.Token))
                 {
                     _logger?.LogTraceIfEnabled("[TaskStateClient] Received TaskProgressDto: {TaskProgressDto}", taskProgressDto);
-                    TaskProgressUpdated?.Invoke(taskProgressDto);
+                    SubscriptionCallbackDispatcher.Invoke(
+                        TaskProgressUpdated,
+                        taskProgressDto,
+                        _logger,
+                        nameof(TaskStateClient));
                 }
             }
             catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)
