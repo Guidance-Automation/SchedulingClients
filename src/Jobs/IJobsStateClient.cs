@@ -74,6 +74,12 @@ public interface IJobsStateClient : IDisposable
     /// <returns>Array of active job Ids.</returns>
     public Task<IEnumerable<int>?> GetActiveJobIdsForAgentAsync(int agentId);
 
+    /// <summary>Gets active job summaries for all agents or one selected agent.</summary>
+    public IEnumerable<JobSummaryDto>? GetActiveJobSummaries(int? agentId = null);
+
+    /// <summary>Gets active job summaries for all agents or one selected agent asynchronously.</summary>
+    public Task<IEnumerable<JobSummaryDto>?> GetActiveJobSummariesAsync(int? agentId = null);
+
     /// <summary>
     /// A summary of the current state of all jobs in the system.
     /// </summary>

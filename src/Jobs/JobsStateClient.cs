@@ -67,7 +67,11 @@ public class JobsStateClient : IJobsStateClient
                 await foreach (JobStateDto? jobStateDto in streamingCall.ResponseStream.ReadAllAsync(_cts.Token))
                 {
                     _logger?.LogTraceIfEnabled("[JobsStateClient] Received JobStateDto: {JobStateDto}", jobStateDto);
-                    JobsStateUpdated?.Invoke(jobStateDto);
+                    SubscriptionCallbackDispatcher.Invoke(
+                        JobsStateUpdated,
+                        jobStateDto,
+                        _logger,
+                        nameof(JobsStateClient));
                     JobsState = jobStateDto;
                 }
             }
@@ -393,6 +397,46 @@ public class JobsStateClient : IJobsStateClient
             _logger?.LogErrorIfEnabled(ex, "[JobsStateClient] Error getting active job IDs for agent");
             return null;
         }
+    }
+
+    /// <summary>Gets active job summaries for all agents or one selected agent.</summary>
+    public IEnumerable<JobSummaryDto>? GetActiveJobSummaries(int? agentId = null)
+    {
+        try
+        {
+            GetActiveJobSummariesResult response = _client.GetActiveJobSummaries(
+                CreateActiveJobSummariesRequest(agentId));
+            return response.ServiceCode == (int)ServiceCode.NoError ? response.Jobs : null;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[JobsStateClient] Error getting active job summaries");
+            return null;
+        }
+    }
+
+    /// <summary>Gets active job summaries for all agents or one selected agent asynchronously.</summary>
+    public async Task<IEnumerable<JobSummaryDto>?> GetActiveJobSummariesAsync(int? agentId = null)
+    {
+        try
+        {
+            GetActiveJobSummariesResult response = await _client.GetActiveJobSummariesAsync(
+                CreateActiveJobSummariesRequest(agentId));
+            return response.ServiceCode == (int)ServiceCode.NoError ? response.Jobs : null;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[JobsStateClient] Error getting active job summaries");
+            return null;
+        }
+    }
+
+    private static GetActiveJobSummariesRequest CreateActiveJobSummariesRequest(int? agentId)
+    {
+        GetActiveJobSummariesRequest request = new();
+        if (agentId.HasValue)
+            request.AgentId = agentId.Value;
+        return request;
     }
 
     /// <summary>

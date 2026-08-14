@@ -248,7 +248,11 @@ public class JobStateClient : IJobStateClient
                 await foreach (JobProgressDto? jobProgressDto in streamingCall.ResponseStream.ReadAllAsync(_cts.Token))
                 {
                     _logger?.LogTraceIfEnabled("[JobStateClient] Received JobProgressDto: {JobProgressDto}", jobProgressDto);
-                    JobProgressUpdated?.Invoke(jobProgressDto);
+                    SubscriptionCallbackDispatcher.Invoke(
+                        JobProgressUpdated,
+                        jobProgressDto,
+                        _logger,
+                        nameof(JobStateClient));
                 }
             }
             catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)

@@ -409,6 +409,52 @@ public class JobBuilderClient : IJobBuilderClient
         }
     }
 
+    /// <summary>Creates and commits a complete go-to-node job.</summary>
+    public int CreateGoToNodeJob(
+        int nodeId,
+        int agentId,
+        JobPriority jobPriority = JobPriority.Normal)
+    {
+        try
+        {
+            Int32Result response = _client.CreateGoToNodeJob(new CreateGoToNodeJobRequest
+            {
+                NodeId = nodeId,
+                AgentId = agentId,
+                JobPriority = jobPriority
+            });
+            return response.ServiceCode == (int)ServiceCode.NoError ? response.Value : -1;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[JobBuilderClient] Error creating go-to-node job");
+            throw;
+        }
+    }
+
+    /// <summary>Creates and commits a complete go-to-node job asynchronously.</summary>
+    public async Task<int> CreateGoToNodeJobAsync(
+        int nodeId,
+        int agentId,
+        JobPriority jobPriority = JobPriority.Normal)
+    {
+        try
+        {
+            Int32Result response = await _client.CreateGoToNodeJobAsync(new CreateGoToNodeJobRequest
+            {
+                NodeId = nodeId,
+                AgentId = agentId,
+                JobPriority = jobPriority
+            });
+            return response.ServiceCode == (int)ServiceCode.NoError ? response.Value : -1;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[JobBuilderClient] Error creating go-to-node job");
+            throw;
+        }
+    }
+
     /// <summary>
     /// Creates a job with the specified priority.
     /// </summary>
