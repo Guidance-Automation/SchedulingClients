@@ -17,7 +17,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="GAAPICommon" Version="3.0.0" />
+		<PackageReference Include="GAAPICommon" Version="3.*" />
 		<PackageReference Include="Grpc.Net.Client" Version="2.*" />
 		<PackageReference Include="Grpc.Net.ClientFactory" Version="2.*" />
 		<PackageReference Include="protobuf-net.Grpc" Version="1.*" />
