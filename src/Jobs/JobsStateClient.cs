@@ -11,6 +11,62 @@ namespace Guidance.SchedulingClients.Jobs;
 /// </summary>
 public class JobsStateClient : IJobsStateClient
 {
+    public bool PauseJob(int jobId, bool allowAgentToAcceptOtherJobs = false)
+    {
+        try
+        {
+            GAAPICommon.GenericResult response = _client.PauseJob(new PauseJobRequest { JobId = jobId, AllowAgentToAcceptOtherJobs = allowAgentToAcceptOtherJobs });
+            return response.ServiceCode == (int)ServiceCode.NoError;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[JobsStateClient] PauseJob failed");
+            return false;
+        }
+    }
+
+    public async Task<bool> PauseJobAsync(int jobId, bool allowAgentToAcceptOtherJobs = false)
+    {
+        try
+        {
+            GAAPICommon.GenericResult response = await _client.PauseJobAsync(new PauseJobRequest { JobId = jobId, AllowAgentToAcceptOtherJobs = allowAgentToAcceptOtherJobs });
+            return response.ServiceCode == (int)ServiceCode.NoError;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[JobsStateClient] PauseJobAsync failed");
+            return false;
+        }
+    }
+
+    public bool ResumeJob(int jobId)
+    {
+        try
+        {
+            GAAPICommon.GenericResult response = _client.ResumeJob(new ResumeJobRequest { JobId = jobId });
+            return response.ServiceCode == (int)ServiceCode.NoError;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[JobsStateClient] ResumeJob failed");
+            return false;
+        }
+    }
+
+    public async Task<bool> ResumeJobAsync(int jobId)
+    {
+        try
+        {
+            GAAPICommon.GenericResult response = await _client.ResumeJobAsync(new ResumeJobRequest { JobId = jobId });
+            return response.ServiceCode == (int)ServiceCode.NoError;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[JobsStateClient] ResumeJobAsync failed");
+            return false;
+        }
+    }
+
     private bool _isDisposed;
     private CancellationTokenSource? _cts;
     private readonly JobsStateServiceProto.JobsStateServiceProtoClient _client;

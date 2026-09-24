@@ -12,6 +12,74 @@ namespace Guidance.SchedulingClients.Agents;
 /// </summary>
 public class AgentClient : IAgentClient
 {
+    public IEnumerable<AgentJobStatisticsDto>? GetAgentJobStatistics(int agentId, DateTimeOffset fromUtc, DateTimeOffset toUtc)
+    {
+        try
+        {
+            GetAgentJobStatisticsResult response = _client.GetAgentJobStatistics(new GetAgentJobStatisticsRequest { AgentId = agentId, FromUtc = Google.Protobuf.WellKnownTypes.Timestamp.FromDateTimeOffset(fromUtc), ToUtc = Google.Protobuf.WellKnownTypes.Timestamp.FromDateTimeOffset(toUtc) });
+            return response.Jobs;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[AgentClient] GetAgentJobStatistics failed");
+            return null;
+        }
+    }
+
+    public async Task<IEnumerable<AgentJobStatisticsDto>?> GetAgentJobStatisticsAsync(int agentId, DateTimeOffset fromUtc, DateTimeOffset toUtc)
+    {
+        try
+        {
+            GetAgentJobStatisticsResult response = await _client.GetAgentJobStatisticsAsync(new GetAgentJobStatisticsRequest { AgentId = agentId, FromUtc = Google.Protobuf.WellKnownTypes.Timestamp.FromDateTimeOffset(fromUtc), ToUtc = Google.Protobuf.WellKnownTypes.Timestamp.FromDateTimeOffset(toUtc) });
+            return response.Jobs;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[AgentClient] GetAgentJobStatisticsAsync failed");
+            return null;
+        }
+    }
+
+    public IEnumerable<PoseDto>? GetPlannedWaypoints(int agentId)
+    {
+        try
+        {
+            GetPlannedWaypointsResult response = _client.GetPlannedWaypoints(new GetPlannedWaypointsRequest { AgentId = agentId });
+            return response.ServiceCode == (int)ServiceCode.NoError ? response.Waypoints : null;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[AgentClient] GetPlannedWaypoints failed");
+            return null;
+        }
+    }
+
+    public async Task<IEnumerable<PoseDto>?> GetPlannedWaypointsAsync(int agentId)
+    {
+        try
+        {
+            GetPlannedWaypointsResult response = await _client.GetPlannedWaypointsAsync(new GetPlannedWaypointsRequest { AgentId = agentId });
+            return response.ServiceCode == (int)ServiceCode.NoError ? response.Waypoints : null;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogErrorIfEnabled(ex, "[AgentClient] GetPlannedWaypointsAsync failed");
+            return null;
+        }
+    }
+
+    /// <summary>Streams planned waypoint results until cancelled; transport errors propagate to the caller.</summary>
+    public async IAsyncEnumerable<GetPlannedWaypointsResult> SubscribePlannedWaypointsAsync(
+        int agentId,
+        [System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken = default)
+    {
+        using AsyncServerStreamingCall<GetPlannedWaypointsResult> call = _client.SubscribePlannedWaypoints(
+            new GetPlannedWaypointsRequest { AgentId = agentId },
+            cancellationToken: cancellationToken);
+        await foreach (GetPlannedWaypointsResult response in call.ResponseStream.ReadAllAsync(cancellationToken))
+            yield return response;
+    }
+
     private bool _isDisposed;
     private CancellationTokenSource? _cts;
     private readonly AgentServiceProto.AgentServiceProtoClient _client;
@@ -368,13 +436,13 @@ public class AgentClient : IAgentClient
         }
     }
 
-    public string? GetBlockingRootCause(string agentIpAddress)
+    public AgentBlockingDiagnostic? GetBlockingRootCause(string agentIpAddress)
     {
         try
         {
             GetBlockingRootCauseResult response = _client.GetBlockingRootCause(
                 new GetBlockingRootCauseRequest { AgentIpAddress = agentIpAddress });
-            return response.ServiceCode == (int)ServiceCode.NoError ? response.Value : null;
+            return response.ServiceCode == (int)ServiceCode.NoError ? response.Diagnostic : null;
         }
         catch (Exception ex)
         {
@@ -383,13 +451,13 @@ public class AgentClient : IAgentClient
         }
     }
 
-    public async Task<string?> GetBlockingRootCauseAsync(string agentIpAddress)
+    public async Task<AgentBlockingDiagnostic?> GetBlockingRootCauseAsync(string agentIpAddress)
     {
         try
         {
             GetBlockingRootCauseResult response = await _client.GetBlockingRootCauseAsync(
                 new GetBlockingRootCauseRequest { AgentIpAddress = agentIpAddress });
-            return response.ServiceCode == (int)ServiceCode.NoError ? response.Value : null;
+            return response.ServiceCode == (int)ServiceCode.NoError ? response.Diagnostic : null;
         }
         catch (Exception ex)
         {

@@ -9,6 +9,13 @@ using GAAPICommon.Services.Maps;
 /// </summary>
 public interface IMapClient : IDisposable
 {
+    public GetNodeMaintenanceResult? GetNodeMaintenance();
+    public Task<GetNodeMaintenanceResult?> GetNodeMaintenanceAsync();
+    public SetNodeMaintenanceResult? SetNodeMaintenance(int nodeId, int mode);
+    public Task<SetNodeMaintenanceResult?> SetNodeMaintenanceAsync(int nodeId, int mode);
+    public bool UpdateRoadmapMetadata(int mapId, string alias, string description);
+    public Task<bool> UpdateRoadmapMetadataAsync(int mapId, string alias, string description);
+
     /// <summary>
     /// Gets all moves in the roadmap.
     /// </summary>

@@ -4,6 +4,11 @@ namespace Guidance.SchedulingClients.Jobs;
 
 public interface IJobsStateClient : IDisposable
 {
+    public bool PauseJob(int jobId, bool allowAgentToAcceptOtherJobs = false);
+    public Task<bool> PauseJobAsync(int jobId, bool allowAgentToAcceptOtherJobs = false);
+    public bool ResumeJob(int jobId);
+    public Task<bool> ResumeJobAsync(int jobId);
+
     /// <summary>
     /// Aborts all jobs in the system.
     /// </summary>

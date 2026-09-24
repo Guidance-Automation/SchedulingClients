@@ -14,6 +14,42 @@ using Google.Protobuf;
 /// </summary>
 public class MapClient : IMapClient
 {
+    public GetNodeMaintenanceResult? GetNodeMaintenance()
+        => Call(
+            () => _client.GetNodeMaintenance(new GetNodeMaintenanceRequest()),
+            response => response.ServiceCode,
+            nameof(GetNodeMaintenance));
+
+    public async Task<GetNodeMaintenanceResult?> GetNodeMaintenanceAsync()
+        => await CallAsync(
+            () => _client.GetNodeMaintenanceAsync(new GetNodeMaintenanceRequest()),
+            response => response.ServiceCode,
+            nameof(GetNodeMaintenanceAsync));
+
+    public SetNodeMaintenanceResult? SetNodeMaintenance(int nodeId, int mode)
+        => Call(
+            () => _client.SetNodeMaintenance(new SetNodeMaintenanceRequest { NodeId = nodeId, Mode = mode }),
+            response => response.ServiceCode,
+            nameof(SetNodeMaintenance));
+
+    public async Task<SetNodeMaintenanceResult?> SetNodeMaintenanceAsync(int nodeId, int mode)
+        => await CallAsync(
+            () => _client.SetNodeMaintenanceAsync(new SetNodeMaintenanceRequest { NodeId = nodeId, Mode = mode }),
+            response => response.ServiceCode,
+            nameof(SetNodeMaintenanceAsync));
+
+    public bool UpdateRoadmapMetadata(int mapId, string alias, string description)
+        => Call(
+            () => _client.UpdateRoadmapMetadata(new UpdateRoadmapMetadataRequest { MapId = mapId, Alias = alias, Description = description }),
+            response => response.ServiceCode,
+            nameof(UpdateRoadmapMetadata)) != null;
+
+    public async Task<bool> UpdateRoadmapMetadataAsync(int mapId, string alias, string description)
+        => await CallAsync(
+            () => _client.UpdateRoadmapMetadataAsync(new UpdateRoadmapMetadataRequest { MapId = mapId, Alias = alias, Description = description }),
+            response => response.ServiceCode,
+            nameof(UpdateRoadmapMetadataAsync)) != null;
+
     private const int FileChunkSize = 64 * 1024;
     private bool _isDisposed;
     private CancellationTokenSource _cts = new();

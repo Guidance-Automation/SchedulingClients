@@ -7,6 +7,13 @@ using GAAPICommon.Services.Agents;
 
 public interface IAgentClient : IDisposable
 {
+    public IEnumerable<AgentJobStatisticsDto>? GetAgentJobStatistics(int agentId, DateTimeOffset fromUtc, DateTimeOffset toUtc);
+    public Task<IEnumerable<AgentJobStatisticsDto>?> GetAgentJobStatisticsAsync(int agentId, DateTimeOffset fromUtc, DateTimeOffset toUtc);
+    public IEnumerable<PoseDto>? GetPlannedWaypoints(int agentId);
+    public Task<IEnumerable<PoseDto>?> GetPlannedWaypointsAsync(int agentId);
+    /// <summary>Streams planned waypoint results until cancelled; transport errors propagate to the caller.</summary>
+    public IAsyncEnumerable<GetPlannedWaypointsResult> SubscribePlannedWaypointsAsync(int agentId, CancellationToken cancellationToken = default);
+
     /// <summary>
     /// Triggered upon an update to a agents.
     /// </summary>
@@ -93,8 +100,8 @@ public interface IAgentClient : IDisposable
         string? background = null);
 
     /// <summary>Gets the blocking chain and root cause for an agent.</summary>
-    public string? GetBlockingRootCause(string agentIpAddress);
+    public AgentBlockingDiagnostic? GetBlockingRootCause(string agentIpAddress);
 
     /// <summary>Gets the blocking chain and root cause for an agent asynchronously.</summary>
-    public Task<string?> GetBlockingRootCauseAsync(string agentIpAddress);
+    public Task<AgentBlockingDiagnostic?> GetBlockingRootCauseAsync(string agentIpAddress);
 }
