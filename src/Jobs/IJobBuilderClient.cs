@@ -26,13 +26,13 @@ public interface IJobBuilderClient : IDisposable
     /// Creates a new job and places it in the editing state.
     /// </summary>
     /// <returns>JobDto containing job Id and root ordered list task Id</returns>
-    public JobDto? CreateJob(JobPriority jobPriority = JobPriority.Normal);
+    public JobDto? CreateJob(JobPriority jobPriority = JobPriority.Normal, string? description = null);
 
     /// <summary>
     /// Creates a new job and places it in the editing state.
     /// </summary>
     /// <returns>JobDto containing job Id and root ordered list task Id</returns>
-    public Task<JobDto?> CreateJobAsync(JobPriority jobPriority = JobPriority.Normal);
+    public Task<JobDto?> CreateJobAsync(JobPriority jobPriority = JobPriority.Normal, string? description = null);
 
     /// <summary>
     /// Creates a new ordered list task (subtasks must be completed in order).

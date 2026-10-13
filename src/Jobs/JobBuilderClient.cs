@@ -459,13 +459,14 @@ public class JobBuilderClient : IJobBuilderClient
     /// Creates a job with the specified priority.
     /// </summary>
     /// <param name="jobPriority">The priority of the job.</param>
+    /// <param name="description">The description of the job.</param>
     /// <returns>The new job information if the operation succeeded, otherwise null.</returns>
-    public JobDto? CreateJob(JobPriority jobPriority = JobPriority.Normal)
+    public JobDto? CreateJob(JobPriority jobPriority = JobPriority.Normal, string? description = null)
     {
         _logger?.LogTraceIfEnabled("[JobBuilderClient] CreateJob() called with {JobPriority}", jobPriority);
         try
         {
-            CreateJobRequest request = new() { JobPriority = jobPriority };
+            CreateJobRequest request = new() { JobPriority = jobPriority, Description = description };
             _logger?.LogDebugIfEnabled("[JobBuilderClient] Sending CreateJobRequest");
             CreateJobResult response = _client.CreateJob(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
@@ -490,13 +491,14 @@ public class JobBuilderClient : IJobBuilderClient
     /// Creates a job with the specified priority asynchronously.
     /// </summary>
     /// <param name="jobPriority">The priority of the job.</param>
+    /// <param name="description">The description of the job.</param>
     /// <returns>A task that represents the asynchronous operation. The task result contains the new job information if the operation succeeded, otherwise null.</returns>
-    public async Task<JobDto?> CreateJobAsync(JobPriority jobPriority = JobPriority.Normal)
+    public async Task<JobDto?> CreateJobAsync(JobPriority jobPriority = JobPriority.Normal, string? description = null)
     {
         _logger?.LogTraceIfEnabled("[JobBuilderClient] CreateJobAsync() called with {JobPriority}", jobPriority);
         try
         {
-            CreateJobRequest request = new() { JobPriority = jobPriority };
+            CreateJobRequest request = new() { JobPriority = jobPriority, Description = description };
             _logger?.LogDebugIfEnabled("[JobBuilderClient] Sending CreateJobRequest");
             CreateJobResult response = await _client.CreateJobAsync(request);
             if (response.ServiceCode == (int)ServiceCode.NoError)
