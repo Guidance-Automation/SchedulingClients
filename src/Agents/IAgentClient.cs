@@ -93,8 +93,8 @@ public interface IAgentClient : IDisposable
         string? background = null);
 
     /// <summary>Gets the blocking chain and root cause for an agent.</summary>
-    public string? GetBlockingRootCause(string agentIpAddress);
+    public AgentBlockingDiagnostic? GetBlockingRootCause(string agentIpAddress);
 
     /// <summary>Gets the blocking chain and root cause for an agent asynchronously.</summary>
-    public Task<string?> GetBlockingRootCauseAsync(string agentIpAddress);
+    public Task<AgentBlockingDiagnostic?> GetBlockingRootCauseAsync(string agentIpAddress);
 }

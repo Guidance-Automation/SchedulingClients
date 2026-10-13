@@ -368,13 +368,13 @@ public class AgentClient : IAgentClient
         }
     }
 
-    public string? GetBlockingRootCause(string agentIpAddress)
+    public AgentBlockingDiagnostic? GetBlockingRootCause(string agentIpAddress)
     {
         try
         {
             GetBlockingRootCauseResult response = _client.GetBlockingRootCause(
                 new GetBlockingRootCauseRequest { AgentIpAddress = agentIpAddress });
-            return response.ServiceCode == (int)ServiceCode.NoError ? response.Value : null;
+            return response.ServiceCode == (int)ServiceCode.NoError ? response.Diagnostic : null;
         }
         catch (Exception ex)
         {
@@ -383,13 +383,13 @@ public class AgentClient : IAgentClient
         }
     }
 
-    public async Task<string?> GetBlockingRootCauseAsync(string agentIpAddress)
+    public async Task<AgentBlockingDiagnostic?> GetBlockingRootCauseAsync(string agentIpAddress)
     {
         try
         {
             GetBlockingRootCauseResult response = await _client.GetBlockingRootCauseAsync(
                 new GetBlockingRootCauseRequest { AgentIpAddress = agentIpAddress });
-            return response.ServiceCode == (int)ServiceCode.NoError ? response.Value : null;
+            return response.ServiceCode == (int)ServiceCode.NoError ? response.Diagnostic : null;
         }
         catch (Exception ex)
         {
